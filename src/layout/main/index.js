@@ -71,12 +71,12 @@ function MainLayout() {
               <div style={{ display: "flex", gap: "20px" }}>
                 <Link to="/uye-ol">
                   <Button variant="contained" color="success" size="small">
-                    Üye Ol
+                    Kaydol
                   </Button>
                 </Link>
                 <Link to="/uye-girisi">
                   <Button variant="contained" color="success" size="small">
-                    Üye Girişi
+                    Giriş Yap
                   </Button>
                 </Link>
               </div>
