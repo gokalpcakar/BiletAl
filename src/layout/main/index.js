@@ -3,6 +3,21 @@ import { Outlet, Link } from "react-router-dom"
 function MainLayout() {
     return (
         <div>
+            <header>
+                <div>
+                    <Link to='/'>
+                        BiletAl
+                    </Link>
+                </div>
+                <div>
+                    <Link>
+                        Üye Ol
+                    </Link>
+                    <Link>
+                        Üye Girişi
+                    </Link>
+                </div>
+            </header>
             <nav>
                 <ul>
                     <li>
@@ -20,6 +35,9 @@ function MainLayout() {
                 </ul>
             </nav>
             <Outlet />
+            <footer>
+
+            </footer>
         </div>
     )
 }
