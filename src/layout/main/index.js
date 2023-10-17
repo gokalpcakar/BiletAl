@@ -10,6 +10,7 @@ import { styled } from "@mui/system";
 import MenuIcon from "@mui/icons-material/Menu";
 import Drawer from "@mui/material/Drawer";
 
+
 const NavContainer = styled(Container)({
   marginTop: "20px",
 });
@@ -46,13 +47,15 @@ function MainLayout() {
       <AppBar position="fixed" sx={{ background: "#fff" }}>
         <Container maxWidth="lg">
           <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-            <Link to="/">
+          <Link to="/">
               <Typography variant={windowWidth <= 768 ? "h6" : "h5"} sx={{ fontWeight: "bold", color: "#2e7d32", textDecoration: "none" }}>
                 Bilet Al
               </Typography>
             </Link>
             {windowWidth <= 768 ? (
-              <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
+              <div
+                style={{ display: "flex", alignItems: "center", gap: "5px" }}
+              >
                 <Link to="/uye-ol">
                   <Button variant="contained" color="success" size="small">
                     Üye Ol
@@ -63,7 +66,12 @@ function MainLayout() {
                     Üye Girişi
                   </Button>
                 </Link>
-                <Button variant="contained" color="success" onClick={toggleMenu} size="small">
+                <Button
+                  variant="contained"
+                  color="success"
+                  onClick={toggleMenu}
+                  size="small"
+                >
                   <MenuIcon />
                 </Button>
               </div>
@@ -71,12 +79,12 @@ function MainLayout() {
               <div style={{ display: "flex", gap: "20px" }}>
                 <Link to="/uye-ol">
                   <Button variant="contained" color="success" size="small">
-                    Üye Ol
+                    Kaydol
                   </Button>
                 </Link>
                 <Link to="/uye-girisi">
                   <Button variant="contained" color="success" size="small">
-                    Üye Girişi
+                    Giriş Yap
                   </Button>
                 </Link>
               </div>
@@ -88,7 +96,7 @@ function MainLayout() {
         <div
           style={{
             width: "250px",
-            backgroundColor: "#66bb6a",
+            backgroundColor: "#2e7d32",
             height: "100%",
             display: "flex",
             flexDirection: "column",
