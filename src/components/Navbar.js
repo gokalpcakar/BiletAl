@@ -39,8 +39,8 @@ function Navbar() {
     <div>
       <CssBaseline />
       <AppBar position="fixed" sx={{ background: "#fff" }}>
-        <Container maxWidth="xlg">
-          <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+        <Container maxWidth="lg">
+          <Toolbar sx={{ display: "flex", justifyContent: "space-between",height:"10vh" }}>
             <Link to="/">
               <Typography
                 variant={windowWidth <= 768 ? "h6" : "h5"}
