@@ -1,0 +1,93 @@
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 25px;
+    padding-top: 25px;
+  }
+  
+  .navContainer {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .nav .left {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+ 
+  .nav .menu ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .nav .menu ul li a {
+    color: #0c572e;
+    padding-right: 25px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all ease-in .3s;
+  }
+  
+  .nav .menu ul li a:hover {
+    background-color:  #2e7d32;
+    border: 1px solid;
+    padding: .5rem;
+    border-radius: 2rem;
+    border: none;
+    color:#fff;
+  }
+  
+  .nav .right {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+    gap: 5px;
+  }
+  .menuIcon{
+
+    color: #0c572e;
+    font-size: 1.5rem;
+    border:2px solid #0c572e;
+    border-radius: .5rem;
+    font-weight: bold;
+  }
+ 
+  @media (max-width: 768px) {
+
+    .navContainer {
+        width: 95%;
+     
+      }
+    .nav .left {
+      display: block;
+      text-align: center;
+    }
+  
+    .menuIcon {
+      display: block;
+      cursor: pointer;
+    }
+    .menu{
+
+        display: none;
+    }
+  
+ 
+  
+    #menuToggle:checked + .menu {
+      display:block;
+    }
+
+  
+  }
+  @media (min-width: 768px) {
+    .menuIcon {
+      display: none; 
+    }}
