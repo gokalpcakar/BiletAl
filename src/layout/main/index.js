@@ -10,9 +10,8 @@ import { styled } from "@mui/system";
 import MenuIcon from "@mui/icons-material/Menu";
 import Drawer from "@mui/material/Drawer";
 
-
 const NavContainer = styled(Container)({
-  marginTop: "20px",
+  padding: "2rem",
 });
 
 function MainLayout() {
@@ -47,8 +46,15 @@ function MainLayout() {
       <AppBar position="fixed" sx={{ background: "#fff" }}>
         <Container maxWidth="lg">
           <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-          <Link to="/">
-              <Typography variant={windowWidth <= 768 ? "h6" : "h5"} sx={{ fontWeight: "bold", color: "#2e7d32", textDecoration: "none" }}>
+            <Link to="/">
+              <Typography
+                variant={windowWidth <= 768 ? "h6" : "h5"}
+                sx={{
+                  fontWeight: "bold",
+                  color: "#2e7d32",
+                  textDecoration: "none",
+                }}
+              >
                 Bilet Al
               </Typography>
             </Link>
