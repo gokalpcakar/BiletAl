@@ -20,11 +20,11 @@ function Footer() {
                         alignItems="center"
                     >
                         <Grid item xs={12} sm={2}>
-                            <Typography variant="h3" color="#2ed87b" gutterBottom>
-                                <Link to='home'>
+                            <Link to='home'>
+                                <Typography variant="h3" color="#2ed87b" gutterBottom>
                                     BİLETAL
-                                </Link>
-                            </Typography>
+                                </Typography>
+                            </Link>
                         </Grid>
 
                         <Divider orientation="vertical" sx={{backgroundColor: "#9d9d9d"}} flexItem/>
