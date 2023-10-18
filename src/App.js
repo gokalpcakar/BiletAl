@@ -1,9 +1,24 @@
 
+import routes from "./routes/index";
+import { Route } from "react-router-dom";
+import { Routes } from 'react-router-dom'
+
 function App() {
   return (
-    <div>
-      
-    </div>
+ <>
+ <Routes>
+ {routes.map((route, index) => (
+          <Route
+            key={index}
+            path={route.path}
+            element={route.element}
+          />
+        ))}
+  
+   </Routes>
+
+ 
+ </>
   );
 }
 
