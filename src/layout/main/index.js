@@ -11,8 +11,9 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Drawer from "@mui/material/Drawer";
 
 
+
 const NavContainer = styled(Container)({
-  marginTop: "20px",
+ padding:"6rem",
 });
 
 function MainLayout() {

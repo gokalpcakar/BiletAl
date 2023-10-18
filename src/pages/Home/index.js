@@ -1,8 +1,8 @@
-
+import Slider from "../../components/Slider"
 function Home() {
   return (
     <div>
-      Home
+    <Slider/>
     </div>
   )
 }
