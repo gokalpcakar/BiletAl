@@ -9,8 +9,6 @@ import Container from "@mui/material/Container";
 import MenuIcon from "@mui/icons-material/Menu";
 import Drawer from "@mui/material/Drawer";
 
-
-
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -42,7 +40,7 @@ function Navbar() {
       <CssBaseline />
       <AppBar position="fixed" sx={{ background: "#fff" }}>
         <Container maxWidth="lg">
-          <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+          <Toolbar sx={{ display: "flex", justifyContent: "space-between",height:"10vh" }}>
             <Link to="/">
               <Typography
                 variant={windowWidth <= 768 ? "h6" : "h5"}
@@ -50,11 +48,15 @@ function Navbar() {
                   fontWeight: "bold",
                   color: "#2e7d32",
                   textDecoration: "none",
+                  "&:hover": {
+                    color: "#4caf50",
+                  },
                 }}
               >
                 Bilet Al
               </Typography>
             </Link>
+
             {windowWidth <= 768 ? (
               <div
                 style={{ display: "flex", alignItems: "center", gap: "5px" }}
@@ -139,7 +141,6 @@ function Navbar() {
           </nav>
         </div>
       </Drawer>
-    
     </div>
   );
 }
