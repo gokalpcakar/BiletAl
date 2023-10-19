@@ -7,36 +7,36 @@ import Festival from '../pages/Festival';
 import StandUp from '../pages/StandUp';
 import NotFound from '../pages/NotFound';
 
+const mainLayoutWrapper = (PageComponent) => (
+  <MainLayout>
+    <PageComponent />
+  </MainLayout>
+);
+
 const routes = [
   {
     path: '/',
-    element: <MainLayout />,
-    children: [
-      {
-        index: true,
-        element: <Home />
-      },
-      {
-        path: 'concert',
-        element: <Concert />
-      },
-      {
-        path: 'theatre',
-        element: <Theatre />
-      },
-      {
-        path: 'festival',
-        element: <Festival />
-      },
-      {
-        path: 'stand-up',
-        element: <StandUp />
-      },
-      {
-        path: '*',
-        element: <NotFound />
-      }
-    ]
+    element: mainLayoutWrapper(Home)
+  },
+  {
+    path: 'concert',
+    element: mainLayoutWrapper(Concert)
+  },
+  {
+    path: 'theatre',
+    element: mainLayoutWrapper(Theatre)
+  },
+  {
+    path: 'festival',
+    element: mainLayoutWrapper(Festival)
+  },
+  {
+    path: 'stand-up',
+    element: mainLayoutWrapper(StandUp)
+  },
+  {
+    path: '*',
+    element: mainLayoutWrapper(NotFound)
   }
 ];
 
