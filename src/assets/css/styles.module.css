@@ -1,10 +1,14 @@
 .nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   display: flex;
   justify-content: center;
   align-items: center;
   border-bottom: 1px solid #e2e8f0;
   padding-bottom: 25px;
   padding-top: 25px;
+  background-color:  #fff;
 }
 
 .navContainer {
@@ -29,6 +33,11 @@
 .nav .logo img{
 
   width: 5rem;
+}
+.nav .menu ul li{
+
+  margin-right: 1rem;
+
 }
 
 .nav .menu ul li a {
