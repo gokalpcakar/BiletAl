@@ -41,12 +41,12 @@ function Navbar() {
         </div>
         <div className={Styles.right}>
           <Link to="/signin">
-            <Button variant="contained" color="success" size="small">
+            <Button variant="contained" color="success" size="medium">
               Giriş Yap
             </Button>
           </Link>
           <Link to="/signup">
-            <Button variant="contained" color="success" size="small">
+            <Button variant="contained" color="success" size="medium">
               Kaydol
             </Button>
           </Link>
