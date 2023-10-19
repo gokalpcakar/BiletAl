@@ -19,7 +19,7 @@ function Slider() {
       >
         <div>
           <img
-            src="https://www.elislab.com.tr/wp-content/uploads/2020/01/laboratuvar-sarf-malzemeleri.jpg"
+            src="https://sepet.konya.bel.tr/wwwkonyasehirtiyatrosucom/sliders/nwNfkEXX7hYEgYpfHa07ePPwrmeDTq_C.jpeg"
             alt="carouselImage"
          
           />
@@ -27,7 +27,7 @@ function Slider() {
 
         <div>
           <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJXjKaxu2Ha1cfkXx2-nrnnd2wQL3fYVCl7w&usqp=CAU"
+            src="https://sepet.konya.bel.tr/wwwkonyasehirtiyatrosucom/sliders/5IdZVX2RXFoYgvpHPf5keuKlt75WiYmO.jpeg"
             alt="carouselImage"
            
           />
@@ -35,39 +35,26 @@ function Slider() {
 
         <div>
           <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV01Nskpen2mDWW_TI60EBpxTBUkAtvQircA&usqp=CAU"
+            src="	https://sepet.konya.bel.tr/wwwkonyasehirtiyatrosucom/sliders/6QtUH8cRilsCBhC8pbNgrYm8nSC7ewfG.jpeg"
             alt="carouselImage"
            
           />
         </div>
         <div>
           <img
-            src="https://www.nasilbe.com/wp-content/uploads/2020/07/Laboratuvar-Malzemelerinin-isimleri-Nelerdir-1024x551.jpg"
+            src="	https://sepet.konya.bel.tr/wwwkonyasehirtiyatrosucom/sliders/kAUUqb-3-XwPbze0vxfMVtRuv_JPjucb.jpeg"
             alt="carouselImage"
            
           />
         </div>
         <div>
           <img
-            src="https://www.sentezlab.com/class/INNOVAEditor/assets/laboratuvar%20cam%20malzemeleri.jpg"
+            src="	https://sepet.konya.bel.tr/wwwkonyasehirtiyatrosucom/sliders/9gzw4ooV537pWjULfAK-WO_4zDqU0ueE.jpeg	"
             alt="carouselImage"
            
           />
         </div>
-        <div>
-          <img
-            src="https://www.kocar.com.tr/uploads/slider/images/000/000/049/medium"
-            alt="carouselImage"
-          
-          />
-        </div>
-        <div>
-          <img
-            src="https://tetralaboratuvar.com/wp-content/uploads/2021/03/Ozel-Laboratuvar.jpg"
-            alt="carouselImage"
-        
-          />
-        </div>
+     
       </Carousel>
     </Box>
   );

@@ -3,27 +3,33 @@ import { Link } from "react-router-dom";
 import Styles from "../assets/css/styles.module.css";
 import Button from "@mui/material/Button";
 import { FiMenu } from "react-icons/fi";
-
-
+import { AiOutlineClose } from 'react-icons/ai';
+import logo from "../assets/images/logo1.png"
 function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const handleMenuToggle = () => {
-    setMenuOpen(!menuOpen);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
-
-
 
   return (
     <nav className={Styles.nav}>
       <div className={Styles.navContainer}>
         <div className={Styles.right}>
-          <button id="menuToggle" onClick={handleMenuToggle} className={Styles.menuIcon}>
+          <button id="menuToggle" className={Styles.menuIcon} onClick={toggleMenu}>
             <FiMenu />
           </button>
+        
 
-          <div className={Styles.menu} >
-            <ul>
+
+          <div className={`${Styles.menu} ${isMenuOpen ? Styles.showMenu : ""}`}>
+            <ul className={Styles.menuList}>
+            <button id="menuToggle" className={Styles.closeIcon} onClick={toggleMenu}>
+          <AiOutlineClose />
+          </button>
+          <li>
+                <Link to="/" className={Styles.logo}><img src={logo} alt="logo" /></Link>
+              </li>
               <li>
                 <Link to="/">Anasayfa</Link>
               </li>
