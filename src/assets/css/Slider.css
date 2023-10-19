@@ -1,6 +1,6 @@
 .homePageCarouselBox{
 
-margin: 0  15%;
+margin: 1rem  15%;
 }
 
 
@@ -13,6 +13,13 @@ margin: 0  15%;
 }
 
 @media only screen and (max-width: 767px) {
+
+  .homePageCarouselBox{
+
+    margin: 1rem  10%;
+    }
+    
+
   .homePageCarousel {
     margin-top: 0;
     width: 100%;
@@ -31,6 +38,6 @@ margin: 0  15%;
 
 @media only screen and (min-width: 820px) {
   .homePageCarousel img {
-  height:450px;
+  height:400px;
   }
 }

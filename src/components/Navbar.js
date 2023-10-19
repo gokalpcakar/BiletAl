@@ -4,12 +4,15 @@ import Styles from "../assets/css/styles.module.css";
 import Button from "@mui/material/Button";
 import { FiMenu } from "react-icons/fi";
 
+
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleMenuToggle = () => {
     setMenuOpen(!menuOpen);
   };
+
+
 
   return (
     <nav className={Styles.nav}>
@@ -19,7 +22,7 @@ function Navbar() {
             <FiMenu />
           </button>
 
-          <div className={Styles.menu}>
+          <div className={Styles.menu} >
             <ul>
               <li>
                 <Link to="/">Anasayfa</Link>

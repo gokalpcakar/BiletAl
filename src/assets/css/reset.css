@@ -91,7 +91,7 @@ video {
   font: inherit;
   vertical-align: baseline;
   text-decoration: none;
-  color: #fff;
+  
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -117,6 +117,12 @@ body {
 ol,
 ul {
   list-style: none;
+}
+
+
+ a{
+
+   color: #9d9d9d;
 }
 
 blockquote,

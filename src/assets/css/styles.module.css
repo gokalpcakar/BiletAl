@@ -38,8 +38,8 @@
   .nav .menu ul li a:hover {
     background-color:  #2e7d32;
     border: 1px solid;
-    padding: .5rem;
-    border-radius: 2rem;
+    padding: .5rem .6rem;
+    border-radius: .2rem;
     border: none;
     color:#fff;
   }
