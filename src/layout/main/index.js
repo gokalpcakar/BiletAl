@@ -2,7 +2,7 @@ import Slider from "../../components/Slider";
 import React from "react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
-import mainLayout from "../../assets/css/mainLayout.module.css"
+import mainLayout from "./mainLayout.module.css";
 
 function MainLayout({ children }) {
   return (

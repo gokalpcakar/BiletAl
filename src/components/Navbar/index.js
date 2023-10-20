@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Styles from "../assets/css/styles.module.css";
+import Styles from "./styles.module.css";
 import Button from "@mui/material/Button";
 import { FiMenu } from "react-icons/fi";
 import { AiOutlineClose } from 'react-icons/ai';
-import logo from "../assets/images/logo1.png"
+import logo from "../../assets/images/logo1.png"
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
