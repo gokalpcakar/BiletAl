@@ -1,115 +1,136 @@
 {
-    "events": [
-      {
-        "id": 1,
-        "name": "Etkinlik 1",
-        "description": "Bu etkinlik hakkında örnek bir açıklama.",
-        "startDate": "2023-10-15",
-        "endDate": "2023-10-17",
-        "location": "Etkinlik Merkezi",
-        "city": "İstanbul",
-        "image": "https://example.com/image1.jpg",
-        "eventType": "tiyatro"
-      },
-      {
-        "id": 2,
-        "name": "Etkinlik 2",
-        "description": "Başka bir etkinlik açıklaması.",
-        "startDate": "2023-11-05",
-        "endDate": "2023-11-07",
-        "location": "Kültürel Salon",
-        "city": "Ankara",
-        "image": "https://example.com/image2.jpg",
-        "eventType": "festival"
-      },
-      {
-        "id": 3,
-        "name": "Etkinlik 3",
-        "description": "Üçüncü etkinlik açıklaması.",
-        "startDate": "2023-12-20",
-        "endDate": "2023-12-22",
-        "location": "Sanat Galerisi",
-        "city": "İzmir",
-        "image": "https://example.com/image3.jpg",
-        "eventType": "standup"
-      },
-      {
-        "id": 4,
-        "name": "Etkinlik 4",
-        "description": "Bu etkinlik hakkında örnek bir açıklama.",
-        "startDate": "2024-01-10",
-        "endDate": "2024-01-12",
-        "location": "Kongre Merkezi",
-        "city": "Ankara",
-        "image": "https://example.com/image4.jpg",
-        "eventType": "konser"
-      },
-      {
-        "id": 5,
-        "name": "Etkinlik 5",
-        "description": "Beşinci etkinlik açıklaması.",
-        "startDate": "2024-02-15",
-        "endDate": "2024-02-17",
-        "location": "Etkinlik Merkezi",
-        "city": "İstanbul",
-        "image": "https://example.com/image5.jpg",
-        "eventType": "tiyatro"
-      },
-      {
-        "id": 6,
-        "name": "Etkinlik 6",
-        "description": "Altıncı etkinlik açıklaması.",
-        "startDate": "2024-03-10",
-        "endDate": "2024-03-12",
-        "location": "Kültürel Salon",
-        "city": "Ankara",
-        "image": "https://example.com/image6.jpg",
-        "eventType": "festival"
-      },
-      {
-        "id": 7,
-        "name": "Etkinlik 7",
-        "description": "Yedinci etkinlik açıklaması.",
-        "startDate": "2024-04-20",
-        "endDate": "2024-04-22",
-        "location": "Sanat Galerisi",
-        "city": "İzmir",
-        "image": "https://example.com/image7.jpg",
-        "eventType": "standup"
-      },
-      {
-        "id": 8,
-        "name": "Etkinlik 8",
-        "description": "Sekizinci etkinlik açıklaması.",
-        "startDate": "2024-05-10",
-        "endDate": "2024-05-12",
-        "location": "Kongre Merkezi",
-        "city": "Ankara",
-        "image": "https://example.com/image8.jpg",
-        "eventType": "konser"
-      },
-      {
-        "id": 9,
-        "name": "Etkinlik 9",
-        "description": "Dokuzuncu etkinlik açıklaması.",
-        "startDate": "2024-06-15",
-        "endDate": "2024-06-17",
-        "location": "Etkinlik Merkezi",
-        "city": "İstanbul",
-        "image": "https://example.com/image9.jpg",
-        "eventType": "tiyatro"
-      },
-      {
-        "id": 10,
-        "name": "Etkinlik 10",
-        "description": "Onuncu etkinlik açıklaması.",
-        "startDate": "2024-07-10",
-        "endDate": "2024-07-12",
-        "location": "Kültürel Salon",
-        "city": "Ankara",
-        "image": "https://example.com/image10.jpg",
-        "eventType": "festival"
-      }
-  
-    ]
-  }
+  "events": [
+    {
+      "id": 1,
+      "name": "Etkinlik 1",
+      "description": "Bu etkinlik hakkında örnek bir açıklama.",
+      "startDate": "2023-10-15",
+      "endDate": "2023-10-17",
+      "location": "Etkinlik Merkezi",
+      "city": "İstanbul",
+      "image": "https://source.unsplash.com/150x150/?event1",
+      "eventType": "tiyatro",
+      "price": 50.0
+    },
+    {
+      "id": 2,
+      "name": "Etkinlik 2",
+      "description": "Başka bir etkinlik açıklaması.",
+      "startDate": "2023-11-05",
+      "endDate": "2023-11-07",
+      "location": "Kültürel Salon",
+      "city": "Ankara",
+      "image": "https://source.unsplash.com/150x150/?event2",
+      "eventType": "festival",
+      "price": 30.0
+    },
+    {
+      "id": 3,
+      "name": "Etkinlik 3",
+      "description": "Üçüncü etkinlik açıklaması.",
+      "startDate": "2023-12-20",
+      "endDate": "2023-12-22",
+      "location": "Sanat Galerisi",
+      "city": "İzmir",
+      "image": "https://source.unsplash.com/150x150/?event3",
+      "eventType": "standup",
+      "price": 25.0
+    },
+    {
+      "id": 4,
+      "name": "Etkinlik 4",
+      "description": "Dördüncü etkinlik açıklaması.",
+      "startDate": "2024-01-10",
+      "endDate": "2024-01-12",
+      "location": "Kongre Merkezi",
+      "city": "Ankara",
+      "image": "https://source.unsplash.com/150x150/?event4",
+      "eventType": "konser",
+      "price": 40.0
+    },
+    {
+      "id": 5,
+      "name": "Etkinlik 5",
+      "description": "Beşinci etkinlik açıklaması.",
+      "startDate": "2024-02-15",
+      "endDate": "2024-02-17",
+      "location": "Etkinlik Merkezi",
+      "city": "İstanbul",
+      "image": "https://source.unsplash.com/150x150/?event5",
+      "eventType": "tiyatro",
+      "price": 55.0
+    },
+    {
+      "id": 6,
+      "name": "Etkinlik 6",
+      "description": "Altıncı etkinlik açıklaması.",
+      "startDate": "2024-03-10",
+      "endDate": "2024-03-12",
+      "location": "Kültürel Salon",
+      "city": "Ankara",
+      "image": "https://source.unsplash.com/150x150/?event6",
+      "eventType": "festival",
+      "price": 35.0
+    },
+    {
+      "id": 7,
+      "name": "Etkinlik 7",
+      "description": "Yedinci etkinlik açıklaması.",
+      "startDate": "2024-04-20",
+      "endDate": "2024-04-22",
+      "location": "Sanat Galerisi",
+      "city": "İzmir",
+      "image": "https://source.unsplash.com/150x150/?event7",
+      "eventType": "standup",
+      "price": 20.0
+    },
+    {
+      "id": 8,
+      "name": "Etkinlik 8",
+      "description": "Sekizinci etkinlik açıklaması.",
+      "startDate": "2024-05-10",
+      "endDate": "2024-05-12",
+      "location": "Kongre Merkezi",
+      "city": "Ankara",
+      "image": "https://source.unsplash.com/150x150/?event8",
+      "eventType": "konser",
+      "price": 60.0
+    },
+    {
+      "id": 9,
+      "name": "Etkinlik 9",
+      "description": "Dokuzuncu etkinlik açıklaması.",
+      "startDate": "2024-06-15",
+      "endDate": "2024-06-17",
+      "location": "Etkinlik Merkezi",
+      "city": "İstanbul",
+      "image": "https://source.unsplash.com/150x150/?event9",
+      "eventType": "tiyatro",
+      "price": 45.0
+    },
+    {
+      "id": 10,
+      "name": "Etkinlik 10",
+      "description": "Onuncu etkinlik açıklaması.",
+      "startDate": "2024-07-10",
+      "endDate": "2024-07-12",
+      "location": "Kültürel Salon",
+      "city": "Ankara",
+      "image": "https://source.unsplash.com/150x150/?event10",
+      "eventType": "festival",
+      "price": 30.0
+    },
+    {
+      "id": 11,
+      "name": "Etkinlik 11",
+      "description": "Onbirinci etkinlik açıklaması.",
+      "startDate": "2024-08-20",
+      "endDate": "2024-08-22",
+      "location": "Sanat Galerisi",
+      "city": "İzmir",
+      "image": "https://source.unsplash.com/150x150/?event11",
+      "eventType": "standup",
+      "price": 25.0
+    }
+  ]
+}

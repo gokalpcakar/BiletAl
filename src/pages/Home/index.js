@@ -1,10 +1,18 @@
-
+import { useQuery } from "react-query";
+import { getEvents } from "../../network/requests/EventServices";
+import EventsGrid from "../../components/EventsGrid";
 function Home() {
-  return <>
+
+  const { isLoading, error, data} = useQuery("events",getEvents);
   
-<div>
-  Home
-</div>
+  if (isLoading) return "Loading...";
+
+  if (error) return "An error has occurred: " + error.message;
+  
+  return <>
+      
+    
+      <EventsGrid data={data}/>
 
   </>;
 }
