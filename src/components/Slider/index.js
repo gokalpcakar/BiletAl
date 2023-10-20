@@ -1,7 +1,7 @@
 import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import { Box } from "@mui/material";
-import "../assets/css/Slider.css";
+import "../Slider/Slider.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 function Slider() {
