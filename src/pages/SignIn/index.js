@@ -32,6 +32,7 @@ function SignIn() {
                             flexDirection: 'column',
                             alignItems: 'center',
                             marginTop: 18,
+                            marginBottom: 18,
                         }}>
                         
                         <Typography variant="h5">
@@ -59,7 +60,7 @@ function SignIn() {
                                 required
                                 fullWidth
                                 id="password"
-                                name="passport"
+                                name="password"
                                 type="password" 
                                 autoComplete="current-password"
                                 variant="outlined" 
