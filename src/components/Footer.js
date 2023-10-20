@@ -20,7 +20,7 @@ function Footer() {
                         alignItems="center"
                     >
                         <Grid item xs={12} sm={2}>
-                            <Link to='home'>
+                            <Link to='/'>
                                 <Typography variant="h3" color="#2ed87b" gutterBottom>
                                     BİLETAL
                                 </Typography>
@@ -80,26 +80,27 @@ function Footer() {
                             <Typography variant="h6" color="#2ed87b" gutterBottom>
                                 KATEGORİLER
                             </Typography>
-                            <Typography variant="body2" color="#9d9d9d" gutterBottom>
-                                <Link to='concert'>
+
+                            <Link to='/concert'>
+                                <Typography variant="body2" color="#9d9d9d" gutterBottom sx={{'&:hover': {color: '#fff',},}}>
                                     KONSER
-                                </Link>
-                            </Typography>
-                            <Typography variant="body2" color="#9d9d9d" gutterBottom>
-                                <Link to='theatre'>
+                                </Typography>
+                            </Link>
+                            <Link to='/theatre'>
+                                <Typography variant="body2" color="#9d9d9d" gutterBottom sx={{'&:hover': {color: '#fff',},}}>
                                     TİYATRO
-                                </Link>
-                            </Typography>
-                            <Typography variant="body2" color="#9d9d9d" gutterBottom>
-                                <Link to='festival'>
+                                </Typography>
+                            </Link>
+                            <Link to='/festival'>
+                                <Typography variant="body2" color="#9d9d9d" gutterBottom sx={{'&:hover': {color: '#fff',},}}>
                                     FESTİVAL
-                                </Link>
-                            </Typography>
-                            <Typography variant="body2" color="#9d9d9d" gutterBottom>
-                                <Link to='standup'>
+                                </Typography>
+                            </Link>
+                            <Link to='/standup'>
+                                <Typography variant="body2" color="#9d9d9d" gutterBottom sx={{'&:hover': {color: '#fff',},}}>
                                     STAND UP
-                                </Link>
-                            </Typography>
+                                </Typography>
+                            </Link>
                         </Grid>
                         <Grid item xs={12} sm={3}>
                             <Typography variant="h6" color="#2ed87b" gutterBottom>
