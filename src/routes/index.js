@@ -44,7 +44,7 @@ const routes = [
     element: mainLayoutWrapper(Festival)
   },
   {
-    path: 'stand-up',
+    path: 'standup',
     element: mainLayoutWrapper(StandUp)
   },
   {
