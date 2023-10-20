@@ -5,5 +5,5 @@ export const getEventsTheatre = async () => {
 };
 
 export const getByEventsById = async (eventsId) => {
-  return baseServices.getById("/events?eventType=tiyatro",eventsId);
+  return baseServices.getById("/events?eventType=tiyatro", eventsId);
 };
