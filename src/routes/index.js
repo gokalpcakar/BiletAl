@@ -19,6 +19,10 @@ const routes = [
     element: mainLayoutWrapper(Home)
   },
   {
+    path: '/events/:id',
+    element: mainLayoutWrapper(Home)
+  },
+  {
     path: 'concert',
     element: mainLayoutWrapper(Concert)
   },
