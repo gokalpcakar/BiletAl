@@ -5,6 +5,9 @@ import Grid from "@mui/material/Grid";
 
 function EventsGrid({ data }) {
 
+  const currentDate = new Date();
+
+  const futureEvents = data.filter(event => new Date(event.startDate) >= currentDate);
 
   return <Container maxWidth="lg" sx={{
     display: 'flex',
@@ -15,7 +18,7 @@ function EventsGrid({ data }) {
     <Grid container spacing={2} sx={{ mb: "3rem", display: 'flex' }} maxWidth="lg">
 
       <Grid container spacing={5}>
-        {data.map((item) => (
+        {futureEvents.map((item) => (
           <Grid item lg={4} md={6} xs={12} key={item.id}>
             <EventsCard item={item} />
           </Grid>
