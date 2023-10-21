@@ -8,7 +8,11 @@
       "endDate": "2023-10-17",
       "location": "Etkinlik Merkezi",
       "city": "İstanbul",
-      "image": "https://source.unsplash.com/150x150/?event1",
+      "images": [
+        "https://source.unsplash.com/150x150/?event1_1",
+        "https://source.unsplash.com/150x150/?event1_2",
+        "https://source.unsplash.com/150x150/?event1_3"
+      ],
       "eventType": "tiyatro",
       "price": 50.0
     },
@@ -20,7 +24,11 @@
       "endDate": "2023-11-07",
       "location": "Kültürel Salon",
       "city": "Ankara",
-      "image": "https://source.unsplash.com/150x150/?event2",
+      "images": [
+        "https://source.unsplash.com/150x150/?event1_1",
+        "https://source.unsplash.com/150x150/?event1_2",
+        "https://source.unsplash.com/150x150/?event1_3"
+      ],
       "eventType": "festival",
       "price": 30.0
     },
@@ -32,7 +40,11 @@
       "endDate": "2023-12-22",
       "location": "Sanat Galerisi",
       "city": "İzmir",
-      "image": "https://source.unsplash.com/150x150/?event3",
+      "images": [
+        "https://source.unsplash.com/150x150/?event1_1",
+        "https://source.unsplash.com/150x150/?event1_2",
+        "https://source.unsplash.com/150x150/?event1_3"
+      ],
       "eventType": "standup",
       "price": 25.0
     },
@@ -44,7 +56,11 @@
       "endDate": "2024-01-12",
       "location": "Kongre Merkezi",
       "city": "Ankara",
-      "image": "https://source.unsplash.com/150x150/?event4",
+      "images": [
+        "https://source.unsplash.com/150x150/?event1_1",
+        "https://source.unsplash.com/150x150/?event1_2",
+        "https://source.unsplash.com/150x150/?event1_3"
+      ],
       "eventType": "konser",
       "price": 40.0
     },
@@ -56,7 +72,11 @@
       "endDate": "2024-02-17",
       "location": "Etkinlik Merkezi",
       "city": "İstanbul",
-      "image": "https://source.unsplash.com/150x150/?event5",
+      "images": [
+        "https://source.unsplash.com/150x150/?event1_1",
+        "https://source.unsplash.com/150x150/?event1_2",
+        "https://source.unsplash.com/150x150/?event1_3"
+      ],
       "eventType": "tiyatro",
       "price": 55.0
     },
@@ -68,7 +88,11 @@
       "endDate": "2024-03-12",
       "location": "Kültürel Salon",
       "city": "Ankara",
-      "image": "https://source.unsplash.com/150x150/?event6",
+      "images": [
+        "https://source.unsplash.com/150x150/?event1_1",
+        "https://source.unsplash.com/150x150/?event1_2",
+        "https://source.unsplash.com/150x150/?event1_3"
+      ],
       "eventType": "festival",
       "price": 35.0
     },
@@ -80,7 +104,11 @@
       "endDate": "2024-04-22",
       "location": "Sanat Galerisi",
       "city": "İzmir",
-      "image": "https://source.unsplash.com/150x150/?event7",
+      "images": [
+        "https://source.unsplash.com/150x150/?event1_1",
+        "https://source.unsplash.com/150x150/?event1_2",
+        "https://source.unsplash.com/150x150/?event1_3"
+      ],
       "eventType": "standup",
       "price": 20.0
     },
@@ -92,7 +120,11 @@
       "endDate": "2024-05-12",
       "location": "Kongre Merkezi",
       "city": "Ankara",
-      "image": "https://source.unsplash.com/150x150/?event8",
+      "images": [
+        "https://source.unsplash.com/150x150/?event1_1",
+        "https://source.unsplash.com/150x150/?event1_2",
+        "https://source.unsplash.com/150x150/?event1_3"
+      ],
       "eventType": "konser",
       "price": 60.0
     },
@@ -104,7 +136,11 @@
       "endDate": "2024-06-17",
       "location": "Etkinlik Merkezi",
       "city": "İstanbul",
-      "image": "https://source.unsplash.com/150x150/?event9",
+      "images": [
+        "https://source.unsplash.com/150x150/?event1_1",
+        "https://source.unsplash.com/150x150/?event1_2",
+        "https://source.unsplash.com/150x150/?event1_3"
+      ],
       "eventType": "tiyatro",
       "price": 45.0
     },
@@ -116,7 +152,11 @@
       "endDate": "2024-07-12",
       "location": "Kültürel Salon",
       "city": "Ankara",
-      "image": "https://source.unsplash.com/150x150/?event10",
+      "images": [
+        "https://source.unsplash.com/150x150/?event1_1",
+        "https://source.unsplash.com/150x150/?event1_2",
+        "https://source.unsplash.com/150x150/?event1_3"
+      ],
       "eventType": "festival",
       "price": 30.0
     },
@@ -128,7 +168,11 @@
       "endDate": "2024-08-22",
       "location": "Sanat Galerisi",
       "city": "İzmir",
-      "image": "https://source.unsplash.com/150x150/?event11",
+      "images": [
+        "https://source.unsplash.com/150x150/?event1_1",
+        "https://source.unsplash.com/150x150/?event1_2",
+        "https://source.unsplash.com/150x150/?event1_3"
+      ],
       "eventType": "standup",
       "price": 25.0
     }
