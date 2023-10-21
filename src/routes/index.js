@@ -1,6 +1,5 @@
 import React from "react";
 import MainLayout from "../layout/main";
-import SignInLayout from "../layout/signin";
 import Home from '../pages/Home';
 import Concert from '../pages/Concert';
 import Theatre from '../pages/Theatre';
@@ -15,12 +14,6 @@ const mainLayoutWrapper = (PageComponent) => (
   <MainLayout>
     <PageComponent />
   </MainLayout>
-);
-
-const signInLayoutWrapper = (PageComponent) => (
-    <SignInLayout>
-        <PageComponent />
-    </SignInLayout>
 );
 
 const routes = [
@@ -78,11 +71,11 @@ const routes = [
   },
   {
     path: 'signin',
-    element: signInLayoutWrapper(SignIn)
+    element: mainLayoutWrapper(SignIn)
   },
   {
     path: 'signup',
-    element: signInLayoutWrapper(SignUp)
+    element: mainLayoutWrapper(SignUp)
   },
   {
     path: '*',
