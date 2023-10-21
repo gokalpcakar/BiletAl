@@ -29,6 +29,10 @@ const routes = [
     element: mainLayoutWrapper(Home)
   },
   {
+    path: '/events',
+    element: mainLayoutWrapper(Home)
+  },
+  {
     path: '/events/:id',
     element: mainLayoutWrapper(EventDetail)
   },
@@ -37,20 +41,40 @@ const routes = [
     element: mainLayoutWrapper(Concert)
   },
   {
+    path: 'concert/events/:id',
+    element: mainLayoutWrapper(EventDetail)
+  },
+  {
     path: 'theatre',
     element: mainLayoutWrapper(Theatre)
+  },
+  {
+    path: 'theatre/events/:id',
+    element: mainLayoutWrapper(EventDetail)
   },
   {
     path: 'festival',
     element: mainLayoutWrapper(Festival)
   },
   {
+    path: 'festival/events/:id',
+    element: mainLayoutWrapper(EventDetail)
+  },
+  {
     path: 'standup',
     element: mainLayoutWrapper(StandUp)
   },
   {
+    path: 'standup/events/:id',
+    element: mainLayoutWrapper(EventDetail)
+  },
+  {
     path: 'pastevents',
     element: mainLayoutWrapper(PastEvents)
+  },
+  {
+    path: 'pastevents/events/:id',
+    element: mainLayoutWrapper(EventDetail)
   },
   {
     path: 'signin',
