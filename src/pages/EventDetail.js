@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { getByEventsById } from '../network/requests/EventServices';
 import { useQuery } from 'react-query';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // Resim slaytı için stil ekleyin
+import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 import { Carousel } from 'react-responsive-carousel';
 
 function EventDetail() {
