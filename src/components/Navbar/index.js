@@ -45,6 +45,9 @@ function Navbar() {
               <li>
                 <Link to="/theatre">Tiyatro</Link>
               </li>
+              <li>
+                <Link to="/pastevents">Geçmiş Etkinlikler</Link>
+              </li>
             </ul>
           </div>
         </div>
