@@ -1,20 +1,29 @@
 import { useQuery } from "react-query";
 import { getEvents } from "../../network/requests/EventServices";
 import EventsGrid from "../../components/EventsGrid";
-function Home() {
+import EventSearchBar from "../../components/SearchBarEvents";
+import React, { useState } from "react";
 
-  const { isLoading, error, data} = useQuery("events",getEvents);
-  
+function Home() {
+  const { isLoading, error, data } = useQuery("events", getEvents);
+  const [searchResults, setSearchResults] = useState(data);
+
   if (isLoading) return "Loading...";
 
   if (error) return "An error has occurred: " + error.message;
-  
-  return <>
-      
-    
-      <EventsGrid data={data}/>
 
-  </>;
+  const handleSearch = (newResults) => {
+    setSearchResults(newResults);
+  };
+
+  return (
+    <>
+      <EventSearchBar data={data} onSearch={handleSearch} />
+      <EventsGrid data={searchResults!=null ?searchResults:data} />
+    </>
+  );
 }
 
 export default Home;
+
+
