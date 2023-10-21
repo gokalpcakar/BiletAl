@@ -10,7 +10,7 @@ import NotFound from '../pages/NotFound';
 import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
 import PastEvents from "../pages/PastEvents";
-
+import EventDetail from "../pages/EventDetail";
 const mainLayoutWrapper = (PageComponent) => (
   <MainLayout>
     <PageComponent />
@@ -30,7 +30,7 @@ const routes = [
   },
   {
     path: '/events/:id',
-    element: mainLayoutWrapper(Home)
+    element: mainLayoutWrapper(EventDetail)
   },
   {
     path: 'concert',

@@ -11,7 +11,7 @@ function EventsCard({ item }) {
       <Link to={`events/${item.id}`} style={{ textDecoration: "none" }}>
         <CardMedia
           sx={{ height: 200, width: "100%", objectFit: "cover" }}
-          image={item.image}
+          image={item.images[0]}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
