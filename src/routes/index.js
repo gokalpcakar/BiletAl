@@ -9,6 +9,7 @@ import StandUp from '../pages/StandUp';
 import NotFound from '../pages/NotFound';
 import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
+import PastEvents from "../pages/PastEvents";
 
 const mainLayoutWrapper = (PageComponent) => (
   <MainLayout>
@@ -46,6 +47,10 @@ const routes = [
   {
     path: 'standup',
     element: mainLayoutWrapper(StandUp)
+  },
+  {
+    path: 'pastevents',
+    element: mainLayoutWrapper(PastEvents)
   },
   {
     path: 'signin',
