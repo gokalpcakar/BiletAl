@@ -3,7 +3,7 @@ import { getEvents } from "../../network/requests/EventServices";
 import EventsGrid from "../../components/EventsGrid";
 import EventSearchBar from "../../components/SearchBarEvents";
 import React, { useState } from "react";
-
+import Slider from "../../components/Slider";
 function Home() {
   const { isLoading, error, data } = useQuery("events", getEvents);
   const [searchResults, setSearchResults] = useState(data);
@@ -18,8 +18,9 @@ function Home() {
 
   return (
     <>
+      <Slider/>
       <EventSearchBar data={data} onSearch={handleSearch} />
-      <EventsGrid data={searchResults!=null ?searchResults:data} />
+      <EventsGrid data={searchResults!=null ?searchResults:data}  />
     </>
   );
 }

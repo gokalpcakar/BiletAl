@@ -1,4 +1,4 @@
-import Slider from "../../components/Slider";
+
 import React from "react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
@@ -9,7 +9,7 @@ function MainLayout({ children }) {
     <>
       <div>
         <Navbar />
-        <Slider />
+     
         <div className={mainLayout.content} >
           {children}
         </div>
