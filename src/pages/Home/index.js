@@ -11,6 +11,7 @@ function Home() {
   if (isLoading) return "Loading...";
 
   if (error) return "An error has occurred: " + error.message;
+ 
 
   const handleSearch = (newResults) => {
     setSearchResults(newResults);
@@ -20,7 +21,7 @@ function Home() {
     <>
       <Slider/>
       <EventSearchBar data={data} onSearch={handleSearch} />
-      <EventsGrid data={searchResults!=null ?searchResults:data}  />
+      <EventsGrid data={searchResults}  />
     </>
   );
 }
