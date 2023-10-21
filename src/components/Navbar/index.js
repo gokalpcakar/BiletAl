@@ -40,10 +40,13 @@ function Navbar() {
                 <Link to="/festival">Festival</Link>
               </li>
               <li>
-                <Link to="/stand-up">Stand-Up</Link>
+                <Link to="/standup">Stand-Up</Link>
               </li>
               <li>
                 <Link to="/theatre">Tiyatro</Link>
+              </li>
+              <li>
+                <Link to="/pastevents">Geçmiş Etkinlikler</Link>
               </li>
             </ul>
           </div>

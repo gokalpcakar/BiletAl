@@ -1,12 +1,7 @@
-.mainContent{
-
-
-margin-bottom: 1rem;
-
-}
-
-.content{
-
-    margin-top: 7rem;
-
+.content {
+    margin-top: 4.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
