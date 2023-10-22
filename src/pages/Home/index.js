@@ -16,12 +16,13 @@ function Home() {
   const handleSearch = (newResults) => {
     setSearchResults(newResults);
   };
+  const events = "/events";
 
   return (
     <>
       <Slider/>
       <EventSearchBar data={data} onSearch={handleSearch} />
-      <EventsGrid data={searchResults}  />
+      <EventsGrid data={searchResults} linkPath={events}  />
     </>
   );
 }

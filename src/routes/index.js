@@ -41,7 +41,7 @@ const routes = [
     element: mainLayoutWrapper(Concert)
   },
   {
-    path: 'concert/events/:id',
+    path: 'concert/:id',
     element: mainLayoutWrapper(EventDetail)
   },
   {
@@ -49,7 +49,7 @@ const routes = [
     element: mainLayoutWrapper(Theatre)
   },
   {
-    path: 'theatre/events/:id',
+    path: 'theatre/:id',
     element: mainLayoutWrapper(EventDetail)
   },
   {
@@ -57,7 +57,7 @@ const routes = [
     element: mainLayoutWrapper(Festival)
   },
   {
-    path: 'festival/events/:id',
+    path: 'festival/:id',
     element: mainLayoutWrapper(EventDetail)
   },
   {
@@ -65,7 +65,7 @@ const routes = [
     element: mainLayoutWrapper(StandUp)
   },
   {
-    path: 'standup/events/:id',
+    path: 'standup/:id',
     element: mainLayoutWrapper(EventDetail)
   },
   {
@@ -73,7 +73,7 @@ const routes = [
     element: mainLayoutWrapper(PastEvents)
   },
   {
-    path: 'pastevents/events/:id',
+    path: 'pastevents/:id',
     element: mainLayoutWrapper(EventDetail)
   },
   {
