@@ -1,0 +1,13 @@
+.form {
+    width: 100%;
+}
+
+.form button {
+    margin-top: 10px;
+    width: 100%;
+    color: #fff;
+    background-color: #2ed87b;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+}
