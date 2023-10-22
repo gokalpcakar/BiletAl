@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 function EventsCard({ item,linkPath}) {
   return (
     <Card>
-      <Link to={`${linkPath}/${item.id}`} style={{ textDecoration: "none" }}>
+      <Link to={`${linkPath}/${item.id}`} >
         <CardMedia
           sx={{ height: 200, width: "100%", objectFit: "cover" }}
           image={item.images[0]}

@@ -1,9 +1,8 @@
-
 import { useQuery } from "react-query";
 import { getAllFestivals } from "../../network/requests/FestivalServices";
 import EventsGrid from "../../components/EventsGrid";
+import Slider from "../../components/Slider";
 function Festival() {
-
   const { isLoading, error, data } = useQuery("festival", getAllFestivals);
 
   if (isLoading) return "Loading...";
@@ -11,8 +10,11 @@ function Festival() {
   if (error) return "An error has occurred: " + error.message;
   const festival = "/festival";
   return (
-    <EventsGrid data={data} linkPath={festival} />
-  )
+    <>
+      <Slider />
+      <EventsGrid data={data} linkPath={festival} />
+    </>
+  );
 }
 
-export default Festival
+export default Festival;

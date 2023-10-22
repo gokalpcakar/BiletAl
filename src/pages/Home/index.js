@@ -2,13 +2,18 @@ import { useQuery } from "react-query";
 import { getEvents } from "../../network/requests/EventServices";
 import EventsGrid from "../../components/EventsGrid";
 import EventSearchBar from "../../components/SearchBarEvents";
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Slider from "../../components/Slider";
+
 function Home() {
   const { isLoading, error, data } = useQuery("events", getEvents);
   const [searchResults, setSearchResults] = useState(data);
 
-  if (isLoading) return "Loading...";
+  useEffect(() => {
+    if (!isLoading) {
+      setSearchResults(data);
+    }
+  }, [isLoading, data]);
 
   if (error) return "An error has occurred: " + error.message;
  
