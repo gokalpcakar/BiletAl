@@ -8,8 +8,9 @@ function Theatre() {
   if (isLoading) return "Loading...";
 
   if (error) return "An error has occurred: " + error.message;
+  const theatre = "/theatre";
   return (
-    <EventsGrid data={data}/>
+    <EventsGrid data={data} linkPath={theatre}/>
   )
 }
 

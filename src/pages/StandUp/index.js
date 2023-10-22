@@ -9,8 +9,9 @@ function StandUp() {
   if (isLoading) return "Loading...";
 
   if (error) return "An error has occurred: " + error.message;
+  const standup = "/standup";
   return (
-    <EventsGrid data={data} />
+    <EventsGrid data={data} linkPath={standup} />
   )
 }
 

@@ -3,7 +3,7 @@ import EventsCard from "./EventsCard";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 
-function PastEventsGrid({ data }) {
+function PastEventsGrid({ data,linkPath}) {
     const currentDate = new Date();
 
     const pastEvents = data.filter(event => new Date(event.startDate) < currentDate);
@@ -14,7 +14,7 @@ function PastEventsGrid({ data }) {
         <Grid container spacing={5}>
           {pastEvents.map((item) => (
             <Grid item lg={4} md={6} xs={12} key={item.id}>
-              <EventsCard item={item} />
+              <EventsCard item={item} linkPath={linkPath}/>
             </Grid>
           ))}
         </Grid>

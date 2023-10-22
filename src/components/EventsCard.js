@@ -5,10 +5,10 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
 
-function EventsCard({ item }) {
+function EventsCard({ item,linkPath}) {
   return (
     <Card>
-      <Link to={`events/${item.id}`} style={{ textDecoration: "none" }}>
+      <Link to={`${linkPath}/${item.id}`} style={{ textDecoration: "none" }}>
         <CardMedia
           sx={{ height: 200, width: "100%", objectFit: "cover" }}
           image={item.images[0]}

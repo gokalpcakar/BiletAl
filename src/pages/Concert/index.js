@@ -9,8 +9,9 @@ function Concert() {
   if (isLoading) return "Loading...";
 
   if (error) return "An error has occurred: " + error.message;
+  const concert = "/concert";
   return (
-    <EventsGrid data={data} />
+    <EventsGrid data={data} linkPath={concert}/>
   )
 }
 
