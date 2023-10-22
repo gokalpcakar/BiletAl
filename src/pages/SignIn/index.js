@@ -31,11 +31,11 @@ function SignIn() {
                             display: 'flex',
                             flexDirection: 'column',
                             alignItems: 'center',
-                            marginTop: 18,
+                            marginTop: 5,
                             marginBottom: 18,
                         }}>
                         
-                        <Typography variant="h5">
+                        <Typography variant="h5" sx={{ mb: 1 }}>
                             Sign In
                         </Typography>
 
@@ -43,7 +43,7 @@ function SignIn() {
                             component="form"
                             onSubmit={handleSubmit}
                             noValidate
-                            sx={{ mt: 1 }}>
+                        >
                             
                             <TextField 
                                 label="Email Address"
