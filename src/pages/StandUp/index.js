@@ -2,6 +2,7 @@
 import { useQuery } from "react-query";
 import { getAllStandUps } from "../../network/requests/StandUpServices";
 import EventsGrid from "../../components/EventsGrid";
+import Slider from "../../components/Slider";
 function StandUp() {
 
   const { isLoading, error, data } = useQuery("stand-up", getAllStandUps);
@@ -11,7 +12,12 @@ function StandUp() {
   if (error) return "An error has occurred: " + error.message;
   const standup = "/standup";
   return (
-    <EventsGrid data={data} linkPath={standup} />
+
+    <>
+        <Slider/>
+        <EventsGrid data={data} linkPath={standup} />
+    </>
+
   )
 }
 

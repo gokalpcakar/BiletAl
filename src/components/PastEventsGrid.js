@@ -9,8 +9,14 @@ function PastEventsGrid({ data,linkPath}) {
     const pastEvents = data.filter(event => new Date(event.startDate) < currentDate);
   
   return (
-    <Container maxWidth="lg" sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-      <Grid container spacing={2} sx={{ mb: "3rem", display: 'flex' }} maxWidth="lg">
+    <Container maxWidth="lg" sx={{
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      marginTop:"5rem"
+  
+    }}>
+      <Grid  spacing={2} sx={{ mb: "3rem", display: 'flex' }} maxWidth="lg">
         <Grid container spacing={5}>
           {pastEvents.map((item) => (
             <Grid item lg={4} md={6} xs={12} key={item.id}>
