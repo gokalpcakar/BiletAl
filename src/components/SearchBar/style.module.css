@@ -13,19 +13,24 @@
     zoom: 1;
 }
 
-/* Form wrapper styling */
-
+/* searchWrapper styling */
 .searchWrapper {
+    display: flex;
+    justify-content: center;
+}
+
+/* Form styling */
+
+.searchForm {
     width: 75%;
-    margin-top: 10px;
     border-radius: 40px;
     background: transparent;
-    box-shadow: 0 4px 20px -2px #e9e9e9;;
+    box-shadow: 0 4px 20px -2px #e9e9e9;
 }
 
 /* Form text input */
 
-.searchWrapper input {
+.searchForm input {
     padding-left: 20px;
     width: 92%;
     height: 20px;
@@ -39,27 +44,27 @@
     box-shadow: none;
 }
 
-.searchWrapper input:focus {
+.searchForm input:focus {
     outline: 0;
     background: #fff;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.8) inset;
 }
 
-.searchWrapper input::-webkit-input-placeholder {
+.searchForm input::-webkit-input-placeholder {
     color: #999;
     font-weight: normal;
     font-style: italic;
     padding-left: 20px;
 }
 
-.searchWrapper input:-moz-placeholder {
+.searchForm input:-moz-placeholder {
 
     color: #999;
     font-weight: normal;
     font-style: italic;
 }
 
-.searchWrapper input:-ms-input-placeholder {
+.searchForm input:-ms-input-placeholder {
     color: #999;
     font-weight: normal;
     font-style: italic;
@@ -67,7 +72,7 @@
 }
 
 /* Form submit button */
-.searchWrapper button {
+.searchForm button {
     overflow: visible;
     position: relative;
     float: right;
@@ -85,22 +90,22 @@
     transition: .4s;
 }
 
-.searchWrapper button:hover {
+.searchForm button:hover {
     background: #179e54;
 }
 
-.searchWrapper button:active,
-.searchWrapper button:focus {
+.searchForm button:active,
+.searchForm button:focus {
     background: #198cff;
     outline: 0;
 }
 
-.searchWrapper button:focus:before,
-.searchWrapper button:active:before {
+.searchForm button:focus:before,
+.searchForm button:active:before {
     border-right-color: #c42f2f;
 }
 
-.searchWrapper button::-moz-focus-inner {
+.searchForm button::-moz-focus-inner {
     border: 0;
     padding: 0;
 }

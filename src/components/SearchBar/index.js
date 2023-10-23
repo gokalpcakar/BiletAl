@@ -9,9 +9,9 @@ import styles from './style.module.css';
 function SearchBar() {
     const navigate = useNavigate();
     const [searchQuery, setSearchQuery] = useState("");
-    const { setSearchResults } = useSearchContext(); 
+    const { setSearchResults } = useSearchContext();
 
-    const { data } = useQuery("events", getEvents); 
+    const { data } = useQuery("events", getEvents);
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
@@ -31,12 +31,14 @@ function SearchBar() {
     }
 
     return (
-        <form className={`${styles.searchWrapper} ${styles.cf}`} onSubmit={onSubmitHandler}>
-            <input type="text" placeholder="Etkinlik veya sanatçı arayın" required style={{ boxShadow: 'none' }} value={searchQuery} onChange={onChangeHandler} />
-            <button type="submit">
-                <SearchIcon />
-            </button>
-        </form>
+        <div className={styles.searchWrapper}>
+            <form className={`${styles.searchForm} ${styles.cf}`} onSubmit={onSubmitHandler}>
+                <input type="text" placeholder="Etkinlik veya sanatçı arayın" required style={{ boxShadow: 'none' }} value={searchQuery} onChange={onChangeHandler} />
+                <button type="submit">
+                    <SearchIcon />
+                </button>
+            </form>
+        </div>
     );
 }
 
