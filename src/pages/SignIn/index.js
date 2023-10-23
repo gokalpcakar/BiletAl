@@ -1,26 +1,30 @@
 import * as React from 'react';
+
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Button from '@mui/material/Button';
 import { Container, CssBaseline, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid';
+
 import { Link } from "react-router-dom";
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+import Styles from "./Styles.module.css";
+import MyTextInput from '../../components/Form/TextInput';
+import MyCheckbox from '../../components/Form/Checkbox';
+
+import { useFormik, Field, Form, Formik } from 'formik';
+import * as yup from 'yup';
+import { signInValidationSchema } from './SignInValidationSchema'
+import { useNavigate } from "react-router-dom";
 
 const defaultTheme = createTheme();
 
 function SignIn() {
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const data = new FormData(event.currentTarget);
-        console.log({
-          email: data.get('email'),
-          password: data.get('password'),
-        });
-      };
+    let navigate = useNavigate(); 
+    const routeChange = (isLoggedIn) =>{ 
+        let path = `/`; 
+        navigate(path);
+    }
 
     return (
         <ThemeProvider theme={defaultTheme}>
@@ -31,59 +35,52 @@ function SignIn() {
                             display: 'flex',
                             flexDirection: 'column',
                             alignItems: 'center',
-                            marginTop: 5,
-                            marginBottom: 18,
+                            marginTop: 10,
+                            marginBottom: 10,
                         }}>
                         
                         <Typography variant="h5" sx={{ mb: 1 }}>
                             Sign In
                         </Typography>
-
-                        <Box
-                            component="form"
-                            onSubmit={handleSubmit}
-                            noValidate
+                        <Formik
+                            initialValues={{
+                                email: '',
+                                password: '',
+                                remember: false, // added for our checkbox
+                            }}
+                            validationSchema={signInValidationSchema}
+                            onSubmit={(values, { setSubmitting }) => {
+                                setTimeout(() => {
+                                    routeChange();
+                                    alert(JSON.stringify(values, null, 2));
+                                    setSubmitting(false);
+                                }, 400);
+                            }}
                         >
-                            
-                            <TextField 
-                                label="Email Address"
-                                required
-                                fullWidth
-                                id="email"
-                                name="email" 
-                                variant="outlined"
-                                autoComplete="email" 
-                                margin='normal'
-                            />
-                            <TextField 
-                                label="Password"
-                                required
-                                fullWidth
-                                id="password"
-                                name="password"
-                                type="password" 
-                                autoComplete="current-password"
-                                variant="outlined" 
-                                margin='normal'
-                            />
-                            <FormControlLabel
-                                control={<Checkbox value="remember" color="primary" />}
-                                label="Remember me"
-                            />
-                            <Button 
-                                variant='contained'
-                                fullWidth
-                                type='submit'
-                                sx={{
-                                    mt: 2,
-                                    mb: 2
-                                }}>
-                                Giriş Yap
-                            </Button>
+                            <Form className={Styles.form}>
+                                <MyTextInput
+                                    label="Email Address"
+                                    name="email"
+                                    type="email"
+                                />
+
+                                <MyTextInput 
+                                    label="Password"
+                                    name="password"
+                                    type="password"
+                                />
+                        
+                                <MyCheckbox name="remember">
+                                    Remember Me
+                                </MyCheckbox>
+                        
+                                <button type="submit">Submit</button>
+                            </Form>
+                        </Formik>
                             <Grid container>
                                 <Grid item xs>
                                     <Link href="#" variant="body2">
-                                    Forgot password?
+                                        Forgot password?
                                     </Link>
                                 </Grid>
                                 <Grid item>
@@ -92,7 +89,6 @@ function SignIn() {
                                     </Link>
                                 </Grid>
                             </Grid>
-                        </Box>
                     </Box>
                 </CssBaseline>
             </Container>

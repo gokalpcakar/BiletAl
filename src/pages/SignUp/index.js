@@ -21,12 +21,13 @@ const defaultTheme = createTheme();
 
 
 function SignUp() {
-    let navigate = useNavigate(); 
 
+    let navigate = useNavigate(); 
     const routeChange = (isLoggedIn) =>{ 
         let path = `/signin`; 
         navigate(path);
     }
+
     return (
         <ThemeProvider theme={defaultTheme}>
             <Container maxWidth="xs">
@@ -36,8 +37,8 @@ function SignUp() {
                             display: 'flex',
                             flexDirection: 'column',
                             alignItems: 'center',
-                            marginTop: 1,
-                            marginBottom: 18,
+                            marginTop: 10,
+                            marginBottom: 10,
                         }}
                     >
                         <Typography variant="h5" sx={{ mb: 2 }}>
