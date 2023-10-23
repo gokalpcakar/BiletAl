@@ -1,11 +1,10 @@
 import EventsGrid from "../../components/EventsGrid";
-import React, { useContext } from "react";
 import Slider from "../../components/Slider";
-import SearchContext from '../../context/SearchContext'
+import {useSearchContext} from '../../context/SearchContext'
 
 function FilteredResults() {
 
-    const { searchResults } = useContext(SearchContext);
+    const { searchResults } = useSearchContext();
 
     const events = "/events";
 
