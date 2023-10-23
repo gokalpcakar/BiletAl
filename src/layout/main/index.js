@@ -10,10 +10,8 @@ function MainLayout({ children }) {
     <>
       <div>
         <Navbar />
-
         <SearchBar />
         <div className={mainLayout.content}>{children}</div>
-
         <Footer />
       </div>
     </>
