@@ -1,10 +1,10 @@
-
 import { useQuery } from "react-query";
 import { getAllStandUps } from "../../network/requests/StandUpServices";
 import EventsGrid from "../../components/EventsGrid";
 import Slider from "../../components/Slider";
-function StandUp() {
+import { Helmet } from "react-helmet";
 
+function StandUp() {
   const { isLoading, error, data } = useQuery("stand-up", getAllStandUps);
 
   if (isLoading) return "Loading...";
@@ -12,13 +12,14 @@ function StandUp() {
   if (error) return "An error has occurred: " + error.message;
   const standup = "/standup";
   return (
-
     <>
-        <Slider/>
-        <EventsGrid data={data} linkPath={standup} />
+      <Helmet>
+        <title>StandUp-Bilet Al</title>
+      </Helmet>
+      <Slider />
+      <EventsGrid data={data} linkPath={standup} />
     </>
-
-  )
+  );
 }
 
-export default StandUp
+export default StandUp;

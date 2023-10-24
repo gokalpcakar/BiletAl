@@ -2,8 +2,8 @@ import { useQuery } from "react-query";
 import { getEvents } from "../../network/requests/EventServices";
 import EventsGrid from "../../components/EventsGrid";
 import Slider from "../../components/Slider";
+import { Helmet } from "react-helmet";
 function Home() {
-
   const { isLoading, error, data } = useQuery("events", getEvents);
 
   if (isLoading) return "Loading...";
@@ -14,6 +14,12 @@ function Home() {
 
   return (
     <>
+      <Helmet>
+     
+        <title>Anasayfa - Bilet Al</title>
+
+      </Helmet>
+
       <Slider />
       <EventsGrid data={data} linkPath={events} />
     </>
@@ -21,5 +27,3 @@ function Home() {
 }
 
 export default Home;
-
-
