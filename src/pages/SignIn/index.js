@@ -29,6 +29,7 @@ function SignIn() {
     <ThemeProvider theme={defaultTheme}>
       <Helmet>
         <title>Giriş Yap</title>
+        <meta name="description" content="Bilet Al" />
       </Helmet>
       <Container maxWidth="xs">
         <CssBaseline>

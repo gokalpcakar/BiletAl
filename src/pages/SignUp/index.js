@@ -27,6 +27,7 @@ function SignUp() {
     <ThemeProvider theme={defaultTheme}>
       <Helmet>
         <title>Kaydol</title>
+        <meta name="description" content="Bilet Al" />
       </Helmet>
       <Container maxWidth="xs">
         <CssBaseline>

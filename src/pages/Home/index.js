@@ -17,7 +17,7 @@ function Home() {
       <Helmet>
      
         <title>Anasayfa - Bilet Al</title>
-
+        <meta name="description" content="Bilet Al" />
       </Helmet>
 
       <Slider />

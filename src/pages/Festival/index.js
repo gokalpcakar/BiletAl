@@ -15,7 +15,7 @@ function Festival() {
          <Helmet>
             
                 <title>Festival- Bilet Al</title>
-              
+                <meta name="description" content="Bilet Al" />
             </Helmet>
       <Slider />
       <EventsGrid data={data} linkPath={festival} />
