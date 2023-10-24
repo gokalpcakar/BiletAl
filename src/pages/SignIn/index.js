@@ -1,99 +1,91 @@
-import * as React from 'react';
+import * as React from "react";
 
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import { Container, CssBaseline, Typography } from '@mui/material';
-import Grid from '@mui/material/Grid';
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Box from "@mui/material/Box";
+import { Container, CssBaseline, Typography } from "@mui/material";
+import Grid from "@mui/material/Grid";
 
 import { Link } from "react-router-dom";
 
 import Styles from "./Styles.module.css";
-import MyTextInput from '../../components/Form/TextInput';
-import MyCheckbox from '../../components/Form/Checkbox';
-
-import { useFormik, Field, Form, Formik } from 'formik';
-import * as yup from 'yup';
-import { signInValidationSchema } from './SignInValidationSchema'
+import MyTextInput from "../../components/Form/TextInput";
+import MyCheckbox from "../../components/Form/Checkbox";
+import { Helmet } from "react-helmet";
+import { useFormik, Field, Form, Formik } from "formik";
+import * as yup from "yup";
+import { signInValidationSchema } from "./SignInValidationSchema";
 import { useNavigate } from "react-router-dom";
 
 const defaultTheme = createTheme();
 
 function SignIn() {
+  let navigate = useNavigate();
+  const routeChange = (isLoggedIn) => {
+    let path = `/`;
+    navigate(path);
+  };
 
-    let navigate = useNavigate(); 
-    const routeChange = (isLoggedIn) =>{ 
-        let path = `/`; 
-        navigate(path);
-    }
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Helmet>
+        <title>Giriş Yap</title>
+      </Helmet>
+      <Container maxWidth="xs">
+        <CssBaseline>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              marginTop: 10,
+              marginBottom: 10,
+            }}
+          >
+            <Typography variant="h5" sx={{ mb: 1 }}>
+              Sign In
+            </Typography>
+            <Formik
+              initialValues={{
+                email: "",
+                password: "",
+                remember: false, // added for our checkbox
+              }}
+              validationSchema={signInValidationSchema}
+              onSubmit={(values, { setSubmitting }) => {
+                setTimeout(() => {
+                  routeChange();
+                  alert(JSON.stringify(values, null, 2));
+                  setSubmitting(false);
+                }, 400);
+              }}
+            >
+              <Form className={Styles.form}>
+                <MyTextInput label="Email Address" name="email" type="email" />
 
-    return (
-        <ThemeProvider theme={defaultTheme}>
-            <Container maxWidth="xs">
-                <CssBaseline>
-                    <Box 
-                        sx={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            alignItems: 'center',
-                            marginTop: 10,
-                            marginBottom: 10,
-                        }}>
-                        
-                        <Typography variant="h5" sx={{ mb: 1 }}>
-                            Sign In
-                        </Typography>
-                        <Formik
-                            initialValues={{
-                                email: '',
-                                password: '',
-                                remember: false, // added for our checkbox
-                            }}
-                            validationSchema={signInValidationSchema}
-                            onSubmit={(values, { setSubmitting }) => {
-                                setTimeout(() => {
-                                    routeChange();
-                                    alert(JSON.stringify(values, null, 2));
-                                    setSubmitting(false);
-                                }, 400);
-                            }}
-                        >
-                            <Form className={Styles.form}>
-                                <MyTextInput
-                                    label="Email Address"
-                                    name="email"
-                                    type="email"
-                                />
+                <MyTextInput label="Password" name="password" type="password" />
 
-                                <MyTextInput 
-                                    label="Password"
-                                    name="password"
-                                    type="password"
-                                />
-                        
-                                <MyCheckbox name="remember">
-                                    Remember Me
-                                </MyCheckbox>
-                        
-                                <button type="submit">Submit</button>
-                            </Form>
-                        </Formik>
-                            <Grid container>
-                                <Grid item xs>
-                                    <Link href="#" variant="body2">
-                                        Forgot password?
-                                    </Link>
-                                </Grid>
-                                <Grid item>
-                                    <Link to="/signup" variant="body2">
-                                        {"Don't have an account? Sign Up"}
-                                    </Link>
-                                </Grid>
-                            </Grid>
-                    </Box>
-                </CssBaseline>
-            </Container>
-        </ThemeProvider>
-    )
-  }
-  
-  export default SignIn;
+                <MyCheckbox name="remember">Remember Me</MyCheckbox>
+
+                <button type="submit">Submit</button>
+              </Form>
+            </Formik>
+            <Grid container>
+              <Grid item xs>
+                <Link href="#" variant="body2">
+                  Forgot password?
+                </Link>
+              </Grid>
+              <Grid item>
+                <Link to="/signup" variant="body2">
+                  {"Don't have an account? Sign Up"}
+                </Link>
+              </Grid>
+            </Grid>
+          </Box>
+        </CssBaseline>
+      </Container>
+    </ThemeProvider>
+  );
+}
+
+export default SignIn;
