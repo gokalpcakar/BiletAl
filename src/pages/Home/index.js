@@ -3,6 +3,9 @@ import { getEvents } from "../../network/requests/EventServices";
 import EventsGrid from "../../components/EventsGrid";
 import Slider from "../../components/Slider";
 import { Helmet } from "react-helmet";
+import Filter from "../../components/Filter";
+
+
 function Home() {
   const { isLoading, error, data } = useQuery("events", getEvents);
 
@@ -21,6 +24,7 @@ function Home() {
       </Helmet>
 
       <Slider />
+      <Filter />
       <EventsGrid data={data} linkPath={events} />
     </>
   );
