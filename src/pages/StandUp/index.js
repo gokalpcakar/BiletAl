@@ -3,7 +3,7 @@ import { getAllStandUps } from "../../network/requests/StandUpServices";
 import EventsGrid from "../../components/EventsGrid";
 import Slider from "../../components/Slider";
 
-import { Helmet } from "react-helmet";
+import PageWithHelmet from "../../components/PageWithHelmet";
 
 function StandUp() {
   const { isLoading, error, data } = useQuery("stand-up", getAllStandUps);
@@ -14,10 +14,7 @@ function StandUp() {
   const standup = "/standup";
   return (
     <>
-      <Helmet>
-        <title>StandUp-Bilet Al</title>
-        <meta name="description" content="Bilet Al" />
-      </Helmet>
+    <PageWithHelmet title={"Standup-Bilet Al"}/>
       <Slider />
       <EventsGrid data={data} linkPath={standup} />
     </>

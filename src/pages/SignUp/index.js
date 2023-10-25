@@ -12,7 +12,7 @@ import Box from "@mui/material/Box";
 import { Container, CssBaseline, Typography } from "@mui/material";
 
 import { useNavigate } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import PageWithHelmet from "../../components/PageWithHelmet";
 
 const defaultTheme = createTheme();
 
@@ -25,10 +25,7 @@ function SignUp() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Helmet>
-        <title>Kaydol</title>
-        <meta name="description" content="Bilet Al" />
-      </Helmet>
+    <PageWithHelmet title={"Kaydol"}/>
       <Container maxWidth="xs">
         <CssBaseline>
           <Box

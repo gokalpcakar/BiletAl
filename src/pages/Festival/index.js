@@ -2,7 +2,7 @@ import { useQuery } from "react-query";
 import { getAllFestivals } from "../../network/requests/FestivalServices";
 import EventsGrid from "../../components/EventsGrid";
 import Slider from "../../components/Slider";
-import {Helmet} from "react-helmet";
+import PageWithHelmet from "../../components/PageWithHelmet";
 function Festival() {
   const { isLoading, error, data } = useQuery("festival", getAllFestivals);
 
@@ -12,11 +12,7 @@ function Festival() {
   const festival = "/festival";
   return (
     <>
-         <Helmet>
-            
-                <title>Festival- Bilet Al</title>
-                <meta name="description" content="Bilet Al" />
-            </Helmet>
+        <PageWithHelmet title={"Festival-Bilet Al"}/>
       <Slider />
       <EventsGrid data={data} linkPath={festival} />
     </>

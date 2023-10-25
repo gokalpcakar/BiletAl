@@ -10,9 +10,8 @@ import { Link } from "react-router-dom";
 import Styles from "./Styles.module.css";
 import MyTextInput from "../../components/Form/TextInput";
 import MyCheckbox from "../../components/Form/Checkbox";
-import { Helmet } from "react-helmet";
+import PageWithHelmet from "../../components/PageWithHelmet";
 import { useFormik, Field, Form, Formik } from "formik";
-import * as yup from "yup";
 import { signInValidationSchema } from "./SignInValidationSchema";
 import { useNavigate } from "react-router-dom";
 
@@ -27,10 +26,7 @@ function SignIn() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Helmet>
-        <title>Giriş Yap</title>
-        <meta name="description" content="Bilet Al" />
-      </Helmet>
+     <PageWithHelmet title={"Giriş Yap"}/>
       <Container maxWidth="xs">
         <CssBaseline>
           <Box
