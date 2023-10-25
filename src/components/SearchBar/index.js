@@ -23,7 +23,7 @@ function SearchBar() {
         });
         setSearchResults(results);
         setSearchQuery("");
-        navigate("/filtered-results");
+        navigate("/");
     };
 
     const onChangeHandler = (e) => {

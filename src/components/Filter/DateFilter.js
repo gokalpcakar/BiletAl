@@ -29,7 +29,7 @@ export default function SingleInputDateRangePicker() {
     });
   
     setSearchResults(filteredData);
-    navigate('/filtered-results');
+    navigate('/');
   };
 
   return (

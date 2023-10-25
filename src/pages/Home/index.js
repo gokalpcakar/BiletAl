@@ -1,17 +1,15 @@
 import { useQuery } from "react-query";
-import { getEvents } from "../../network/requests/EventServices";
+
 import EventsGrid from "../../components/EventsGrid";
 import Slider from "../../components/Slider";
 import PageWithHelmet from "../../components/PageWithHelmet";
 import Filter from "../../components/Filter";
-
+import {useSearchContext} from '../../context/SearchContext'
 
 function Home() {
-  const { isLoading, error, data } = useQuery("events", getEvents);
 
-  if (isLoading) return "Loading...";
-
-  if (error) return "An error has occurred: " + error.message;
+  const { searchResults } = useSearchContext();
+  
 
   const events = "/events";
 
@@ -21,7 +19,7 @@ function Home() {
 
       <Slider />
       <Filter />
-      <EventsGrid data={data} linkPath={events} />
+      <EventsGrid data={searchResults} linkPath={events} />
     </>
   );
 }
