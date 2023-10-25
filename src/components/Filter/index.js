@@ -5,7 +5,6 @@ import { useQuery } from "react-query";
 import { getEvents } from "../../network/requests/EventServices";
 import Styles from "./Styles.module.css";
 import { Container, Grid, Typography } from "@mui/material";
-import SearchIcon from '@mui/icons-material/Search';
 import SingleInputDateRangePicker from "./DateFilter";
 
 function Filter() {
@@ -28,10 +27,10 @@ function Filter() {
     useEffect(() => {
        
         handleSubmit();
-    }, [location, city, data]);
+    }, [data,city,location]);
 
     const handleSubmit = () => {
-        const results = data.filter((event) => {
+        const results = data?.filter((event) => {
             if (city && !location) {
                 return (
                     event.city.toLowerCase() === city.toLowerCase()
