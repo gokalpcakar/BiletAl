@@ -48,6 +48,9 @@ function Filter() {
                     event.city.toLowerCase() === city.toLowerCase()
                 );
             }
+            else if (!location && !city) {
+           return true;
+            }
         })
         setSearchResults(results);
         navigate("/filtered-results");
