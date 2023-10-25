@@ -8,9 +8,10 @@ function Slider() {
   return (
     <Box>
       <Carousel
-        autoPlay="true"
-        emulateTouch="true"
-        infiniteLoop="true"
+        autoPlay={true}
+        emulateTouch={true}
+        infiniteLoop={true}
+        showArrows={false}
         className={styles.homePageCarousel}
         showThumbs={false}
         showStatus={false}
