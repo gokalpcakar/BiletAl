@@ -34,7 +34,20 @@ export default function SingleInputDateRangePicker() {
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <DemoContainer components={['SingleInputDateRangeField']}>
+      <DemoContainer components={['SingleInputDateRangeField']}
+        sx={{
+            overflow: 'hidden',
+            '& .MuiInputBase-root': {
+              height: '50px',
+              width: '100%',
+              borderRadius: '10px',
+              border: '1px solid black',
+              alignItems: 'center',
+              margin: '0px',
+              padding: '0px',
+            },
+        }}
+      >
         <DateRangePicker
           slots={{ field: SingleInputDateRangeField }}
           value={selectedDateRange}

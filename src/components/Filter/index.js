@@ -72,7 +72,7 @@ function Filter() {
 
     return (
         <Container maxWidth="lg" sx={{ marginTop: "5rem" }}>
-            <form onSubmit={(e) => e.preventDefault()} className={Styles.form}>
+            <form onSubmit={(e) => e.preventDefault()}>
                 <Grid container spacing={5} display="flex" justifyContent="space-between" alignItems="center">
                     <Grid item xs={12} sm={4} justifyContent="center">
                         <Typography gutterBottom variant="h5" sx={{ display: "flex", justifyContent: "center" }}>
