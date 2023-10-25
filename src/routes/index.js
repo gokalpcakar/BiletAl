@@ -1,5 +1,6 @@
 import React from "react";
 import MainLayout from "../layout/main";
+import AuthLayout from "../layout/auth";
 import Home from '../pages/Home';
 import Concert from '../pages/Concert';
 import Theatre from '../pages/Theatre';
@@ -11,10 +12,17 @@ import SignUp from '../pages/SignUp';
 import FilteredResults from '../pages/FilteredResults';
 import PastEvents from "../pages/PastEvents";
 import EventDetail from "../pages/EventDetail";
+
 const mainLayoutWrapper = (PageComponent) => (
   <MainLayout>
     <PageComponent />
   </MainLayout>
+);
+
+const authLayoutWrapper = (PageComponent) => (
+  <AuthLayout>
+    <PageComponent />
+  </AuthLayout>
 );
 
 const routes = [
@@ -76,11 +84,11 @@ const routes = [
   },
   {
     path: 'signin',
-    element: mainLayoutWrapper(SignIn)
+    element: authLayoutWrapper(SignIn)
   },
   {
     path: 'signup',
-    element: mainLayoutWrapper(SignUp)
+    element: authLayoutWrapper(SignUp)
   },
   {
     path: '*',
