@@ -7,3 +7,16 @@ select {
     margin-top: 7px;
     font-size: 16px;
 }
+
+select:focus {
+    outline: none;
+}
+
+select:focus-within {
+    background-color: #EFEFEF;
+}
+
+select:hover {
+    background-color: #EFEFEF;
+    border: none;
+}

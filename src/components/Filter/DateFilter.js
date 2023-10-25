@@ -41,10 +41,8 @@ export default function SingleInputDateRangePicker() {
               height: '50px',
               width: '100%',
               borderRadius: '10px',
-              border: '1px solid black',
+              border: 'none',
               alignItems: 'center',
-              margin: '0px',
-              padding: '0px',
             },
         }}
       >
@@ -52,6 +50,33 @@ export default function SingleInputDateRangePicker() {
           slots={{ field: SingleInputDateRangeField }}
           value={selectedDateRange}
           onChange={handleDateRangeChange}
+          format="DD-MM-YYYY"
+          sx={{
+            borderRadius: "10px",
+            '&:hover': {
+                backgroundColor: "#EFEFEF",
+            }
+          }}
+          slotProps={{
+            day: { 
+              sx:{
+                "&.MuiPickersDay-root.Mui-selected": {
+                    color: "white",
+                    backgroundColor: "#2ed87b",
+                    borderRadius: "20px",
+                    ":hover": {
+                    color: "white",
+                    backgroundColor: "#2ed87b",
+                    borderColor: "#2ed87b"
+                    }
+                },
+                ":hover": {
+                    color: "white",
+                    backgroundColor: "#2ed87b",
+                    borderRadius: "20px",
+                    borderColor: "#2ed87b"
+                }
+            }}}}
         />
       </DemoContainer>
     </LocalizationProvider>
