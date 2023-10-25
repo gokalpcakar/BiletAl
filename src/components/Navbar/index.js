@@ -16,7 +16,7 @@ function Navbar() {
   return (
     <nav className={styles.nav}>
       <div className={styles.navContainer}>
-        <div className={styles.right}>
+        <div className={styles.left}>
           <button id="menuToggle" className={styles.menuIcon} onClick={toggleMenu}>
             <FiMenu />
           </button>

@@ -6,7 +6,7 @@ import styles from './style.module.css'
 
 function Slider() {
   return (
-    <Box className={styles.homePageCarouselBox}>
+    <Box>
       <Carousel
         autoPlay="true"
         emulateTouch="true"
