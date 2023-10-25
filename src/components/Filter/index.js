@@ -10,6 +10,7 @@ import SingleInputDateRangePicker from "./DateFilter";
 function Filter() {
     const navigate = useNavigate();
     const { setSearchResults } = useSearchContext();
+
     const { data } = useQuery("events", getEvents);
 
     const [location, setLocation] = useState("");
@@ -24,10 +25,12 @@ function Filter() {
     }
 
     
-    useEffect(() => {
-       
-        handleSubmit();
-    }, [data,city,location]);
+    useEffect(
+        () => {
+            handleSubmit();
+        }, 
+        [data,city,location]
+    );
 
     const handleSubmit = () => {
         const results = data?.filter((event) => {
@@ -48,10 +51,9 @@ function Filter() {
                 );
             }
             else if (!location && !city) {
-           return true;
+                return true;
             }else {
-                
-                console.error("data is not available yet.");
+                console.error("Data is not available yet.");
             }
         })
         setSearchResults(results);
@@ -76,7 +78,7 @@ function Filter() {
                 <Grid container spacing={5} display="flex" justifyContent="space-between" alignItems="center">
                     <Grid item xs={12} sm={4} justifyContent="center">
                         <Typography gutterBottom variant="h5" sx={{ display: "flex", justifyContent: "center" }}>
-                            Mekan
+                            Mekan Seç
                         </Typography>
                         <select
                             value={location}
@@ -88,7 +90,7 @@ function Filter() {
                     </Grid>
                     <Grid item xs={12} sm={4}>
                         <Typography gutterBottom variant="h5" sx={{ display: "flex", justifyContent: "center" }}>
-                            Şehir
+                            Şehir Seç
                         </Typography>
                         <select
                             value={city}
@@ -100,9 +102,9 @@ function Filter() {
                     </Grid>
                     <Grid item xs={12} sm={4}>
                         <Typography gutterBottom variant="h5" sx={{ display: "flex", justifyContent: "center" }}>
-                            Zaman
+                            Zaman Aralığı Seç
                         </Typography>
-                        <SingleInputDateRangePicker  />
+                        <SingleInputDateRangePicker />
                     </Grid>
                 </Grid>
             </form>
