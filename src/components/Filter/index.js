@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSearchContext } from '../../context/SearchContext';
 import { useNavigate } from "react-router-dom";
 import { useQuery } from "react-query";
@@ -24,8 +24,13 @@ function Filter() {
         setCity(event.target.value);
     }
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
+    
+    useEffect(() => {
+       
+        handleSubmit();
+    }, [location, city, data]);
+
+    const handleSubmit = () => {
         const results = data.filter((event) => {
             if (city && !location) {
                 return (
@@ -62,7 +67,7 @@ function Filter() {
 
     return (
         <Container maxWidth="lg" sx={{ marginTop: "5rem" }}>
-            <form onSubmit={handleSubmit} className={Styles.form}>
+            <form onSubmit={(e) => e.preventDefault()} className={Styles.form}>
                 <Grid container spacing={5} display="flex" justifyContent="space-between" alignItems="center">
                     <Grid item xs={12} sm={4} direction="column" justifyContent="center">
                         <Typography gutterBottom variant="h5" sx={{ display: "flex", justifyContent: "center" }}>
@@ -93,11 +98,6 @@ function Filter() {
                             Zaman
                         </Typography>
                         <SingleInputDateRangePicker  />
-                    </Grid>
-                    <Grid item xs={12} sm={12} display="flex" justifyContent="center">
-                        <button type="submit">
-                            <SearchIcon />
-                        </button>
                     </Grid>
                 </Grid>
             </form>
