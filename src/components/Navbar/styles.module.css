@@ -1,19 +1,20 @@
 .nav {
-  position:sticky ;
-  position: -webkit-sticky;
+  position:fixed ;
   top: 0;
-  z-index: 100;
+  left: 0;
+  right: 0;
+  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid #e2e8f0;
   padding-bottom: 25px;
   padding-top: 25px;
-  background-color:  #fff;
+  background-color:  #007841;
+  box-sizing: border-box;
 }
 
 .navContainer {
-  width: 62.5%;
+  width: 90%;
   display: flex;
   justify-content: space-between;
 }
@@ -32,30 +33,30 @@
 }
 
 .nav .logo img{
-
-  width: 5rem;
+  width: 3rem;
+  border-radius: 50%;
+  border: 1px solid #fff;
 }
 .nav .menu ul li{
-
-  margin-right: 1rem;
-
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .nav .menu ul li a {
-  color: #0c572e;
+  color: #fff;
   padding-right: 25px;
   font-weight: bold;
   font-size: 1.1rem;
-  transition: all ease-in 0.3s;
+  width: 100%;
 }
 
 .nav .menu ul li a:hover:not(.logo){
-  background-color: #2e7d32;
+  background-color: #fff;
   border: 1px solid;
   padding: 0.5rem 0.6rem;
   border-radius: 0.2rem;
   border: none;
-  color: #fff;
+  color: #007841;
 }
 
 .nav .right {
@@ -65,16 +66,15 @@
   gap: 5px;
 }
 .menuIcon {
-  color: #0c572e;
+  color: #007841;
   font-size: 1.5rem;
-  border: 2px solid #0c572e;
+  border: 2px solid #fff;
   border-radius: 0.5rem;
   font-weight: bold;
 }
 .nav .menuList .closeIcon {
   display: none;
 }
-
 @media (max-width: 768px) {
   .navContainer {
     width: 95%;
@@ -83,8 +83,6 @@
     display: block;
     text-align: center;
   }
-
-
   .menuIcon {
     display: block;
     cursor: pointer;
@@ -92,38 +90,34 @@
   .menu {
     display: none;
   }
-
   .nav .menu.showMenu {
     display: block;
   }
-
   .nav .menuList {
     flex-direction: column;
     align-items: center;
     justify-content: center;
     position: fixed;
-    left: -20%;
+    left: -35%;
     top: 0;
-    background-color: #fff;
-    border-right: 0.0625rem solid #dee0ea;
+    background-color: #007841;
+    border-right: 0.0625rem solid #007841;
     height: 100%;
-    width: 50%;
-    z-index: 999;
+    width: 20%;
+    z-index: 3;
     transition: all ease 0.3s;
   }
-
   .nav .menuList .closeIcon {
     display: block;
     position: absolute;
     right: 0;
     top: 0;
-    color: #0c572e;
+    color: #007841;
     font-size: 1.5rem;
-    border: 2px solid #0c572e;
+    border: 2px solid #fff;
     border-radius: 0.5rem;
     font-weight: bold;
   }
-
   #menuToggle:checked + .menu {
     display: block;
   }

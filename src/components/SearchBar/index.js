@@ -32,7 +32,7 @@ function SearchBar() {
 
     return (
         <div className={styles.searchWrapper}>
-            <form className={`${styles.searchForm} ${styles.cf}`} onSubmit={onSubmitHandler}>
+            <form className={styles.searchForm} onSubmit={onSubmitHandler}>
                 <input type="text" placeholder="Etkinlik veya sanatçı arayın" required style={{ boxShadow: 'none' }} value={searchQuery} onChange={onChangeHandler} />
                 <button type="submit">
                     <SearchIcon />
