@@ -50,10 +50,13 @@ function Filter() {
             }
             else if (!location && !city) {
            return true;
+            }else {
+                
+                console.error("data is not available yet.");
             }
         })
         setSearchResults(results);
-        navigate("/filtered-results");
+        navigate("/");
     }
 
     let Locations = () => data?.map(
