@@ -73,7 +73,7 @@ function EventDetail() {
 
       <Container maxWidth="lg">
         <Grid container spacing={1} sx={{ mb: "3rem", display: 'flex' }}>
-          <Grid lg={6} xs={12}>
+          <Grid item={true} lg={6} xs={12}>
             <Box className={styles.tabPanelBox}>
               <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                 <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
@@ -82,20 +82,20 @@ function EventDetail() {
                 </Tabs>
               </Box>
               <CustomTabPanel value={value} index={0}>
-                <h1>{data.name}</h1>
-                {data.description}
+                {data.name}<br />
+                {data.description}<br />
               </CustomTabPanel>
               <CustomTabPanel value={value} index={1}>
-                <h1>{data.name}</h1>
-                <p>Kategori: {data.eventType}</p>
-                <p>Şehir: {data.city}</p>
-                <p>Başlangıç tarihi: {data.startDate}</p>
-                <p>Bitiş tarihi: {data.endDate}</p>
-                <p>Ücret: {data.price}</p>
+                {data.name}<br />
+                Kategori: {data.eventType}<br />
+                Şehir: {data.city}<br />
+                Başlangıç tarihi: {data.startDate}<br />
+                Bitiş tarihi: {data.endDate}<br />
+                Ücret: {data.price}
               </CustomTabPanel>
             </Box>
           </Grid>
-          <Grid lg={6} xs={12} mt={{ lg: 0, xs: 2 }} pl={{ lg: 2, xs: 0 }}>
+          <Grid item={true} lg={6} xs={12} mt={{ lg: 0, xs: 2 }} pl={{ lg: 2, xs: 0 }}>
             <div className={styles.map}>
               <iframe
                 src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d304282.5343310836!2d32.52732558689937!3d39.9344112443957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cfbb769c32db85%3A0x2d276a630ac725b8!2s${data.city}!5e0!3m2!1str!2str!4v1698163533517`}
