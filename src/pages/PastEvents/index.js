@@ -2,7 +2,7 @@ import { useQuery } from "react-query";
 import { getEvents } from "../../network/requests/EventServices";
 import PastEventsGrid from "../../components/PastEventsGrid";
 import Slider from "../../components/Slider";
-import {Helmet} from "react-helmet";
+import PageWithHelmet from "../../components/PageWithHelmet";
 function PastEvents() {
   const { isLoading, error, data } = useQuery("pastEvents", getEvents);
 
@@ -12,11 +12,7 @@ function PastEvents() {
   const pastEvents = "/pastEvents";
   return (
     <>
-      <Helmet>
-      
-        <title>Geçmiş Etkinlikler -Bilet Al</title>
-     
-      </Helmet>
+       <PageWithHelmet title={"Geçmiş Etkinlikler-Bilet Al"}/>
 
       <Slider />
       <PastEventsGrid data={data} linkPath={pastEvents} />

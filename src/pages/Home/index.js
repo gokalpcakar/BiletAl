@@ -2,7 +2,7 @@ import { useQuery } from "react-query";
 import { getEvents } from "../../network/requests/EventServices";
 import EventsGrid from "../../components/EventsGrid";
 import Slider from "../../components/Slider";
-import { Helmet } from "react-helmet";
+import PageWithHelmet from "../../components/PageWithHelmet";
 import Filter from "../../components/Filter";
 
 
@@ -17,11 +17,7 @@ function Home() {
 
   return (
     <>
-      <Helmet>
-     
-        <title>Anasayfa - Bilet Al</title>
-        <meta name="description" content="Bilet Al" />
-      </Helmet>
+      <PageWithHelmet title={"Anasayfa-Bilet Al"}/>
 
       <Slider />
       <Filter />

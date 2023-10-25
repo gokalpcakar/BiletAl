@@ -3,7 +3,7 @@ import { useQuery } from "react-query";
 import { getAllConcerts } from "../../network/requests/ConcertServices";
 import EventsGrid from "../../components/EventsGrid";
 import Slider from "../../components/Slider";
-import {Helmet} from "react-helmet";
+import PageWithHelmet from "../../components/PageWithHelmet";
 function Concert() {
 
   const { isLoading, error, data } = useQuery("concert", getAllConcerts);
@@ -14,11 +14,7 @@ function Concert() {
   const concert = "/concert";
   return (
     <> 
-        <Helmet>
-             
-                <title>Konser - Bilet Al</title>
-                <meta name="description" content="Bilet Al" />
-            </Helmet>
+    <PageWithHelmet title={"Konser-Bilet Al"}/>
     <Slider/>
     <EventsGrid data={data} linkPath={concert}/>
       </>
