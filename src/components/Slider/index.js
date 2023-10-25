@@ -8,10 +8,10 @@ function Slider() {
   return (
     <Box className="homePageCarouselBox">
       <Carousel
-        autoPlay="true"
-        emulateTouch="true"
-        infiniteLoop="true"
-        showArrows="true"
+        autoPlay={true}
+        emulateTouch={true}
+        infiniteLoop={true}
+        showArrows={false}
         className="homePageCarousel"
         showThumbs={false}
         showStatus={false}

@@ -74,7 +74,7 @@ function Filter() {
         <Container maxWidth="lg" sx={{ marginTop: "5rem" }}>
             <form onSubmit={(e) => e.preventDefault()} className={Styles.form}>
                 <Grid container spacing={5} display="flex" justifyContent="space-between" alignItems="center">
-                    <Grid item xs={12} sm={4} direction="column" justifyContent="center">
+                    <Grid item xs={12} sm={4} justifyContent="center">
                         <Typography gutterBottom variant="h5" sx={{ display: "flex", justifyContent: "center" }}>
                             Mekan
                         </Typography>
@@ -82,7 +82,7 @@ function Filter() {
                             value={location}
                             onChange={locationHandleChange}
                         >
-                            <option value="" disabled selected hidden>Mekanlar...</option>
+                            <option value="" defaultValue>Mekanlar...</option>
                             {Locations()}
                         </select>
                     </Grid>
@@ -94,7 +94,7 @@ function Filter() {
                             value={city}
                             onChange={cityHandleChange}
                         >
-                            <option value="" disabled selected hidden>Şehirler...</option>
+                            <option value="" defaultValue>Şehirler...</option>
                             {Cities()}
                         </select>
                     </Grid>
