@@ -8,7 +8,6 @@ import StandUp from '../pages/StandUp';
 import NotFound from '../pages/NotFound';
 import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
-import FilteredResults from '../pages/FilteredResults';
 import PastEvents from "../pages/PastEvents";
 import EventDetail from "../pages/EventDetail";
 const mainLayoutWrapper = (PageComponent) => (
@@ -29,10 +28,6 @@ const routes = [
   {
     path: '/events/:id',
     element: mainLayoutWrapper(EventDetail)
-  },
-  {
-    path: '/filtered-results',
-    element: mainLayoutWrapper(FilteredResults)
   },
   {
     path: 'concert',
