@@ -1,0 +1,32 @@
+.homePageCarousel {
+  margin-top: 95px;
+  border-bottom: 1px solid #9d9d9d;
+  visibility: visible;
+  opacity: 1;
+}
+
+.homePageCarousel img {
+  height: 600px;
+  object-fit: cover;
+}
+
+@media only screen and (max-width: 1140px) {
+  .homePageCarousel img {
+    height: 400px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .homePageCarousel {
+    margin-top: 80px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .homePageCarousel {
+    margin-top: 100px;
+  }
+  .homePageCarousel img {
+    height: 200px;
+  }
+}

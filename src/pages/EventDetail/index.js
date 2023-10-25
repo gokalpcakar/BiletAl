@@ -4,7 +4,8 @@ import { getByEventsById } from "../../network/requests/EventServices";
 import { useQuery } from "react-query";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-import styles from "./Styles.module.css";
+import styles from "./style.module.css";
+
 function EventDetail() {
   const { id } = useParams();
   const { isLoading, error, data } = useQuery(["events", id], () =>

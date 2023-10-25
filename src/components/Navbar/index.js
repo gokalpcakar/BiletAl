@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Styles from "./styles.module.css";
+import styles from "./styles.module.css";
 import Button from "@mui/material/Button";
 import { FiMenu } from "react-icons/fi";
 import { AiOutlineClose } from 'react-icons/ai';
 import logo from "../../assets/images/logo1.png"
+import SearchBar from "../SearchBar";
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -13,22 +14,22 @@ function Navbar() {
   };
 
   return (
-    <nav className={Styles.nav}>
-      <div className={Styles.navContainer}>
-        <div className={Styles.right}>
-          <button id="menuToggle" className={Styles.menuIcon} onClick={toggleMenu}>
+    <nav className={styles.nav}>
+      <div className={styles.navContainer}>
+        <div className={styles.right}>
+          <button id="menuToggle" className={styles.menuIcon} onClick={toggleMenu}>
             <FiMenu />
           </button>
-        
 
 
-          <div className={`${Styles.menu} ${isMenuOpen ? Styles.showMenu : ""}`}>
-            <ul className={Styles.menuList}>
-            <button id="menuToggle" className={Styles.closeIcon} onClick={toggleMenu}>
-          <AiOutlineClose />
-          </button>
-          <li>
-                <Link to="/" className={Styles.logo}><img src={logo} alt="logo" /></Link>
+
+          <div className={`${styles.menu} ${isMenuOpen ? styles.showMenu : ""}`}>
+            <ul className={styles.menuList}>
+              <button id="menuToggle" className={styles.closeIcon} onClick={toggleMenu}>
+                <AiOutlineClose />
+              </button>
+              <li>
+                <Link to="/" className={styles.logo}><img src={logo} alt="logo" /></Link>
               </li>
               <li>
                 <Link to="/">Anasayfa</Link>
@@ -51,7 +52,8 @@ function Navbar() {
             </ul>
           </div>
         </div>
-        <div className={Styles.right}>
+        <div className={styles.right}>
+          <SearchBar />
           <Link to="/signin">
             <Button variant="contained" color="success" size="medium">
               Giriş Yap
