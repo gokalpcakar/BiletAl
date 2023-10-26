@@ -34,7 +34,7 @@ const routes = [
     element: mainLayoutWrapper(Home)
   },
   {
-    path: '/events/:id',
+    path: '/events/:slug',
     element: mainLayoutWrapper(EventDetail)
   },
   {
@@ -42,7 +42,7 @@ const routes = [
     element: mainLayoutWrapper(Concert)
   },
   {
-    path: 'concert/:id',
+    path: '/concert/:slug',
     element: mainLayoutWrapper(EventDetail)
   },
   {
@@ -50,7 +50,7 @@ const routes = [
     element: mainLayoutWrapper(Theatre)
   },
   {
-    path: 'theatre/:id',
+    path: '/theatre/:slug',
     element: mainLayoutWrapper(EventDetail)
   },
   {
@@ -58,7 +58,7 @@ const routes = [
     element: mainLayoutWrapper(Festival)
   },
   {
-    path: 'festival/:id',
+    path: '/festival/:slug',
     element: mainLayoutWrapper(EventDetail)
   },
   {
@@ -66,7 +66,7 @@ const routes = [
     element: mainLayoutWrapper(StandUp)
   },
   {
-    path: 'standup/:id',
+    path: '/standup/:slug',
     element: mainLayoutWrapper(EventDetail)
   },
   {
@@ -74,7 +74,7 @@ const routes = [
     element: mainLayoutWrapper(PastEvents)
   },
   {
-    path: 'pastevents/:id',
+    path: '/pastevents/:slug',
     element: mainLayoutWrapper(EventDetail)
   },
   {

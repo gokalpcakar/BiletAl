@@ -6,9 +6,13 @@ import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
 
 function EventsCard({ item,linkPath}) {
+
+
+
+
   return (
     <Card>
-      <Link to={`${linkPath}/${item.id}`} >
+      <Link to={`${linkPath}/${item.slug}`} >
         <CardMedia
           sx={{ height: 200, width: "100%", objectFit: "cover" }}
           image={item.images[0]}
