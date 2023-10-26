@@ -15,7 +15,7 @@ function Slider() {
         className={styles.homePageCarousel}
         showThumbs={false}
         showStatus={false}
-        showIndicators={true}
+        showIndicators={false}
       >
         <div>
           <img
