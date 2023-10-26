@@ -1,73 +1,83 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import styles from "./styles.module.css";
-import Button from "@mui/material/Button";
-import { FiMenu } from "react-icons/fi";
-import { AiOutlineClose } from 'react-icons/ai';
 import logo from "../../assets/images/logo1.png"
 import SearchBar from "../SearchBar";
-function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+import {
+  AppBar,
+  Button,
+  Tab,
+  Tabs,
+  Toolbar,
+  Box,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
+import NavbarDrawer from "../NavbarDrawer";
+
+const Navbar = () => {
+  const [value, setValue] = useState(false);
+  const theme = useTheme();
+  const isMatch = useMediaQuery(theme.breakpoints.down("lg"));
 
   return (
-    <nav className={styles.nav}>
-      <div className={styles.navContainer}>
-        <div className={styles.left}>
-          <button id="menuToggle" className={styles.menuIcon} onClick={toggleMenu}>
-            <FiMenu />
-          </button>
-
-
-
-          <div className={`${styles.menu} ${isMenuOpen ? styles.showMenu : ""}`}>
-            <ul className={styles.menuList}>
-              <button id="menuToggle" className={styles.closeIcon} onClick={toggleMenu}>
-                <AiOutlineClose />
-              </button>
-              <li>
-                <Link to="/" className={styles.logo}><img src={logo} alt="logo" /></Link>
-              </li>
-              <li>
-                <Link to="/">Anasayfa</Link>
-              </li>
-              <li>
-                <Link to="/concert">Konser</Link>
-              </li>
-              <li>
-                <Link to="/festival">Festival</Link>
-              </li>
-              <li>
-                <Link to="/standup">Stand-Up</Link>
-              </li>
-              <li>
-                <Link to="/theatre">Tiyatro</Link>
-              </li>
-              <li>
-                <Link to="/pastevents">Geçmiş Etkinlikler</Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className={styles.right}>
-          <SearchBar />
-          <Link to="/signin">
-            <Button variant="contained" color="success" size="medium">
-              Giriş Yap
-            </Button>
-          </Link>
-          <Link to="/signup">
-            <Button variant="contained" color="success" size="medium">
-              Kaydol
-            </Button>
-          </Link>
-        </div>
-      </div>
-    </nav>
+    <>
+      <AppBar sx={{ background: "#034f84" }}>
+        <Toolbar>
+          {isMatch ? (
+            <>
+              <NavbarDrawer />
+              <Link to="/">
+                <Box
+                  component="img"
+                  sx={{
+                    height: 45,
+                    marginRight: "10px"
+                  }}
+                  alt="Your logo."
+                  src={logo}
+                />
+              </Link>
+              <SearchBar />
+            </>
+          ) : (
+            <>
+              <Link to="/">
+                <Box
+                  component="img"
+                  sx={{
+                    height: 45,
+                  }}
+                  alt="Your logo."
+                  src={logo}
+                />
+              </Link>
+              <Tabs
+                sx={{ marginLeft: "25px", marginRight: "auto" }}
+                indicatorColor="secondary"
+                textColor="inherit"
+                value={value}
+                onChange={(e, value) => setValue(value)}
+              >
+                <Tab label="Anasayfa" component={Link} to="/" value="/" />
+                <Tab label="Konser" component={Link} to="/concert" value="/concert" />
+                <Tab label="Festival" component={Link} to="/festival" value="/festival" />
+                <Tab label="Stand-Up" component={Link} to="/standup" value="/standup" />
+                <Tab label="Tiyatro" component={Link} to="/theatre" value="/theatre" />
+                <Tab label="Geçmiş Etkinlikler" component={Link} to="/pastevents" value="/pastevents" />
+              </Tabs>
+              <SearchBar />
+            </>
+          )}
+          <Button sx={{ marginLeft: "10px", backgroundColor: "#7BD8C0", color: "#034f84" }} variant="contained">
+            Login
+          </Button>
+          <Button sx={{ marginLeft: "10px", backgroundColor: "#7BD8C0", color: "#034f84" }} variant="contained">
+            SignUp
+          </Button>
+        </Toolbar>
+      </AppBar>
+    </>
   );
-}
-
+};
 export default Navbar;
