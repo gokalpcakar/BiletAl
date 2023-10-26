@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import { getAllSlug } from "../../network/requests/EventServices";
 import { useQuery } from "react-query";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from "react-responsive-carousel";
 import styles from "./style.module.css";
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
@@ -12,7 +11,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-
+import ImageGallery from "react-image-gallery";
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -61,15 +60,14 @@ function EventDetail() {
     return <div>Error: {error.message}</div>;
   }
 
+
+  const images = data[0]?.images.map((image, index) => ({
+    original: image,
+ 
+  }));
   return (
     <div>
-      <Carousel className={styles.homePageCarousel} showArrows={true} showStatus={false} showThumbs={false}>
-        {data[0]?.images.map((image, index) => (
-          <div key={index}>
-            <img src={image} alt={`Image ${index}`} />
-          </div>
-        ))}
-      </Carousel>
+     <ImageGallery items={images} />
 
       <Container maxWidth="lg">
         <Grid container spacing={1} sx={{ mb: "3rem", display: 'flex' }}>
