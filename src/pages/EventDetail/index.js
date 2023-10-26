@@ -67,10 +67,14 @@ function EventDetail() {
   }));
   return (
     <div>
-     <ImageGallery items={images} />
 
-      <Container maxWidth="lg">
-        <Grid container spacing={1} sx={{ mb: "3rem", display: 'flex' }}>
+      <div className={styles.gallery}>
+     <ImageGallery items={images} showPlayButton={false}  />
+        
+      </div>
+
+      <Container maxWidth="xlg">
+        <Grid container spacing={1} sx={{ mb: "3rem", display: 'flex', mt:"3rem" }}>
           <Grid item={true} lg={6} xs={12}>
             <Box className={styles.tabPanelBox}>
               <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
