@@ -6,12 +6,21 @@ import { FiMenu } from "react-icons/fi";
 import { AiOutlineClose } from 'react-icons/ai';
 import logo from "../../assets/images/logo1.png"
 import SearchBar from "../SearchBar";
+import { useSearchContext } from "../../context/SearchContext";
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+ const {data,setSearchResults}=useSearchContext()
+ 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  const handleClick=()=>{
+
+    setSearchResults(data)
+
+
+  }
 
   return (
     <nav className={styles.nav}>
@@ -32,7 +41,7 @@ function Navbar() {
                 <Link to="/" className={styles.logo}><img src={logo} alt="logo" /></Link>
               </li>
               <li>
-                <Link to="/">Anasayfa</Link>
+                <Link to="/" onClick={handleClick}>Anasayfa</Link>
               </li>
               <li>
                 <Link to="/concert">Konser</Link>
