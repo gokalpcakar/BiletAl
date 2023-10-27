@@ -26,7 +26,7 @@ const NavbarDrawer = () => {
         <List
           sx={{ width: "300px", backgroundColor: "#034f84", height: "100%" }}
         >
-          <ListItemButton component={Link} to="/" onClick={handleClick}>
+          <ListItemButton component={Link} to="/">
             <ListItemIcon>
               <ListItemText sx={{ color: "#fff" }} >
                 Anasayfa

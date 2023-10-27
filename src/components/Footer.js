@@ -19,7 +19,7 @@ function Footer() {
                         justifyContent="space-between"
                         alignItems="center"
                     >
-                        <Grid item xs={12} sm={2}>
+                        <Grid item xs={12} sm={3}>
                             <Link to='/'>
                                 <Typography variant="h3" color="#2ed87b" gutterBottom>
                                     BİLETAL
