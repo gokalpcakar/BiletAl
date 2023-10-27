@@ -27,7 +27,9 @@ function EventsCard({ item,linkPath}) {
           sx={{ height: 200, width: "100%", objectFit: "cover" }}
           image={item.images[0]}
         />
+        </Link>
         <CardContent>
+          <Link to={`${linkPath}/${item.slug}`} >
           <Typography gutterBottom variant="h5" component="div">
             {item.name}
           </Typography>
@@ -43,19 +45,21 @@ function EventsCard({ item,linkPath}) {
           <Typography variant="body2" color="text.secondary">
             <strong>End Date:</strong> {item.endDate}
           </Typography>
+          </Link>
           <Link to="/" onClick={handleClick}>
             <Typography variant="body2" color="text.secondary">
                 <strong>Location:</strong> {item.location}
             </Typography>
           </Link>
+          <Link to={`${linkPath}/${item.slug}`} >
           <Typography variant="body2" color="text.secondary">
             <strong>Event Type:</strong> {item.eventType}
           </Typography>
           <Typography variant="body2" color="text.secondary">
             <strong>Price:</strong> ${item.price}
           </Typography>
+          </Link>
         </CardContent>
-      </Link>
     </Card>
   );
 }
