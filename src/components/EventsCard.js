@@ -4,7 +4,6 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
-
 import { useSearchContext } from "../context/SearchContext";
 
 function EventsCard({ item,linkPath}) {
@@ -27,24 +26,24 @@ function EventsCard({ item,linkPath}) {
           sx={{ height: 200, width: "100%", objectFit: "cover" }}
           image={item.images[0]}
         />
-        </Link>
+      </Link>
         <CardContent>
           <Link to={`${linkPath}/${item.slug}`} >
-          <Typography gutterBottom variant="h5" component="div">
-            {item.name}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {item.description}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            <strong>City:</strong> {item.city}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            <strong>Start Date:</strong> {item.startDate}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            <strong>End Date:</strong> {item.endDate}
-          </Typography>
+            <Typography gutterBottom variant="h5" component="div">
+              {item.name}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              {item.description}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              <strong>City:</strong> {item.city}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              <strong>Start Date:</strong> {item.startDate}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              <strong>End Date:</strong> {item.endDate}
+            </Typography>
           </Link>
           <Link to="/" onClick={handleClick}>
             <Typography variant="body2" color="text.secondary">
@@ -52,12 +51,12 @@ function EventsCard({ item,linkPath}) {
             </Typography>
           </Link>
           <Link to={`${linkPath}/${item.slug}`} >
-          <Typography variant="body2" color="text.secondary">
-            <strong>Event Type:</strong> {item.eventType}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            <strong>Price:</strong> ${item.price}
-          </Typography>
+            <Typography variant="body2" color="text.secondary">
+              <strong>Event Type:</strong> {item.eventType}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              <strong>Price:</strong> ${item.price}
+            </Typography>
           </Link>
         </CardContent>
     </Card>

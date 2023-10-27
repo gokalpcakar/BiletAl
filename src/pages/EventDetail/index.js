@@ -12,6 +12,8 @@ import Box from '@mui/material/Box';
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import ImageGallery from "react-image-gallery";
+import ShareButtons from "../../components/ShareButtons"
+
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -111,6 +113,11 @@ function EventDetail() {
           </Grid>
         </Grid>
       </Container>
+      <ShareButtons 
+        eventName={data[0].name} 
+        eventType={data[0].eventType}
+        eventDescription={data[0].description}
+      />
     </div >
   );
 }
