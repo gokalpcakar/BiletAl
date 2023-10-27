@@ -65,7 +65,7 @@ function SearchBar() {
         e.preventDefault();
         const results = data.filter((event) => {
             return (
-                event.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                event.name.toLowerCase() == (searchQuery.toLowerCase()) ||
                 event.eventType.toLowerCase().includes(searchQuery.toLowerCase())
             );
         });
