@@ -5,10 +5,20 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
 
+import { useSearchContext } from "../context/SearchContext";
+
 function EventsCard({ item,linkPath}) {
+  const { setSearchResults, data } = useSearchContext();
 
+  const results = data?.filter((event) => {
+    return ( 
+      event.location.toLowerCase().includes(item.location.toLowerCase())
+    );
+  });
 
-
+  const handleClick = () => {
+    setSearchResults(results);
+  };
 
   return (
     <Card>
@@ -33,9 +43,11 @@ function EventsCard({ item,linkPath}) {
           <Typography variant="body2" color="text.secondary">
             <strong>End Date:</strong> {item.endDate}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
-            <strong>Location:</strong> {item.location}
-          </Typography>
+          <Link to="/" onClick={handleClick}>
+            <Typography variant="body2" color="text.secondary">
+                <strong>Location:</strong> {item.location}
+            </Typography>
+          </Link>
           <Typography variant="body2" color="text.secondary">
             <strong>Event Type:</strong> {item.eventType}
           </Typography>
