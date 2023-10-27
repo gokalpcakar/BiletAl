@@ -1,9 +1,7 @@
 .btn{
-  margin-left: "10px";
+  margin-left: "10px";}
 
-}
-
-.btn:hover {
-  background-color: "#7BD8C0";
-  color: "#034f84";
-}
+  .btn:hover {
+    background-color: "#7BD8C0";
+    color: "#034f84";
+  }
