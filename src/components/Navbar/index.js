@@ -13,11 +13,15 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/images/logo1.png"
 import SearchBar from "../SearchBar";
+import { useSearchContext } from "../../context/SearchContext";
 const Navbar = () => {
   const [value, setValue] = useState(false);
   const theme = useTheme();
   const isMatch = useMediaQuery(theme.breakpoints.down("lg"));
-
+  const { setSearchResults, data } = useSearchContext();
+  const handleClick = () => {
+    setSearchResults(data);
+  };
   return (
     <>
       <AppBar sx={{ background: "#034f84" }}>
@@ -57,7 +61,7 @@ const Navbar = () => {
                 value={value}
                 onChange={(e, value) => setValue(value)}
               >
-                <Tab label="Anasayfa" component={Link} to="/" value="/" />
+                <Tab label="Anasayfa" component={Link} to="/" value="/" onClick={handleClick} />
                 <Tab label="Konser" component={Link} to="/concert" value="/concert" />
                 <Tab label="Festival" component={Link} to="/festival" value="/festival" />
                 <Tab label="Stand-Up" component={Link} to="/standup" value="/standup" />

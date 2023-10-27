@@ -14,6 +14,7 @@ const pages = ["Products", "Services", "ABoutUs", "ContactUs"];
 
 const NavbarDrawer = () => {
   const [openDrawer, setOpenDrawer] = useState(false);
+  
 
   return (
     <>
@@ -25,9 +26,11 @@ const NavbarDrawer = () => {
         <List
           sx={{ width: "300px", backgroundColor: "#034f84", height: "100%" }}
         >
-          <ListItemButton component={Link} to="/">
+          <ListItemButton component={Link} to="/" onClick={handleClick}>
             <ListItemIcon>
-              <ListItemText sx={{ color: "#fff" }}>Anasayfa</ListItemText>
+              <ListItemText sx={{ color: "#fff" }} >
+                Anasayfa
+              </ListItemText>
             </ListItemIcon>
           </ListItemButton>
           <ListItemButton component={Link} to="/concert">
