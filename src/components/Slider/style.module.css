@@ -1,8 +1,6 @@
 .homePageCarousel {
-  margin-top: 95px;
+  margin-top: 64px;
   border-bottom: 1px solid #9d9d9d;
-  visibility: visible;
-  opacity: 1;
 }
 
 .homePageCarousel img {
@@ -18,14 +16,14 @@
 
 @media only screen and (max-width: 768px) {
   .homePageCarousel {
-    margin-top: 80px;
+    margin-top: 60px;
+  }
+  .homePageCarousel img {
+    height: 300px;
   }
 }
 
 @media only screen and (max-width: 576px) {
-  .homePageCarousel {
-    margin-top: 100px;
-  }
   .homePageCarousel img {
     height: 200px;
   }

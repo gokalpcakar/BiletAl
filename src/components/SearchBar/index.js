@@ -3,8 +3,6 @@ import { useSearchContext } from '../../context/SearchContext';
 import { useNavigate } from "react-router-dom";
 import { useQuery } from "react-query";
 import { getEvents } from "../../network/requests/EventServices";
-// import SearchIcon from '@mui/icons-material/Search';
-// import styles from './style.module.css';
 import SearchIcon from '@mui/icons-material/Search';
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
@@ -46,11 +44,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     color: 'inherit',
     '& .MuiInputBase-input': {
         padding: theme.spacing(1, 1, 1, 0),
-        // vertical padding + font size from searchIcon
-        paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-        transition: theme.transitions.create('width'),
-        width: '100%',
-        [theme.breakpoints.up('lg')]: { width: '100%' }
+        paddingLeft: `calc(1em + ${theme.spacing(4)})`
     },
 }));
 
@@ -79,16 +73,8 @@ function SearchBar() {
     }
 
     return (
-        // <div className={styles.searchWrapper}>
-        //     <form className={styles.searchForm} onSubmit={onSubmitHandler}>
-        //         <input type="text" placeholder="Etkinlik veya sanatçı arayın" required style={{ boxShadow: 'none' }} value={searchQuery} onChange={onChangeHandler} />
-        //         <button type="submit">
-        //             <SearchIcon />
-        //         </button>
-        //     </form>
-        // </div>
         <Search onSubmit={onSubmitHandler}>
-            <SearchIconWrapper type="submit">
+            <SearchIconWrapper>
                 <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
@@ -96,6 +82,7 @@ function SearchBar() {
                 inputProps={{ 'aria-label': 'search' }}
                 value={searchQuery}
                 onInput={onChangeHandler}
+                style={{ width: '100%' }}
             />
         </Search>
     );
