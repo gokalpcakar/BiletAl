@@ -1,11 +1,7 @@
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
-import Typography from "@mui/material/Typography";
+import { Box, Container, Grid, Typography, Divider } from '@mui/material';
 import { Link } from "react-router-dom";
-import Divider from '@mui/material/Divider';
-import { Facebook, Instagram, Twitter, LinkedIn, YouTube, LocationOn } from '@mui/icons-material';
-
+import { Facebook, Instagram, Twitter, LinkedIn, YouTube } from '@mui/icons-material';
+  
 function Footer() {
 
     return (
