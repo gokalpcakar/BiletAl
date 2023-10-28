@@ -18,11 +18,11 @@ const mainLayoutWrapper = (PageComponent) => (
   </MainLayout>
 );
 
-const authLayoutWrapper = (PageComponent) => (
-  <AuthLayout>
-    <PageComponent />
-  </AuthLayout>
-);
+// const authLayoutWrapper = (PageComponent) => (
+//   <AuthLayout>
+//     <PageComponent />
+//   </AuthLayout>
+// );
 
 const routes = [
   {
@@ -79,11 +79,11 @@ const routes = [
   },
   {
     path: 'signin',
-    element: authLayoutWrapper(SignIn)
+    element: mainLayoutWrapper(SignIn)
   },
   {
     path: 'signup',
-    element: authLayoutWrapper(SignUp)
+    element: mainLayoutWrapper(SignUp)
   },
   {
     path: '*',

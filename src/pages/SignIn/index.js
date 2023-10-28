@@ -14,16 +14,10 @@ import PageWithHelmet from "../../components/PageWithHelmet";
 import { useFormik, Field, Form, Formik } from "formik";
 import { signInValidationSchema } from "./SignInValidationSchema";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
 
 const defaultTheme = createTheme();
 
 function SignIn() {
-
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
-
   let navigate = useNavigate();
   const routeChange = (isLoggedIn) => {
     let path = `/`;
@@ -32,7 +26,7 @@ function SignIn() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <PageWithHelmet title={"Giriş Yap"} />
+     <PageWithHelmet title={"Giriş Yap"}/>
       <Container maxWidth="xs">
         <CssBaseline>
           <Box
@@ -40,7 +34,7 @@ function SignIn() {
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              marginTop: 10,
+              marginTop: 15,
               marginBottom: 10,
             }}
           >

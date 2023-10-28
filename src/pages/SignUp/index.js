@@ -37,8 +37,8 @@ function SignUp() {
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              marginTop: 10,
-              marginBottom: 10,
+              marginTop: 13,
+              marginBottom: 5
             }}
           >
             <Typography variant="h5" sx={{ mb: 2 }}>
