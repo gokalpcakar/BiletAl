@@ -24,7 +24,7 @@ const NavbarDrawer = () => {
         onClose={() => setOpenDrawer(false)}
       >
         <List
-          sx={{ width: "300px", backgroundColor: "#034f84", height: "100%" }}
+          sx={{ width: "30ch", backgroundColor: "#034f84", height: "100%" }}
         >
           <ListItemButton component={Link} to="/">
             <ListItemIcon>

@@ -24,12 +24,12 @@ function Filter() {
         setCity(event.target.value);
     }
 
-    
+
     useEffect(
         () => {
             handleSubmit();
-        }, 
-        [data,city,location]
+        },
+        [data, city, location]
     );
 
     const handleSubmit = () => {
@@ -52,7 +52,7 @@ function Filter() {
             }
             else if (!location && !city) {
                 return true;
-            }else {
+            } else {
                 console.error("Data is not available yet.");
             }
         })
@@ -62,21 +62,21 @@ function Filter() {
 
     let Locations = () => data?.map(
         item => item.location).filter(
-            (val, id, array) => {return array.indexOf(val) === id}).map( 
+            (val, id, array) => { return array.indexOf(val) === id }).map(
                 (location, index) => <option key={index} value={location}>{location}</option>
-    );
+            );
 
     let Cities = () => data?.map(
         item => item.city).filter(
-            (val, id, array) => {return array.indexOf(val) === id}).map(
+            (val, id, array) => { return array.indexOf(val) === id }).map(
                 (city, index) => <option key={index} value={city}>{city}</option>
-    );
+            );
 
     return (
-        <Container maxWidth="lg" sx={{ marginTop: "5rem" }}>
+        <Container maxWidth="lg" sx={{ marginTop: "3rem" }}>
             <form onSubmit={(e) => e.preventDefault()}>
                 <Grid container spacing={5} display="flex" justifyContent="space-between" alignItems="center">
-                    <Grid item xs={12} sm={4} justifyContent="center">
+                    <Grid xs={12} item md={4} justifyContent="center">
                         <Typography gutterBottom variant="h5" sx={{ display: "flex", justifyContent: "center" }}>
                             Mekan Seç
                         </Typography>
@@ -88,7 +88,7 @@ function Filter() {
                             {Locations()}
                         </select>
                     </Grid>
-                    <Grid item xs={12} sm={4}>
+                    <Grid xs={12} item md={4}>
                         <Typography gutterBottom variant="h5" sx={{ display: "flex", justifyContent: "center" }}>
                             Şehir Seç
                         </Typography>
@@ -100,7 +100,7 @@ function Filter() {
                             {Cities()}
                         </select>
                     </Grid>
-                    <Grid item xs={12} sm={4}>
+                    <Grid item xs={12} md={4}>
                         <Typography gutterBottom variant="h5" sx={{ display: "flex", justifyContent: "center" }}>
                             Zaman Aralığı Seç
                         </Typography>

@@ -1,4 +1,3 @@
-import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import { Box } from "@mui/material";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -12,10 +11,10 @@ function Slider() {
         emulateTouch={true}
         infiniteLoop={true}
         showArrows={false}
-        className={styles.homePageCarousel}
         showThumbs={false}
         showStatus={false}
         showIndicators={false}
+        className={styles.homePageCarousel}
       >
         <div>
           <img

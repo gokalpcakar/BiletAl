@@ -11,7 +11,7 @@ function EventsGrid({ data, linkPath }) {
   const futureEvents = data.filter(event => new Date(event.startDate) >= currentDate);
 
   return (
-    <Container maxWidth="lg" sx={{ marginTop: "5rem" }}>
+    <Container maxWidth="lg" sx={{ marginTop: "3rem" }}>
       <Grid container spacing={5} sx={{ mb: "3rem", display: 'flex' }}>
         {futureEvents.map((item) => (
           <Grid item lg={4} md={6} xs={12} key={item.id}>

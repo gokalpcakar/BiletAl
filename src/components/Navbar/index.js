@@ -11,17 +11,20 @@ import {
 import NavbarDrawer from "../NavbarDrawer";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../../assets/images/logo1.png"
+import logo from "../../assets/images/logo2.png"
 import SearchBar from "../SearchBar";
 import { useSearchContext } from "../../context/SearchContext";
+
 const Navbar = () => {
   const [value, setValue] = useState(false);
   const theme = useTheme();
   const isMatch = useMediaQuery(theme.breakpoints.down("lg"));
   const { setSearchResults, data } = useSearchContext();
+
   const handleClick = () => {
     setSearchResults(data);
   };
+
   return (
     <>
       <AppBar sx={{ background: "#034f84" }}>
@@ -33,7 +36,7 @@ const Navbar = () => {
                 <Box
                   component="img"
                   sx={{
-                    height: 45,
+                    height: 60,
                     marginRight: "10px"
                   }}
                   alt="Your logo."
@@ -48,7 +51,7 @@ const Navbar = () => {
                 <Box
                   component="img"
                   sx={{
-                    height: 45,
+                    height: 60,
                   }}
                   alt="Your logo."
                   src={logo}
@@ -71,10 +74,30 @@ const Navbar = () => {
               <SearchBar />
             </>
           )}
-          <Button sx={{ marginLeft: "10px", backgroundColor: "#7BD8C0", color: "#034f84" }} variant="contained">
+          <Button sx={{
+            marginLeft: "10px",
+            backgroundColor: "#7BD8C0",
+            color: "#034f84",
+            "&:hover": {
+              border: '1px solid #7BD8C0',
+              color: '#7BD8C0',
+              transition: '.5s',
+              backgroundColor: '#034f84'
+            }
+          }} component={Link} to="/signin" variant="contained">
             Login
           </Button>
-          <Button sx={{ marginLeft: "10px", backgroundColor: "#7BD8C0", color: "#034f84" }} variant="contained">
+          <Button sx={{
+            marginLeft: "10px",
+            backgroundColor: "#7BD8C0",
+            color: "#034f84",
+            transition: '.5s',
+            "&:hover": {
+              border: '1px solid #7BD8C0',
+              color: '#7BD8C0',
+              backgroundColor: '#034f84'
+            }
+          }} component={Link} to="/signup" variant="contained">
             SignUp
           </Button>
         </Toolbar>
