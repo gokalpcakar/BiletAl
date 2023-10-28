@@ -1,5 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import { useEffect } from "react";
 import { Formik, Form, useField } from "formik";
 import { validationSchema } from "./ValidationSchema";
 
@@ -17,6 +16,11 @@ import PageWithHelmet from "../../components/PageWithHelmet";
 const defaultTheme = createTheme();
 
 function SignUp() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   let navigate = useNavigate();
   const routeChange = (isLoggedIn) => {
     let path = `/signin`;
@@ -25,7 +29,7 @@ function SignUp() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-    <PageWithHelmet title={"Kaydol"}/>
+      <PageWithHelmet title={"Kaydol"} />
       <Container maxWidth="xs">
         <CssBaseline>
           <Box

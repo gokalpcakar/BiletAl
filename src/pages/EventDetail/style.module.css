@@ -1,25 +1,16 @@
 .gallery {
-  margin-top: 10rem;
-  max-width: 900px;
-  width: 100%;
+  width: 80%;
+  margin: 7rem auto 0;
   box-shadow: 1px 10px 10px 5px rgba(43, 21, 69, 0.24);
-
 }
 
 @media (max-width: 768px) {
   .gallery {
-    max-width: 100%;
-    box-shadow: none;
+    width: 100%;
+    margin-top: 3rem;
   }
 }
 
-@media (max-width: 480px) {
-  .gallery {
-    max-width: 100%;
-    margin-top: 8rem;
-   
-  }
-}
 .tabPanelBox {
   border: 1px solid #a89ba4;
   border-radius: 10px;

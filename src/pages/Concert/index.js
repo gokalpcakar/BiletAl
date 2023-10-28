@@ -4,7 +4,13 @@ import { getAllConcerts } from "../../network/requests/ConcertServices";
 import EventsGrid from "../../components/EventsGrid";
 import Slider from "../../components/Slider";
 import PageWithHelmet from "../../components/PageWithHelmet";
+import { useEffect } from "react";
+
 function Concert() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   const { isLoading, error, data } = useQuery("concert", getAllConcerts);
 

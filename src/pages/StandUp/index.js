@@ -4,8 +4,14 @@ import EventsGrid from "../../components/EventsGrid";
 import Slider from "../../components/Slider";
 
 import PageWithHelmet from "../../components/PageWithHelmet";
+import { useEffect } from "react";
 
 function StandUp() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   const { isLoading, error, data } = useQuery("stand-up", getAllStandUps);
 
   if (isLoading) return "Loading...";
@@ -14,7 +20,7 @@ function StandUp() {
   const standup = "/standup";
   return (
     <>
-    <PageWithHelmet title={"Standup-Bilet Al"}/>
+      <PageWithHelmet title={"Standup-Bilet Al"} />
       <Slider />
       <EventsGrid data={data} linkPath={standup} />
     </>
