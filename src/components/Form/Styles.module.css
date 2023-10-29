@@ -69,6 +69,10 @@
 }
 */
 
+.checkbox-input {
+  margin-bottom: 10px;
+}
+
 .error {
     font-size: 13px;
     font-weight: 700;
@@ -77,4 +81,21 @@
     width: auto;
     padding: 5px;
     margin-bottom: 5px;
+}
+
+.btn {
+  margin-top: 10px;
+  width: 100%;
+  color: #7BD8C0;
+  background-color: #034f84;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: #1976d2;
 }

@@ -1,19 +1,13 @@
-import * as React from "react";
-
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import Box from "@mui/material/Box";
-import { Container, CssBaseline, Typography } from "@mui/material";
-import Grid from "@mui/material/Grid";
-
-import { Link } from "react-router-dom";
-
-import Styles from "./Styles.module.css";
+import React, { useRef } from "react";
+import { createTheme, ThemeProvider, Container, CssBaseline, Box, Grid, Typography } from "@mui/material";
+import { Link, useNavigate } from "react-router-dom";
 import MyTextInput from "../../components/Form/TextInput";
 import MyCheckbox from "../../components/Form/Checkbox";
+import SubmitButton from "../../components/Form/SubmitButton"
 import PageWithHelmet from "../../components/PageWithHelmet";
-import { useFormik, Field, Form, Formik } from "formik";
+import { Form, Formik } from "formik";
 import { signInValidationSchema } from "./SignInValidationSchema";
-import { useNavigate } from "react-router-dom";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const defaultTheme = createTheme();
 
@@ -23,6 +17,12 @@ function SignIn() {
     let path = `/`;
     navigate(path);
   };
+
+  const captchaRef = useRef(null);
+
+  const formStyle = {
+    width: "100%",
+  }
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -34,8 +34,8 @@ function SignIn() {
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              marginTop: 15,
-              marginBottom: 10,
+              marginTop: 25,
+              marginBottom: 20,
             }}
           >
             <Typography variant="h5" sx={{ mb: 1 }}>
@@ -52,29 +52,36 @@ function SignIn() {
                 setTimeout(() => {
                   routeChange();
                   alert(JSON.stringify(values, null, 2));
+                  const token = captchaRef.current.getValue();
+                  captchaRef.current.reset();
                   setSubmitting(false);
                 }, 400);
               }}
             >
-              <Form className={Styles.form}>
+              <Form style={formStyle}>
                 <MyTextInput label="Email Address" name="email" type="email" />
 
                 <MyTextInput label="Password" name="password" type="password" />
 
                 <MyCheckbox name="remember">Remember Me</MyCheckbox>
 
-                <button type="submit">Submit</button>
+                <ReCAPTCHA
+                  sitekey={process.env.REACT_APP_SITE_KEY}
+                  ref={captchaRef}
+                />
+
+                <SubmitButton label="Giriş Yap"/>
               </Form>
             </Formik>
             <Grid container>
               <Grid item xs>
                 <Link href="#" variant="body2">
-                  Forgot password?
+                  Şifrani mi unuttun?
                 </Link>
               </Grid>
               <Grid item>
                 <Link to="/signup" variant="body2">
-                  {"Don't have an account? Sign Up"}
+                  {"Hesabın yok mu? Kayıt Ol"}
                 </Link>
               </Grid>
             </Grid>
