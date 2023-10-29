@@ -5,24 +5,33 @@ import Slider from "../../components/Slider";
 import PageWithHelmet from "../../components/PageWithHelmet";
 import { useEffect } from "react";
 
+
 function PastEvents() {
+ 
+  const { data, isLoading } = useQuery("events", getEvents);
 
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
-  
-  const { isLoading, error, data } = useQuery("pastEvents", getEvents);
+    window.scrollTo(0, 0);
+  }, []);
 
-  if (isLoading) return "Loading...";
-
-  if (error) return "An error has occurred: " + error.message;
   const pastEvents = "/pastEvents";
+
   return (
     <>
-       <PageWithHelmet title={"Geçmiş Etkinlikler-Bilet Al"}/>
+      <PageWithHelmet title={"Geçmiş Etkinlikler-Bilet Al"} />
 
       <Slider />
-      <PastEventsGrid data={data} linkPath={pastEvents} />
+
+      {isLoading ? (
+       
+        <div>Loading...</div>
+      ) : data ? (
+     
+        <PastEventsGrid data={data} linkPath={pastEvents} />
+      ) : (
+    
+        <div>No data available.</div>
+      )}
     </>
   );
 }

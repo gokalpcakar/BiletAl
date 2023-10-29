@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { useSearchContext } from '../../context/SearchContext';
 import { useNavigate } from "react-router-dom";
-import { useQuery } from "react-query";
-import { getEvents } from "../../network/requests/EventServices";
 import SearchIcon from '@mui/icons-material/Search';
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
@@ -51,9 +49,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 function SearchBar() {
     const navigate = useNavigate();
     const [searchQuery, setSearchQuery] = useState("");
-    const { setSearchResults } = useSearchContext();
-
-    const { data } = useQuery("events", getEvents);
+    const { setSearchResults,data } = useSearchContext();
+    
+  
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
@@ -65,7 +63,7 @@ function SearchBar() {
         });
         setSearchResults(results);
         setSearchQuery("");
-        navigate("/");
+        
     };
 
     const onChangeHandler = (e) => {
