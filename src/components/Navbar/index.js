@@ -19,11 +19,16 @@ const Navbar = () => {
   const [value, setValue] = useState(false);
   const theme = useTheme();
   const isMatch = useMediaQuery(theme.breakpoints.down("lg"));
-  const { setSearchResults, data } = useSearchContext();
+  const { setSearchResults, data,searchData } = useSearchContext();
 
   const handleClick = () => {
     setSearchResults(data);
   };
+  const handleClickConcert=()=>{
+
+    setSearchResults(searchData)
+
+  }
 
   return (
     <>
@@ -32,7 +37,7 @@ const Navbar = () => {
           {isMatch ? (
             <>
               <NavbarDrawer />
-              <Link to="/">
+              <Link to="/" >
                 <Box
                   component="img"
                   sx={{
@@ -47,7 +52,7 @@ const Navbar = () => {
             </>
           ) : (
             <>
-              <Link to="/">
+              <Link to="/"onClick={handleClick}>
                 <Box
                   component="img"
                   sx={{
@@ -65,7 +70,7 @@ const Navbar = () => {
                 onChange={(e, value) => setValue(value)}
               >
                 <Tab label="Anasayfa" component={Link} to="/" value="/" onClick={handleClick} />
-                <Tab label="Konser" component={Link} to="/concert" value="/concert" />
+                <Tab label="Konser" component={Link} to="/concert" value="/concert" onClick={handleClickConcert} />
                 <Tab label="Festival" component={Link} to="/festival" value="/festival" />
                 <Tab label="Stand-Up" component={Link} to="/standup" value="/standup" />
                 <Tab label="Tiyatro" component={Link} to="/theatre" value="/theatre" />

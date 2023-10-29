@@ -4,23 +4,32 @@ import EventsGrid from "../../components/EventsGrid";
 import Slider from "../../components/Slider";
 import PageWithHelmet from "../../components/PageWithHelmet";
 import { useEffect } from "react";
+import {useSearchContext} from "../../context/SearchContext"
 function Theatre() {
 
+  const { searchResults,setSearchResults, setSearchData } = useSearchContext();
+
+  const { data, isLoading, isError } = useQuery("theatre", getEventsTheatre);
+
+  console.log(data)
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+    if (!isLoading && !isError) {
+      setSearchResults(data);
+    }
+    window.scrollTo(0, 0);
+  }, [isLoading, isError, data, setSearchData]);
+ setSearchData(data)
+ 
 
-  const { isLoading, error, data } = useQuery("theatre", getEventsTheatre);
-
-  if (isLoading) return "Loading...";
-
-  if (error) return "An error has occurred: " + error.message;
+  if (isLoading) {
+    return <p>Loading...</p>; 
+  }
   const theatre = "/theatre";
   return (
     <>
       <PageWithHelmet title={"Tiyatro-Bilet Al"} />
       <Slider />
-      <EventsGrid data={data} linkPath={theatre} />
+      <EventsGrid data={searchResults} linkPath={theatre} />
     </>
   );
 }

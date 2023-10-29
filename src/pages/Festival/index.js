@@ -4,24 +4,32 @@ import EventsGrid from "../../components/EventsGrid";
 import Slider from "../../components/Slider";
 import PageWithHelmet from "../../components/PageWithHelmet";
 import { useEffect } from "react";
-
+import { useSearchContext } from "../../context/SearchContext";
 function Festival() {
 
+  const { searchResults,setSearchResults, setSearchData} = useSearchContext();
+
+  const { data, isLoading, isError } = useQuery("festival", getAllFestivals);
+
+  console.log(data)
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+    if (!isLoading && !isError) {
+      setSearchResults(data);
+    }
+    window.scrollTo(0, 0);
+  }, [isLoading, isError, data, setSearchData]);
+ setSearchData(data)
+ 
 
-  const { isLoading, error, data } = useQuery("festival", getAllFestivals);
-
-  if (isLoading) return "Loading...";
-
-  if (error) return "An error has occurred: " + error.message;
+  if (isLoading) {
+    return <p>Loading...</p>; 
+  }
   const festival = "/festival";
   return (
     <>
       <PageWithHelmet title={"Festival-Bilet Al"} />
       <Slider />
-      <EventsGrid data={data} linkPath={festival} />
+      <EventsGrid data={searchResults} linkPath={festival} />
     </>
   );
 }
