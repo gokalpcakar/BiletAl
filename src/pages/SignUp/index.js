@@ -1,17 +1,13 @@
-import { useEffect } from "react";
-import { Formik, Form, useField } from "formik";
+import { useEffect, useRef } from "react";
+import { Formik, Form } from "formik";
 import { validationSchema } from "./ValidationSchema";
-
-import Styles from "./Styles.module.css";
 import MyTextInput from "../../components/Form/TextInput";
 import MyCheckbox from "../../components/Form/Checkbox";
-
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import Box from "@mui/material/Box";
-import { Container, CssBaseline, Typography } from "@mui/material";
-
-import { useNavigate } from "react-router-dom";
+import SubmitButton from "../../components/Form/SubmitButton"
+import { createTheme, ThemeProvider, Container, CssBaseline, Box, Grid, Typography } from "@mui/material";
+import { Link, useNavigate } from "react-router-dom";
 import PageWithHelmet from "../../components/PageWithHelmet";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const defaultTheme = createTheme();
 
@@ -27,6 +23,12 @@ function SignUp() {
     navigate(path);
   };
 
+  const formStyle = {
+    width: "100%",
+  }
+
+  const captchaRef = useRef(null)
+
   return (
     <ThemeProvider theme={defaultTheme}>
       <PageWithHelmet title={"Kaydol"} />
@@ -37,8 +39,8 @@ function SignUp() {
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              marginTop: 13,
-              marginBottom: 5
+              marginTop: 17,
+              marginBottom: 9,
             }}
           >
             <Typography variant="h5" sx={{ mb: 2 }}>
@@ -58,26 +60,34 @@ function SignUp() {
                 setTimeout(() => {
                   routeChange();
                   alert(JSON.stringify(values, null, 2));
+                  const token = captchaRef.current.getValue();
+                  captchaRef.current.reset();
                   setSubmitting(false);
                 }, 400);
               }}
             >
-              <Form className={Styles.form}>
+              <Form style={formStyle}>
                 <MyTextInput label="First Name" name="firstName" type="text" />
-
                 <MyTextInput label="Last Name" name="lastName" type="text" />
-
                 <MyTextInput label="Email Address" name="email" type="email" />
-
                 <MyTextInput label="Password" name="password" type="password" />
-
                 <MyCheckbox name="acceptedTerms">
                   I accept the terms and conditions
                 </MyCheckbox>
-
-                <button type="submit">Submit</button>
+                <ReCAPTCHA
+                  sitekey={process.env.REACT_APP_SITE_KEY}
+                  ref={captchaRef}
+                />
+                <SubmitButton label="Kayıt Ol"/>
               </Form>
             </Formik>
+            <Grid container>
+              <Grid item>
+                <Link to="/signin" variant="body2">
+                  {"Zaten bir hesabın var mı? Giriş Yap"}
+                </Link>
+              </Grid>
+            </Grid>
           </Box>
         </CssBaseline>
       </Container>
