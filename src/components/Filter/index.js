@@ -5,9 +5,9 @@ import { useQuery } from "react-query";
 import { getEvents } from "../../network/requests/EventServices";
 import Styles from "./Styles.module.css";
 import { Container, Grid, Typography } from "@mui/material";
-import { DateRange } from 'react-date-range';
-import 'react-date-range/dist/styles.css'; 
-import 'react-date-range/dist/theme/default.css'; 
+import { DateRange } from "react-date-range";
+import "react-date-range/dist/styles.css";
+import "react-date-range/dist/theme/default.css";
 
 function Filter() {
   const navigate = useNavigate();
@@ -21,9 +21,9 @@ function Filter() {
   const [showDateRangePicker, setShowDateRangePicker] = useState(false);
   const [selectedDateRange, setSelectedDateRange] = useState([
     {
-      startDate: null, 
-      endDate: null, 
-      key: 'selection',
+      startDate: null,
+      endDate: null,
+      key: "selection",
     },
   ]);
   const locationHandleChange = (event) => {
@@ -41,6 +41,16 @@ function Filter() {
     setSelectedDateRange([ranges.selection]);
   };
 
+  const clearDateRange = () => {
+    setSelectedDateRange([
+      {
+        startDate: null,
+        endDate: null,
+        key: "selection",
+      },
+    ]);
+  };
+
   useEffect(() => {
     handleSubmit();
   }, [data, city, location, selectedDateRange]);
@@ -51,15 +61,18 @@ function Filter() {
       const eventLocation = event.location.toLowerCase();
 
       const cityMatch = !city || eventCity === city.toLowerCase();
-      const locationMatch = !location || eventLocation.includes(location.toLowerCase());
+      const locationMatch =
+        !location || eventLocation.includes(location.toLowerCase());
 
       const startDate = new Date(event.startDate);
       const endDate = new Date(event.startDate);
 
       // İlgili etkinlik, seçilen tarih aralığına uygunsa filtrele
       const dateMatch =
-        (!selectedDateRange[0].startDate || !selectedDateRange[0].startDate) || // Hiç tarih aralığı seçilmemişse
-        (startDate >= selectedDateRange[0].startDate && startDate <= selectedDateRange[0].endDate);
+        !selectedDateRange[0].startDate ||
+        !selectedDateRange[0].startDate || // Hiç tarih aralığı seçilmemişse
+        (startDate >= selectedDateRange[0].startDate &&
+          startDate <= selectedDateRange[0].endDate);
 
       return cityMatch && locationMatch && dateMatch;
     });
@@ -102,7 +115,13 @@ function Filter() {
           justifyContent="space-between"
           alignItems="center"
         >
-          <Grid xs={12} item md={6} justifyContent="center">
+          <Grid
+            xs={12}
+            item
+            md={4}
+            justifyContent="center"
+            alignSelf="flex-start"
+          >
             <Typography
               gutterBottom
               variant="h5"
@@ -117,7 +136,7 @@ function Filter() {
               {Locations()}
             </select>
           </Grid>
-          <Grid xs={12} item md={6}>
+          <Grid xs={12} item md={4} alignSelf="flex-start">
             <Typography
               gutterBottom
               variant="h5"
@@ -132,7 +151,12 @@ function Filter() {
               {Cities()}
             </select>
           </Grid>
-          <Grid item xs={12}  md={6} >
+
+          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={4}>
+            
+          </Grid>
+
             <Typography
               gutterBottom
               variant="h5"
@@ -140,12 +164,15 @@ function Filter() {
             >
               Tarih Aralığı Seç
             </Typography>
-            <input className={Styles.input}
+            <input
+              className={Styles.input}
               type="text"
               onClick={toggleDateRangePicker} // Tarih aralığını seçmek için takvimi açar
-              value={selectedDateRange[0].startDate && selectedDateRange[0].endDate
-                ? `${selectedDateRange[0].startDate.toLocaleDateString()} - ${selectedDateRange[0].endDate.toLocaleDateString()}`
-                : 'Tarihler...'}
+              value={
+                selectedDateRange[0].startDate && selectedDateRange[0].endDate
+                  ? `${selectedDateRange[0].startDate.toLocaleDateString()} - ${selectedDateRange[0].endDate.toLocaleDateString()}`
+                  : "Tarihler..."
+              }
             />
             {showDateRangePicker && (
               <DateRange
@@ -155,15 +182,14 @@ function Filter() {
                 ranges={selectedDateRange}
               />
             )}
+
+            <Grid item xs={12} md={4} sx={{ alignSelf: "flex-start" }}>
+              <button type="button" onClick={clearDateRange}>
+                Tarih Aralığını Temizle
+              </button>
+            </Grid>
           </Grid>
         </Grid>
-
- 
-
-
-
-
-     
       </form>
     </Container>
   );
