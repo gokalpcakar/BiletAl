@@ -153,10 +153,6 @@ function Filter() {
           </Grid>
 
           <Grid item xs={12} md={4}>
-          <Grid item xs={12} md={4}>
-            
-          </Grid>
-
             <Typography
               gutterBottom
               variant="h5"
@@ -164,29 +160,40 @@ function Filter() {
             >
               Tarih Aralığı Seç
             </Typography>
-            <input
-              className={Styles.input}
-              type="text"
-              onClick={toggleDateRangePicker} // Tarih aralığını seçmek için takvimi açar
-              value={
-                selectedDateRange[0].startDate && selectedDateRange[0].endDate
-                  ? `${selectedDateRange[0].startDate.toLocaleDateString()} - ${selectedDateRange[0].endDate.toLocaleDateString()}`
-                  : "Tarihler..."
-              }
-            />
-            {showDateRangePicker && (
-              <DateRange
-                editableDateInputs={true}
-                onChange={handleDateRangeChange}
-                moveRangeOnFirstSelection={false}
-                ranges={selectedDateRange}
-              />
-            )}
+            
+            <Grid 
+              container 
+              direction="row"  
+              display="flex"
+              justifyContent="space-between"
+              alignItems="center"
+            >
+              <Grid item xs={8}>            
+                <input
+                  className={Styles.input}
+                  type="text"
+                  onClick={toggleDateRangePicker} // Tarih aralığını seçmek için takvimi açar
+                  value={
+                    selectedDateRange[0].startDate && selectedDateRange[0].endDate
+                      ? `${selectedDateRange[0].startDate.toLocaleDateString()} - ${selectedDateRange[0].endDate.toLocaleDateString()}`
+                      : "Tarihler..."
+                  }
+                />
+                {showDateRangePicker && (
+                  <DateRange
+                    editableDateInputs={true}
+                    onChange={handleDateRangeChange}
+                    moveRangeOnFirstSelection={false}
+                    ranges={selectedDateRange}
+                  />
+                )}
+              </Grid>  
 
-            <Grid item xs={12} md={4} sx={{ alignSelf: "flex-start" }}>
-              <button type="button" onClick={clearDateRange}>
-                Tarih Aralığını Temizle
-              </button>
+              <Grid item xs={3}>
+                <button type="button" onClick={clearDateRange}>
+                  Tarihi Temizle
+                </button>
+              </Grid>
             </Grid>
           </Grid>
         </Grid>
