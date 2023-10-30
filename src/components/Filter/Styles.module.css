@@ -1,4 +1,4 @@
-select {
+select,.input {
     height: 50px;
     width: 100%;
     border-radius: 10px;
@@ -8,15 +8,15 @@ select {
     font-size: 16px;
 }
 
-select:focus {
+select:focus,.input:focus {
     outline: none;
 }
 
-select:focus-within {
+select:focus-within,.input:focus-within {
     background-color: #EFEFEF;
 }
 
-select:hover {
+select:hover,.input:hover {
     background-color: #EFEFEF;
     border: none;
 }
