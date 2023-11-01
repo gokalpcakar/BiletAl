@@ -11,7 +11,7 @@ import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
 import PastEvents from "../pages/PastEvents";
 import EventDetail from "../pages/EventDetail";
-
+import  AdminPanel  from "../pages/AdminPanel"
 const mainLayoutWrapper = (PageComponent) => (
   <MainLayout>
     <PageComponent />
@@ -84,6 +84,10 @@ const routes = [
   {
     path: 'signup',
     element: mainLayoutWrapper(SignUp)
+  },
+  {
+    path: 'admin',
+    element: mainLayoutWrapper(AdminPanel)
   },
   {
     path: '*',

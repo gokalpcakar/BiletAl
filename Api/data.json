@@ -1,6 +1,5 @@
 {
   "events": [
-
     {
       "id": 1,
       "name": "Etkinlik 1",
@@ -15,8 +14,8 @@
         "https://source.unsplash.com/150x150/?event1_3"
       ],
       "eventType": "tiyatro",
-      "price": 50.0,
-      "slug":"etkinlik-1"
+      "price": 50,
+      "slug": "etkinlik-1"
     },
     {
       "id": 2,
@@ -32,8 +31,8 @@
         "https://source.unsplash.com/150x150/?event1_3"
       ],
       "eventType": "festival",
-      "price": 30.0,
-      "slug":"etkinlik-2"
+      "price": 30,
+      "slug": "etkinlik-2"
     },
     {
       "id": 3,
@@ -49,8 +48,8 @@
         "https://source.unsplash.com/150x150/?event1_3"
       ],
       "eventType": "standup",
-      "price": 25.0,
-      "slug":"etkinlik-3"
+      "price": 25,
+      "slug": "etkinlik-3"
     },
     {
       "id": 4,
@@ -66,8 +65,8 @@
         "https://source.unsplash.com/150x150/?event1_3"
       ],
       "eventType": "konser",
-      "price": 40.0,
-      "slug":"etkinlik-4"
+      "price": 40,
+      "slug": "etkinlik-4"
     },
     {
       "id": 5,
@@ -83,8 +82,8 @@
         "https://source.unsplash.com/150x150/?event1_3"
       ],
       "eventType": "tiyatro",
-      "price": 55.0,
-      "slug":"etkinlik-5"
+      "price": 55,
+      "slug": "etkinlik-5"
     },
     {
       "id": 6,
@@ -100,8 +99,8 @@
         "https://source.unsplash.com/150x150/?event1_3"
       ],
       "eventType": "festival",
-      "price": 35.0,
-      "slug":"etkinlik-6"
+      "price": 35,
+      "slug": "etkinlik-6"
     },
     {
       "id": 7,
@@ -117,8 +116,8 @@
         "https://source.unsplash.com/150x150/?event1_3"
       ],
       "eventType": "standup",
-      "price": 20.0,
-      "slug":"etkinlik-7"
+      "price": 20,
+      "slug": "etkinlik-7"
     },
     {
       "id": 8,
@@ -134,8 +133,8 @@
         "https://source.unsplash.com/150x150/?event1_3"
       ],
       "eventType": "konser",
-      "price": 60.0,
-      "slug":"etkinlik-8"
+      "price": 60,
+      "slug": "etkinlik-8"
     },
     {
       "id": 9,
@@ -151,8 +150,8 @@
         "https://source.unsplash.com/150x150/?event1_3"
       ],
       "eventType": "tiyatro",
-      "price": 45.0,
-      "slug":"etkinlik-9"
+      "price": 45,
+      "slug": "etkinlik-9"
     },
     {
       "id": 10,
@@ -168,8 +167,8 @@
         "https://source.unsplash.com/150x150/?event1_3"
       ],
       "eventType": "festival",
-      "price": 30.0,
-      "slug":"etkinlik-10"
+      "price": 30,
+      "slug": "etkinlik-10"
     },
     {
       "id": 11,
@@ -185,8 +184,18 @@
         "https://source.unsplash.com/150x150/?event1_3"
       ],
       "eventType": "standup",
-      "price": 25.0,
-      "slug":"etkinlik-11"
+      "price": 25,
+      "slug": "etkinlik-11"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "admin@admin.com",
+      "password": "12345"
+    },
+    {
+      "id": 2
     }
   ]
 }

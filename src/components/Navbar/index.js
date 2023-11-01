@@ -14,8 +14,15 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/images/logo2.png"
 import SearchBar from "../SearchBar";
 import { useSearchContext } from "../../context/SearchContext";
+import {useAuth} from "../../context/AuthContext";
+import {useNavigate} from "react-router-dom"
+
+
+
 
 const Navbar = () => {
+  const {user,logout,loggedIn}=useAuth();
+  const navigate=useNavigate();
   const [value, setValue] = useState(false);
   const theme = useTheme();
   const isMatch = useMediaQuery(theme.breakpoints.down("lg"));
@@ -29,6 +36,17 @@ const Navbar = () => {
     setSearchResults(searchData)
 
   }
+  const handleLogout=async()=>{
+
+
+    logout(()=>{
+
+     navigate("/")
+
+    });
+
+
+}
 
   return (
     <>
@@ -79,7 +97,16 @@ const Navbar = () => {
               <SearchBar />
             </>
           )}
-          <Button sx={{
+
+
+
+
+{
+      !loggedIn && (<>
+      
+      
+      
+      <Button sx={{
             marginLeft: "10px",
             backgroundColor: "#7BD8C0",
             color: "#034f84",
@@ -90,7 +117,7 @@ const Navbar = () => {
               backgroundColor: '#034f84'
             }
           }} component={Link} to="/signin" variant="contained">
-            Login
+            Giriş Yap
           </Button>
           <Button sx={{
             marginLeft: "10px",
@@ -103,8 +130,48 @@ const Navbar = () => {
               backgroundColor: '#034f84'
             }
           }} component={Link} to="/signup" variant="contained">
-            SignUp
+            Kaydol
           </Button>
+      
+      
+       </>)}
+
+
+       {loggedIn && (
+      <> 
+      
+      <Button sx={{
+            marginLeft: "10px",
+            backgroundColor: "#7BD8C0",
+            color: "#034f84",
+            transition: '.5s',
+            "&:hover": {
+              border: '1px solid #7BD8C0',
+              color: '#7BD8C0',
+              backgroundColor: '#034f84'
+            }
+          }} component={Link} to="/admin" variant="contained">
+            Admin 
+          </Button>
+      
+         <Button sx={{
+            marginLeft: "10px",
+            backgroundColor: "#7BD8C0",
+            color: "#034f84",
+            transition: '.5s',
+            "&:hover": {
+              border: '1px solid #7BD8C0',
+              color: '#7BD8C0',
+              backgroundColor: '#034f84'
+            }
+          }} component={Link} to="/" variant="contained" onClick={handleLogout}>
+          Çıkış Yap
+          </Button>
+      
+       </>)}
+
+
+         
         </Toolbar>
       </AppBar>
     </>
