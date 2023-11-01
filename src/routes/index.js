@@ -34,59 +34,59 @@ const routes = [
     element: mainLayoutWrapper(Home)
   },
   {
-    path: '/events/:slug',
+    path: '/events/:name',
     element: mainLayoutWrapper(EventDetail)
   },
   {
-    path: 'concert',
+    path: '/concert',
     element: mainLayoutWrapper(Concert)
   },
   {
-    path: '/concert/:slug',
+    path: '/concert/:name',
     element: mainLayoutWrapper(EventDetail)
   },
   {
-    path: 'theatre',
+    path: '/theatre',
     element: mainLayoutWrapper(Theatre)
   },
   {
-    path: '/theatre/:slug',
+    path: '/theatre/:name',
     element: mainLayoutWrapper(EventDetail)
   },
   {
-    path: 'festival',
+    path: '/festival',
     element: mainLayoutWrapper(Festival)
   },
   {
-    path: '/festival/:slug',
+    path: '/festival/:name',
     element: mainLayoutWrapper(EventDetail)
   },
   {
-    path: 'standup',
+    path: '/standup',
     element: mainLayoutWrapper(StandUp)
   },
   {
-    path: '/standup/:slug',
+    path: '/standup/:name',
     element: mainLayoutWrapper(EventDetail)
   },
   {
-    path: 'pastevents',
+    path: '/pastevents',
     element: mainLayoutWrapper(PastEvents)
   },
   {
-    path: '/pastevents/:slug',
+    path: '/pastevents/:name',
     element: mainLayoutWrapper(EventDetail)
   },
   {
-    path: 'signin',
+    path: '/signin',
     element: mainLayoutWrapper(SignIn)
   },
   {
-    path: 'signup',
+    path: '/signup',
     element: mainLayoutWrapper(SignUp)
   },
   {
-    path: 'admin',
+    path: '/admin',
     element: mainLayoutWrapper(AdminPanel)
   },
   {

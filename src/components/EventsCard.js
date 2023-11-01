@@ -21,14 +21,14 @@ function EventsCard({ item,linkPath}) {
 
   return (
     <Card>
-      <Link to={`${linkPath}/${item.slug}`} >
+      <Link to={`${linkPath}/${item.name}`} >
         <CardMedia
           sx={{ height: 200, width: "100%", objectFit: "cover" }}
           image={item.images[0]}
         />
       </Link>
         <CardContent>
-          <Link to={`${linkPath}/${item.slug}`} >
+          <Link to={`${linkPath}/${item.name}`} >
             <Typography gutterBottom variant="h5" component="div">
               {item.name}
             </Typography>
@@ -50,7 +50,7 @@ function EventsCard({ item,linkPath}) {
                 <strong>Location:</strong> {item.location}
             </Typography>
           </Link>
-          <Link to={`${linkPath}/${item.slug}`} >
+          <Link to={`${linkPath}/${item.name}`} >
             <Typography variant="body2" color="text.secondary">
               <strong>Event Type:</strong> {item.eventType}
             </Typography>

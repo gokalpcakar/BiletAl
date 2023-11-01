@@ -2,7 +2,7 @@
   "events": [
     {
       "id": 1,
-      "name": "Etkinlik 1",
+      "name": "Etkinlik1",
       "description": "Bu etkinlik hakkında örnek bir açıklama.",
       "startDate": "2023-10-15",
       "endDate": "2023-10-17",
@@ -14,12 +14,12 @@
         "https://source.unsplash.com/150x150/?event1_3"
       ],
       "eventType": "tiyatro",
-      "price": 50,
-      "slug": "etkinlik-1"
+      "price": 50
+   
     },
     {
       "id": 2,
-      "name": "Etkinlik 2",
+      "name": "Etkinlik2",
       "description": "Başka bir etkinlik açıklaması.",
       "startDate": "2023-11-05",
       "endDate": "2023-11-07",
@@ -31,12 +31,12 @@
         "https://source.unsplash.com/150x150/?event1_3"
       ],
       "eventType": "festival",
-      "price": 30,
-      "slug": "etkinlik-2"
+      "price": 30
+     
     },
     {
       "id": 3,
-      "name": "Etkinlik 3",
+      "name": "Etkinlik3",
       "description": "Üçüncü etkinlik açıklaması.",
       "startDate": "2023-12-20",
       "endDate": "2023-12-22",
@@ -48,12 +48,12 @@
         "https://source.unsplash.com/150x150/?event1_3"
       ],
       "eventType": "standup",
-      "price": 25,
-      "slug": "etkinlik-3"
+      "price": 25
+      
     },
     {
       "id": 4,
-      "name": "Etkinlik 4",
+      "name": "Etkinlik4",
       "description": "Dördüncü etkinlik açıklaması.",
       "startDate": "2024-01-10",
       "endDate": "2024-01-12",
@@ -65,12 +65,12 @@
         "https://source.unsplash.com/150x150/?event1_3"
       ],
       "eventType": "konser",
-      "price": 40,
-      "slug": "etkinlik-4"
+      "price": 40
+     
     },
     {
       "id": 5,
-      "name": "Etkinlik 5",
+      "name": "Etkinlik5",
       "description": "Beşinci etkinlik açıklaması.",
       "startDate": "2024-02-15",
       "endDate": "2024-02-17",
@@ -82,12 +82,12 @@
         "https://source.unsplash.com/150x150/?event1_3"
       ],
       "eventType": "tiyatro",
-      "price": 55,
-      "slug": "etkinlik-5"
+      "price": 55
+      
     },
     {
       "id": 6,
-      "name": "Etkinlik 6",
+      "name": "Etkinlik6",
       "description": "Altıncı etkinlik açıklaması.",
       "startDate": "2024-03-10",
       "endDate": "2024-03-12",
@@ -99,12 +99,12 @@
         "https://source.unsplash.com/150x150/?event1_3"
       ],
       "eventType": "festival",
-      "price": 35,
-      "slug": "etkinlik-6"
+      "price": 35
+     
     },
     {
       "id": 7,
-      "name": "Etkinlik 7",
+      "name": "Etkinlik7",
       "description": "Yedinci etkinlik açıklaması.",
       "startDate": "2024-04-20",
       "endDate": "2024-04-22",
@@ -116,12 +116,12 @@
         "https://source.unsplash.com/150x150/?event1_3"
       ],
       "eventType": "standup",
-      "price": 20,
-      "slug": "etkinlik-7"
+      "price": 20
+     
     },
     {
       "id": 8,
-      "name": "Etkinlik 8",
+      "name": "Etkinlik8",
       "description": "Sekizinci etkinlik açıklaması.",
       "startDate": "2024-05-10",
       "endDate": "2024-05-12",
@@ -133,12 +133,12 @@
         "https://source.unsplash.com/150x150/?event1_3"
       ],
       "eventType": "konser",
-      "price": 60,
-      "slug": "etkinlik-8"
+      "price": 60
+     
     },
     {
       "id": 9,
-      "name": "Etkinlik 9",
+      "name": "Etkinlik9",
       "description": "Dokuzuncu etkinlik açıklaması.",
       "startDate": "2024-06-15",
       "endDate": "2024-06-17",
@@ -150,12 +150,12 @@
         "https://source.unsplash.com/150x150/?event1_3"
       ],
       "eventType": "tiyatro",
-      "price": 45,
-      "slug": "etkinlik-9"
+      "price": 45
+
     },
     {
       "id": 10,
-      "name": "Etkinlik 10",
+      "name": "Etkinlik10",
       "description": "Onuncu etkinlik açıklaması.",
       "startDate": "2024-07-10",
       "endDate": "2024-07-12",
@@ -167,12 +167,12 @@
         "https://source.unsplash.com/150x150/?event1_3"
       ],
       "eventType": "festival",
-      "price": 30,
-      "slug": "etkinlik-10"
+      "price": 30
+  
     },
     {
       "id": 11,
-      "name": "Etkinlik 11",
+      "name": "Etkinlik11",
       "description": "Onbirinci etkinlik açıklaması.",
       "startDate": "2024-08-20",
       "endDate": "2024-08-22",
@@ -184,8 +184,8 @@
         "https://source.unsplash.com/150x150/?event1_3"
       ],
       "eventType": "standup",
-      "price": 25,
-      "slug": "etkinlik-11"
+      "price": 25
+     
     }
   ],
   "users": [
@@ -193,9 +193,7 @@
       "id": 1,
       "email": "admin@admin.com",
       "password": "12345"
-    },
-    {
-      "id": 2
     }
+  
   ]
 }
