@@ -4,15 +4,19 @@ import App from "../src/App";
 import "../src/reset.css";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { SearchContextProvider } from "./context/SearchContext";
-
+import { AuthProvider } from "./context/AuthContext";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const queryClient = new QueryClient();
 root.render(
   <>
     <BrowserRouter>
       <QueryClientProvider client={queryClient}>
-        <SearchContextProvider>
+      <SearchContextProvider>
+      <AuthProvider>
+      
           <App />
+
+        </AuthProvider>
         </SearchContextProvider>
       </QueryClientProvider>
     </BrowserRouter>

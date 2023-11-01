@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { createTheme, ThemeProvider, Container, CssBaseline, Box, Grid, Typography } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import MyTextInput from "../../components/Form/TextInput";
@@ -8,16 +8,17 @@ import PageWithHelmet from "../../components/PageWithHelmet";
 import { Form, Formik } from "formik";
 import { signInValidationSchema } from "./SignInValidationSchema";
 import ReCAPTCHA from "react-google-recaptcha";
+import { controllerUserMail } from '../../network/requests/UsersServices'
+import { useAuth } from "../../context/AuthContext"
+import { fetchLogin } from '../../network/requests/UsersServices'
+import { controllerUserPassword } from '../../network/requests/UsersServices'
 
 const defaultTheme = createTheme();
 
 function SignIn() {
-  let navigate = useNavigate();
-  const routeChange = (isLoggedIn) => {
-    let path = `/`;
-    navigate(path);
-  };
-
+  const { login } = useAuth();
+  const [error, setError] = useState(""); // Hata mesajını saklamak için bir state ekledik
+  const navigate = useNavigate();
   const captchaRef = useRef(null);
 
   const formStyle = {
@@ -26,7 +27,7 @@ function SignIn() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-     <PageWithHelmet title={"Giriş Yap"}/>
+      <PageWithHelmet title={"Giriş Yap"} />
       <Container maxWidth="xs">
         <CssBaseline>
           <Box
@@ -45,38 +46,48 @@ function SignIn() {
               initialValues={{
                 email: "",
                 password: "",
-                remember: false, // added for our checkbox
+                remember: false,
               }}
               validationSchema={signInValidationSchema}
-              onSubmit={(values, { setSubmitting }) => {
-                setTimeout(() => {
-                  routeChange();
-                  alert(JSON.stringify(values, null, 2));
+              onSubmit={async (values, bag) => { // Asenkron işlemi işaretledik
+                try {
+                  const checkUserMail = await controllerUserMail(values.email); // Asenkron işlem
+                  const checkUserPassword = await controllerUserPassword(values.password); // Asenkron işlem
+
+                  if (checkUserMail === undefined) {
+                    setError('E-mail adresi bulunamadı');
+                  } else if (checkUserPassword === undefined) {
+                    setError('E-mail veya parola hatalı');
+                  } else {
+                    const loginResponse = await fetchLogin(values.email); // Asenkron işlem
+
+                    login(loginResponse);
+                    navigate("/admin");
+                  }
+
                   const token = captchaRef.current.getValue();
                   captchaRef.current.reset();
-                  setSubmitting(false);
-                }, 400);
+                } catch (error) {
+                  setError('Bir hata oluştu. Lütfen tekrar deneyin.');
+                }
               }}
             >
               <Form style={formStyle}>
                 <MyTextInput label="Email Address" name="email" type="email" />
-
                 <MyTextInput label="Password" name="password" type="password" />
-
                 <MyCheckbox name="remember">Remember Me</MyCheckbox>
-
                 <ReCAPTCHA
                   sitekey={process.env.REACT_APP_SITE_KEY}
                   ref={captchaRef}
                 />
-
-                <SubmitButton label="Giriş Yap"/>
+                {error && <div style={{ color: 'red' }}>{error}</div>}
+                <SubmitButton label="Giriş Yap" />
               </Form>
             </Formik>
             <Grid container>
               <Grid item xs>
                 <Link href="#" variant="body2">
-                  Şifrani mi unuttun?
+                  Şifreni mi unuttun?
                 </Link>
               </Grid>
               <Grid item>

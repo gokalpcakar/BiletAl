@@ -12,7 +12,15 @@ function Home() {
   const { data } = useQuery("events", getEvents);
 
 
-  setSearchData(data)
+  useEffect(() => {
+   
+    if (data) {
+      setSearchData(data);
+    }
+    
+  }, [data]);
+
+
   const events = "/events";
 
   useEffect(() => {

@@ -6,7 +6,7 @@ function Footer() {
 
     return (
         <footer>
-            <Box sx={{ backgroundColor: "#034f84", pt: 7, pb: 7, }}>
+            <Box sx={{ backgroundColor: "#034f84", pt: 7, pb: 7}}>
                 <Container maxWidth="lg">
                     <Grid container
                         direction="row"
