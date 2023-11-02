@@ -12,7 +12,6 @@ function StandUp() {
 
   const { data, isLoading, isError } = useQuery("standup", getAllStandUps);
 
-  console.log(data)
   useEffect(() => {
     if (!isLoading && !isError) {
       setSearchResults(data);

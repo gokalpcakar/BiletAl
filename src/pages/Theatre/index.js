@@ -11,7 +11,6 @@ function Theatre() {
 
   const { data, isLoading, isError } = useQuery("theatre", getEventsTheatre);
 
-  console.log(data)
   useEffect(() => {
     if (!isLoading && !isError) {
       setSearchResults(data);
