@@ -8,7 +8,7 @@ import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import Logout from '@mui/icons-material/Logout';
 import { useNavigate, Link } from "react-router-dom"
-import { useAuth } from "../../context/AuthContext";
+import { useAuth } from "../../../context/AuthContext";
 import { Box } from "@mui/material";
 
 function AccountMenu() {
