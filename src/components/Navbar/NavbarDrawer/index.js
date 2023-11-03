@@ -10,8 +10,6 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
 
-const pages = ["Products", "Services", "ABoutUs", "ContactUs"];
-
 const NavbarDrawer = () => {
   const [openDrawer, setOpenDrawer] = useState(false);
   

@@ -4,7 +4,7 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useSearchContext } from "../../context/SearchContext";
+import { useSearchContext } from "../../../context/SearchContext";
 
 function NavbarTabs() {
 
@@ -20,7 +20,7 @@ function NavbarTabs() {
 
     return (
         <Tabs
-            sx={{ marginLeft: "25px", marginRight: "auto" }}
+            sx={{ marginRight: "auto" }}
             indicatorColor="secondary"
             textColor="inherit"
             value={value}
