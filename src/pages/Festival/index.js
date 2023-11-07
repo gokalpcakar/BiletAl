@@ -11,7 +11,6 @@ function Festival() {
 
   const { data, isLoading, isError } = useQuery("festival", getAllFestivals);
 
-  console.log(data)
   useEffect(() => {
     if (!isLoading && !isError) {
       setSearchResults(data);

@@ -1,12 +1,12 @@
 import { Box, Container, Grid, Typography, Divider } from '@mui/material';
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Twitter, LinkedIn, YouTube } from '@mui/icons-material';
-  
+
 function Footer() {
 
     return (
         <footer>
-            <Box sx={{ backgroundColor: "#034f84", pt: 7, pb: 7}}>
+            <Box sx={{ backgroundColor: "#034f84", pt: 7, pb: 7 }}>
                 <Container maxWidth="lg">
                     <Grid container
                         direction="row"

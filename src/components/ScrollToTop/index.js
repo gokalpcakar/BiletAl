@@ -31,7 +31,7 @@ function ScrollToTop() {
       right: "20px",
       zIndex: "1",
       cursor: "pointer",
-      color: "green",
+      color: "#7BD8C0",
     }}> 
       <ArrowCircleUpSharpIcon 
         onClick={scrollToTop}  
