@@ -1,128 +1,111 @@
-import React from 'react'
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell, { tableCellClasses } from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableFooter from '@mui/material/TableFooter';
-import TablePagination from '@mui/material/TablePagination';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-import { styled } from '@mui/material/styles';
-import { useQuery } from "react-query";
-import { getEvents } from "../../network/requests/EventServices";
-import { Container, Grid } from "@mui/material";
-import ClearIcon from '@mui/icons-material/Clear';
-import AddIcon from '@mui/icons-material/Add';
-import EditIcon from '@mui/icons-material/Edit';
-import TablePaginationActions from "./TablePaginationActions";
+import React, { useEffect, useState } from 'react'
+import { useQuery, useMutation, useQueryClient } from "react-query";
+import { getEvents, deleteEventsById } from "../../network/requests/EventServices";
+import { Box, Container, Stack, Button } from '@mui/material';
+import { DataGrid } from '@mui/x-data-grid';
+import { Link } from 'react-router-dom';
+import AddCircleRoundedIcon from '@mui/icons-material/AddCircleRounded';
+import DeleteSweepRoundedIcon from '@mui/icons-material/DeleteSweepRounded';
+import EditRoundedIcon from '@mui/icons-material/EditRounded';
 
-const StyledTableRow = styled(TableRow)(({ theme }) => ({
-  '&:nth-of-type(even)': {
-    backgroundColor: theme.palette.action.hover,
+const columns = [
+  {
+    field: 'id',
+    headerName: 'ID',
+    width: 90
   },
-  // hide last border
-  '&:last-child td, &:last-child th': {
-    border: 0,
+  {
+    field: 'name',
+    headerName: 'Name',
+    width: 150,
+    editable: true,
   },
-}));
+  {
+    field: 'city',
+    headerName: 'City',
+    width: 150,
+    editable: true,
+  },
+  {
+    field: 'location',
+    headerName: 'Location',
+    width: 150,
+    editable: true,
+  },
+  {
+    field: 'price',
+    headerName: 'Price',
+    type: 'number',
+    width: 100,
+    editable: true,
+  },
+];
 
-const StyledTableCell = styled(TableCell)(({ theme }) => ({
-  [`&.${tableCellClasses.head}`]: {
-    backgroundColor: theme.palette.info.main,
-    color: theme.palette.common.white,
-  },
-  [`&.${tableCellClasses.body}`]: {
-    fontSize: 14,
-  },
-}));
+
 
 function EventTable() {
-  const { data, isLoading } = useQuery("events", getEvents);
-  const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(5);
+  const { isLoading, data } = useQuery("events", getEvents);
+  const [selectedRows, setSelectedRows] = React.useState([]);
+  const [rows, setRows] = React.useState([]);
 
-  const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - data?.length) : 0;
+  useEffect(()=>{
+    if(!isLoading && data) {
+      setRows(data);
+    }
+  }, [data]);
 
-  const handleChangePage = (event, newPage) => {
-    setPage(newPage);
-  };
+  const handleDelete = () => {
+    if (data.length == 0) {
+      return;
+    }
+    selectedRows.map((row) => {
+      var index = Number(row.id);
+      setRows([...rows.slice(0, index-1), ...rows.slice(index)])//Delete from DataGrid
+      return deleteEventsById(index);//Delete from Server
+    })
+  }
 
-  const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(parseInt(event.target.value, 10));
-    setPage(0);
-  };
-  
   return (
     <>
-      {isLoading ? (<div>Loading...</div>) : data? ( 
-        <Container maxWidth="lg" sx={{marginTop:"7%", marginBottom:"4%"}}>
-          <TableContainer component={Paper}>
-            <Table sx={{ minWidth: 900 }}>
-              <TableHead>
-                <TableRow>
-                  <StyledTableCell>ID</StyledTableCell>
-                  <StyledTableCell align="left">İsim</StyledTableCell>
-                  <StyledTableCell align="left">Şehir</StyledTableCell>
-                  <StyledTableCell align="left">Mekan</StyledTableCell>
-                  <StyledTableCell align="left">Etkinlik Türü</StyledTableCell>
-                  <StyledTableCell align="left">Başlangıç Tarihi</StyledTableCell>
-                  <StyledTableCell align="left">Bitiş Tarihi</StyledTableCell>
-                  <StyledTableCell align="left">Ücret&nbsp;(TL)</StyledTableCell>
-                  <StyledTableCell align="left"></StyledTableCell>
-                  <StyledTableCell align="left"></StyledTableCell>
-                  <StyledTableCell align="left"></StyledTableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {(rowsPerPage > 0
-                  ? data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                  : data
-                ).map((row) => (
-                  <StyledTableRow key={row.id}>
-                    <StyledTableCell component="th" scope="row"><strong>{row.id}</strong></StyledTableCell>
-                    <StyledTableCell align="left">{row.name}</StyledTableCell>
-                    <StyledTableCell align="left">{row.city}</StyledTableCell>
-                    <StyledTableCell align="left">{row.location}</StyledTableCell>
-                    <StyledTableCell align="left">{row.eventType}</StyledTableCell>
-                    <StyledTableCell align="left">{row.startDate}</StyledTableCell>
-                    <StyledTableCell align="left">{row.endDate}</StyledTableCell>
-                    <StyledTableCell align="left">{row.price}</StyledTableCell>
-                    <StyledTableCell align="left"><ClearIcon /></StyledTableCell>
-                    <StyledTableCell align="left"><EditIcon /></StyledTableCell>
-                    <StyledTableCell align="left"><AddIcon /></StyledTableCell>
-                  </StyledTableRow>
-                ))}
-                {emptyRows > 0 && (
-                  <TableRow style={{ height: 53 * emptyRows }}>
-                    <TableCell colSpan={11} />
-                  </TableRow>
-                )}
-              </TableBody>
-              <TableFooter>
-                <TableRow>
-                  <TablePagination
-                    rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
-                    colSpan={11}
-                    count={data.length}
-                    rowsPerPage={rowsPerPage}
-                    page={page}
-                    SelectProps={{
-                      inputProps: {
-                        'aria-label': 'rows per page',
-                      },
-                      native: true,
-                    }}
-                    onPageChange={handleChangePage}
-                    onRowsPerPageChange={handleChangeRowsPerPage}
-                    ActionsComponent={TablePaginationActions}
-                  />
-                </TableRow>
-              </TableFooter>
-            </Table>
-          </TableContainer>
-        </Container>
-      ): (<div>No data available.</div>)}
+      {isLoading ? (<div>Loading...</div>) : rows ? (
+        <Box sx={{ height: 400, width: "100%", marginTop: "7rem", marginBottom: "7rem" }}>
+          <Container maxWidth="lg">
+            <Stack direction="row" spacing={1}>
+              <Button size="small">
+                <EditRoundedIcon />
+              </Button>
+              <Button size="small" onClick={handleDelete}>
+                <DeleteSweepRoundedIcon />
+              </Button>
+              <Button size="small">
+                <AddCircleRoundedIcon />
+              </Button>
+            </Stack>
+            <DataGrid
+              rows={rows}
+              columns={columns}
+              initialState={{
+                pagination: {
+                  paginationModel: {
+                    pageSize: 5,
+                  },
+                },
+              }}
+              pageSizeOptions={[5, 10, 20]}
+              checkboxSelection
+              disableRowSelectionOnClick
+              onRowSelectionModelChange={(ids) => {
+                const selectedRows = ids.map((id) => {
+                  return data?.find((row) =>
+                    row.id == id
+                  );
+                });
+                setSelectedRows(selectedRows);
+              }}
+            />
+          </Container>
+        </Box>
+      ) : (<div>No data available.</div>)}
     </>
   )
 }
