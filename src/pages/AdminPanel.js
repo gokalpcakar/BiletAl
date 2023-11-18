@@ -1,15 +1,12 @@
-import React from 'react'
+import EventTable from "../components/EventTable/index";
 
 function AdminPanel() {
-
-   
+  
   return (
-    <div style={{marginTop:"30rem", marginBottom:"30rem"}}>
-
-    ADMİN
-
-    </div>
+    <>
+      <EventTable />
+    </>
   )
 }
 
-export default AdminPanel
+export default AdminPanel;

@@ -8,3 +8,6 @@ export const getByEventsById = async (eventsId) => {
   return baseServices.getById("/events",eventsId);
 };
 
+export const deleteEventsById = async (eventsId) => {
+  baseServices.deleteById("/events", eventsId);
+}
