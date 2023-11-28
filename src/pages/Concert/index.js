@@ -11,7 +11,6 @@ function Concert() {
 
   const { data, isLoading, isError } = useQuery("concert", getAllConcerts);
 
-  console.log(data)
   useEffect(() => {
     if (!isLoading && !isError) {
       setSearchResults(data);
