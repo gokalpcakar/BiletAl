@@ -9,5 +9,5 @@ export const getByEventsById = async (eventsId) => {
 };
 
 export const deleteEventsById = async (eventsId) => {
-  baseServices.deleteById("/events", eventsId);
+  return baseServices.deleteById("/events", eventsId);
 }
