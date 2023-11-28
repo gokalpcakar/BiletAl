@@ -18,3 +18,4 @@ Bu proje, etkinlikleri listelemek, detaylarını görüntülemek, haritada konum
 - State Yönetimi: Context API kullanılarak state yönetimi sağlanmıştır.
 - Pagination: Etkinlik listesi için sayfalama özelliği.
 - Material-UI (MUI): Grid ve Card yapısında MUI kullanılmıştır.
+-Responsive Tasarim:Uygulama responsivedir.
