@@ -1,3 +1,4 @@
+import axios from "axios";
 import { axiosInstance } from "./AxiosInstance";
 
 export const baseServices = {
@@ -26,11 +27,14 @@ export const baseServices = {
   },
 
   deleteById: async (entityUrl, id) => {
+    let response = [];
     try {
-      await axiosInstance.delete(`${entityUrl}/${id}`);
-      console.log(`${id} Successfully Deleted`);
-    } catch (err) {
-      console.error("ERROR DELETE: ", err);
+      await axiosInstance.delete(`${entityUrl}/${id}`).then(res => {
+        console.log(`${id} Successfully Deleted`)
+      });
+    } 
+    catch (err) {
+      console.error("ERROR DELETE: ", err)
       throw err;
     }
   },
