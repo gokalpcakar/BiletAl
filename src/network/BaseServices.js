@@ -1,4 +1,4 @@
-import axios from "axios";
+
 import { axiosInstance } from "./AxiosInstance";
 
 export const baseServices = {
