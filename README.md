@@ -1,4 +1,4 @@
-# https://bilet-al-z8ay.vercel.app/
+# https://bilet-al-gvtp.vercel.app/
 
 # React Etkinlik Yönetimi Uygulaması
 
@@ -14,7 +14,7 @@ Bu proje, etkinlikleri listelemek, detaylarını görüntülemek, haritada konum
 - Arama: Her sayfada etkinlik arama özelliği.
 - Admin Girişi: Yönetici girişi yapma imkanı.
 - Admin Paneli: Yönetici sayfasında etkinlik ekleme ve silme seçenekleri.
-- JSON Server: Verilerin yönetimi için JSON Server kullanılmıştır.
+- Mock Api: Verilerin yönetimi için Mock Api kullanılmıştır.
 - State Yönetimi: Context API kullanılarak state yönetimi sağlanmıştır.
 - Pagination: Etkinlik listesi için sayfalama özelliği.
 - Material-UI (MUI): Grid ve Card yapısında MUI kullanılmıştır.
