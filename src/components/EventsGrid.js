@@ -27,7 +27,7 @@ function EventsGrid({ data, linkPath }) {
   const displayedEvents = futureEvents.slice(startIndex, endIndex);
 
   return (
-    <Container maxWidth="lg" sx={{ marginTop: "3rem",marginBottom:"3rem" }}>
+    <Container maxWidth="lg" sx={{ marginTop: "4rem",marginBottom:"3rem" }}>
       <Grid container spacing={5} sx={{ mb: "3rem", display: 'flex' }}>
         {displayedEvents.map((item) => (
           <Grid item lg={4} md={6} xs={12} key={item.id}>

@@ -23,16 +23,17 @@ select:hover,.input:hover {
 
 button {
   border-radius: 10px;
-  background-color: #7BD8C0;
-  color: #034f84;
+  background-color: #034f84;
+  color: #7BD8C0;
   border: none;
   align-self: center;
   height: 55px;
   font-size: 14px;
+  font-weight: bold;
 }
 
 button:hover {
   cursor: pointer;
-  background-color: #034f84;
-  color: #7BD8C0;
+  background-color: #7BD8C0;
+  color: #034f84;
 }
