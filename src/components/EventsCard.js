@@ -23,7 +23,7 @@ function EventsCard({ item,linkPath}) {
     <Card>
       <Link to={`${linkPath}/${item.name}`} >
         <CardMedia
-          sx={{ height: 200, width: "100%", objectFit: "cover" }}
+          sx={{ height:310, width: "100%", objectFit: "contain"}}
           image={item.images[0]}
         />
       </Link>
@@ -32,9 +32,7 @@ function EventsCard({ item,linkPath}) {
             <Typography gutterBottom variant="h5" component="div">
               {item.name}
             </Typography>
-            <Typography variant="body2" color="text.secondary">
-              {item.description}
-            </Typography>
+           
             <Typography variant="body2" color="text.secondary">
               <strong>City:</strong> {item.city}
             </Typography>

@@ -18,37 +18,36 @@ function Slider() {
       >
         <div>
           <img
-            src="https://sepet.konya.bel.tr/wwwkonyasehirtiyatrosucom/sliders/nwNfkEXX7hYEgYpfHa07ePPwrmeDTq_C.jpeg"
+            src="https://cdn.bubilet.com.tr/files/EtiketBanner/watergarden-performans-merkezi-39919.png"
             alt="carouselImage"
 
           />
         </div>
 
-        <div>
-          <img
-            src="https://sepet.konya.bel.tr/wwwkonyasehirtiyatrosucom/sliders/5IdZVX2RXFoYgvpHPf5keuKlt75WiYmO.jpeg"
-            alt="carouselImage"
-
-          />
-        </div>
 
         <div>
           <img
-            src="	https://sepet.konya.bel.tr/wwwkonyasehirtiyatrosucom/sliders/6QtUH8cRilsCBhC8pbNgrYm8nSC7ewfG.jpeg"
+            src="https://cdn.bubilet.com.tr/files/EtiketBanner/pubg-mobile-dunya-sampiyonasi-38867.png"
             alt="carouselImage"
 
           />
         </div>
         <div>
           <img
-            src="	https://sepet.konya.bel.tr/wwwkonyasehirtiyatrosucom/sliders/kAUUqb-3-XwPbze0vxfMVtRuv_JPjucb.jpeg"
+            src="	https://cdn.bubilet.com.tr/files/EtiketBanner/dada-salon-kabarett-bursa-10044.jpg"
             alt="carouselImage"
 
           />
         </div>
         <div>
           <img
-            src="	https://sepet.konya.bel.tr/wwwkonyasehirtiyatrosucom/sliders/9gzw4ooV537pWjULfAK-WO_4zDqU0ueE.jpeg	"
+            src="	https://cdn.bubilet.com.tr/files/EtiketBanner/ulker-spor-ve-etkinlik-salonu-62622.jpg	"
+            alt="carouselImage"
+          />
+        </div>
+        <div>
+          <img
+            src="	https://cdn.bubilet.com.tr/files/EtiketBanner/tayyare-kultur-merkezi-71542.jpg	"
             alt="carouselImage"
           />
         </div>
