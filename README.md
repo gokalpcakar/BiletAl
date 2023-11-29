@@ -2,7 +2,7 @@
 
 # React Etkinlik Yönetimi Uygulaması
 
-Bu proje, etkinlikleri listelemek, detaylarını görüntülemek, haritada konumlarını göstermek ve çeşitli filtreleme seçenekleriyle etkinlikleri yönetmek amacıyla oluşturulmuştur.Uygulama responsivedir.
+Bu proje, etkinlikleri listelemek, detaylarını görüntülemek, haritada konumlarını göstermek ve çeşitli filtreleme seçenekleriyle etkinlikleri yönetmek amacıyla oluşturulmuştur.Uygulama responsivedir.İstekler Postmande test edildi.
 
 ## Özellikler
 
