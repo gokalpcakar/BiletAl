@@ -70,7 +70,7 @@ function EventTable() {
       {status === "loading" && <p>Fetching data...</p>}
       {status === "success" && (
         <Box sx={{ height: 400, width: "100%", marginTop: "7rem", marginBottom: "7rem" }}>
-          <Container maxWidth="lg" sx={{backgroundColor:"#fff"}}>
+          <Container maxWidth="lg" sx={{backgroundColor:"#ffe7ba"}}>
             <Stack direction="row" spacing={1}>
               <Button size="small">
                 <EditRoundedIcon />
