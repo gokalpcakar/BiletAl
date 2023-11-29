@@ -125,7 +125,7 @@ function Filter() {
             <Typography
               gutterBottom
               variant="h5"
-              sx={{ display: "flex", justifyContent: "center" }}
+              sx={{ display: "flex", justifyContent: "center"}}
             >
              Lütfen Mekan Seçin
             </Typography>
