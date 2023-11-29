@@ -127,7 +127,7 @@ function Filter() {
               variant="h5"
               sx={{ display: "flex", justifyContent: "center" }}
             >
-              Mekan Seç
+             Lütfen Mekan Seçin
             </Typography>
             <select value={location} onChange={locationHandleChange}>
               <option value="" defaultValue>
@@ -142,7 +142,7 @@ function Filter() {
               variant="h5"
               sx={{ display: "flex", justifyContent: "center" }}
             >
-              Şehir Seç
+            Lütfen Şehir Seçin
             </Typography>
             <select value={city} onChange={cityHandleChange}>
               <option value="" defaultValue>
@@ -158,7 +158,7 @@ function Filter() {
               variant="h5"
               sx={{ display: "flex", justifyContent: "center" }}
             >
-              Tarih Aralığı Seç
+             Lütfen Tarih Aralığı Seçin
             </Typography>
             
             <Grid 
