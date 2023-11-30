@@ -38,6 +38,7 @@ const AuthProvider = ({ children }) => {
     //accesstoken refreshtoken add
 
     localStorage.setItem("loginData", JSON.stringify(data));
+    localStorage.setItem("loggedIn", "true");
   };
 
   const logout = async () => {
@@ -46,14 +47,17 @@ const AuthProvider = ({ children }) => {
 
     //accesstoken refreshtoken remove
     localStorage.removeItem("loginData");
+    localStorage.removeItem("loggedIn");
     await fetchLogout();
   };
 
   const values = {
     loggedIn,
     user,
+    setUser,
     login,
     logout,
+    loading
   };
 
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
