@@ -11,12 +11,23 @@ import AccountMenu from "./AccountMenu";
 import NavbarButtonGroup from "./NavbarButtonGroup";
 import NavbarTabs from "./NavbarTabs";
 import NavbarBrand from "./NavbarBrand";
+import { useEffect } from "react";
 
 const Navbar = () => {
-
-  const { loggedIn } = useAuth();
+  const { loggedIn, login } = useAuth();
   const theme = useTheme();
   const isMatch = useMediaQuery(theme.breakpoints.down("lg"));
+
+  useEffect(() => {
+    const localStorageLoggedIn = localStorage.getItem("loggedIn") === "true";
+    if (localStorageLoggedIn) {
+      const storedUser = localStorage.getItem("loginData");
+      const parsedUser = JSON.parse(storedUser);
+      if (parsedUser) {
+        login(parsedUser);
+      }
+    }
+  }, [login]);
 
   return (
     <>
@@ -35,17 +46,16 @@ const Navbar = () => {
               <SearchBar />
             </>
           )}
-          {
-            !loggedIn && (<>
+          {!loggedIn && (
+            <>
               <NavbarButtonGroup />
             </>
-            )}
-          {
-            loggedIn && (
-              <>
-                <AccountMenu />
-              </>
-            )}
+          )}
+          {loggedIn && (
+            <>
+              <AccountMenu />
+            </>
+          )}
         </Toolbar>
       </AppBar>
     </>
