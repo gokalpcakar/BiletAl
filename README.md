@@ -1,4 +1,4 @@
-# https://bilet-al-gvtp.vercel.app/
+# https://bilet-al-zeogs.vercel.app/
 
 # React Etkinlik Yönetimi Uygulaması
 
