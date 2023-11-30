@@ -2,7 +2,7 @@ import {
     Box,
 } from "@mui/material";
 import { Link } from "react-router-dom";
-import logo from "../../../assets/images/logo2.png"
+import biletLogo from "../../../assets/images/biletLogo.jpeg"
 import { useSearchContext } from "../../../context/SearchContext";
 
 const NavbarBrand = () => {
@@ -19,10 +19,10 @@ const NavbarBrand = () => {
                 <Box
                     component="img"
                     sx={{
-                        height: 60,
+                        height: 70,
                     }}
                     alt="Your logo."
-                    src={logo}
+                    src={biletLogo}
                 />
             </Link>
         </>
