@@ -11,3 +11,7 @@ export const getByEventsById = async (eventsId) => {
 export const deleteEventsById = async (eventsId) => {
   return baseServices.deleteById("/events", eventsId);
 }
+
+export const addNewEvent = async (newEvent) => {
+  return baseServices.postEvent("/events", newEvent)
+}
