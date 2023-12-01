@@ -45,6 +45,12 @@ const columns = [
     editable: true,
   },
   {
+    field: 'eventType',
+    headerName: 'Event Type',
+    width: 150,
+    editable: true,
+  },
+  {
     field: 'price',
     headerName: 'Price',
     type: 'number',
@@ -86,6 +92,9 @@ function EventTable() {
   const locationHandleChange = (e) => {
     setEvent({ ...event, location: e.target.value })
   }
+  const eventTypeHandleChange = (e) => {
+    setEvent({ ...event, eventType: e.target.value })
+  }
   const priceHandleChange = (e) => {
     setEvent({ ...event, price: e.target.value })
   }
@@ -95,10 +104,16 @@ function EventTable() {
   const endDateHandleChange = (e) => {
     setEvent({ ...event, endDate: e.target.value })
   }
+  const imageHandleChange = (e) => {
+    setEvent({ ...event, images: [e.target.value] })
+  }
 
   const handleDelete = () => {
     if (rows && selectedRowIds) {
       selectedRowIds.map(id => deleteEventsById(id))
+      var newarr = rows.filter(row => !selectedRowIds.find(id => id == row.id))
+      setRows(newarr)
+      console.log(newarr)
     }
   }
 
@@ -174,6 +189,16 @@ function EventTable() {
                 <Grid item xs={6} md={3}>
                   <TextField
                     id="outlined-basic"
+                    label="Event Type"
+                    variant="outlined"
+                    value={event.eventType}
+                    onChange={eventTypeHandleChange}
+                    sx={{ backgroundColor: "#fff", minWidth: "100%" }}
+                  />
+                </Grid>
+                <Grid item xs={6} md={3}>
+                  <TextField
+                    id="outlined-basic"
                     label="Location"
                     variant="outlined"
                     value={event.location}
@@ -205,6 +230,16 @@ function EventTable() {
                     variant="outlined"
                     value={event.price}
                     onChange={priceHandleChange}
+                    sx={{ backgroundColor: "#fff", minWidth: "100%" }}
+                  />
+                </Grid>
+                <Grid item xs={6} md={3}>
+                  <TextField
+                    id="outlined-basic"
+                    label="Images"
+                    variant="outlined"
+                    value={event.images}
+                    onChange={imageHandleChange}
                     sx={{ backgroundColor: "#fff", minWidth: "100%" }}
                   />
                 </Grid>
