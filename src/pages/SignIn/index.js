@@ -61,16 +61,19 @@ function SignIn() {
                   } else {
                     const loginResponse = await fetchLogin(values.email); // Asenkron işlem
 
-                    login(loginResponse);
-                    navigate("/admin");
+                    const captchaValue = captchaRef.current.getValue();
+                    if (!captchaValue) {
+                      alert("Please verify the reCAPTCHA!");
+                    } else {
+                      // make form submission
+                      login(loginResponse)
+                      navigate("/admin")
+                    }
+                    }
+                  } catch (error) {
+                    setError('Bir hata oluştu. Lütfen tekrar deneyin.');
                   }
-
-                  const token = captchaRef.current.getValue();
-                  captchaRef.current.reset();
-                } catch (error) {
-                  setError('Bir hata oluştu. Lütfen tekrar deneyin.');
-                }
-              }}
+                }}
             >
               <Form style={formStyle}>
                 <MyTextInput label="Email Address" name="email" type="email" />
