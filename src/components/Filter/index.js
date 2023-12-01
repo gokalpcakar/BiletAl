@@ -173,7 +173,7 @@ function Filter() {
                   className={Styles.input}
                   type="text"
                   onClick={toggleDateRangePicker} // Tarih aralığını seçmek için takvimi açar
-                  value={
+                  defaultValue={
                     selectedDateRange[0].startDate && selectedDateRange[0].endDate
                       ? `${selectedDateRange[0].startDate.toLocaleDateString()} - ${selectedDateRange[0].endDate.toLocaleDateString()}`
                       : "Tarihler..."
