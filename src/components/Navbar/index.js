@@ -21,10 +21,10 @@ const Navbar = () => {
   useEffect(() => {
     const localStorageLoggedIn = localStorage.getItem("loggedIn") === "true";
     if (localStorageLoggedIn) {
-      const storedUser = localStorage.getItem("loginData");
-      const parsedUser = JSON.parse(storedUser);
-      if (parsedUser) {
-        login(parsedUser);
+      const storedUser = JSON.parse(localStorage.getItem("loginData"));
+      
+      if (storedUser) {
+        login(storedUser);
       }
     }
   }, [login]);
