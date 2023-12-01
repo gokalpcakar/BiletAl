@@ -69,11 +69,11 @@ function SignIn() {
                       login(loginResponse)
                       navigate("/admin")
                     }
-                    }
-                  } catch (error) {
-                    setError('Bir hata oluştu. Lütfen tekrar deneyin.');
                   }
-                }}
+                } catch (error) {
+                  setError('Bir hata oluştu. Lütfen tekrar deneyin.');
+                }
+              }}
             >
               <Form style={formStyle}>
                 <MyTextInput label="Email Address" name="email" type="email" />
