@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useQuery } from "react-query";
 import { getEvents, deleteEventsById, addNewEvent } from "../../network/requests/EventServices";
-import { Box, Container, Stack, Button, TextField, Grid } from '@mui/material';
+import { Box, Stack, Button, TextField, Grid } from '@mui/material';
 import { DataGrid } from '@mui/x-data-grid';
 import AddCircleRoundedIcon from '@mui/icons-material/AddCircleRounded';
 import DeleteSweepRoundedIcon from '@mui/icons-material/DeleteSweepRounded';
