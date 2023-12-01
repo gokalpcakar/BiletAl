@@ -38,4 +38,16 @@ export const baseServices = {
       throw err;
     }
   },
+
+  postEvent: async(entityUrl, newEvent) => {
+    try {
+      await axiosInstance.post(entityUrl, newEvent).then(res => {
+        console.log("Successfully added new event.")
+      })
+    }
+    catch (err) {
+      console.error("ERROR POST: ", err)
+      throw err;
+    }
+  }
 }
