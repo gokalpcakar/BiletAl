@@ -12,24 +12,24 @@ const columns = [
     field: 'id',
     headerName: 'ID',
     type: 'number',
-    width: 90
+    width: 40
   },
   {
     field: 'name',
     headerName: 'Name',
-    width: 150,
+    width: 200,
     editable: true,
   },
   {
     field: 'city',
     headerName: 'City',
-    width: 150,
+    width: 100,
     editable: true,
   },
   {
     field: 'location',
     headerName: 'Location',
-    width: 150,
+    width: 170,
     editable: true,
   },
   {
@@ -47,7 +47,7 @@ const columns = [
   {
     field: 'eventType',
     headerName: 'Event Type',
-    width: 150,
+    width: 100,
     editable: true,
   },
   {
@@ -105,7 +105,7 @@ function EventTable() {
     setEvent({ ...event, endDate: e.target.value })
   }
   const imageHandleChange = (e) => {
-    setEvent({ ...event, images: [e.target.value] })
+    setEvent({ ...event, images: [...event.images, e.target.value] })
   }
 
   const handleDelete = () => {
@@ -113,7 +113,6 @@ function EventTable() {
       selectedRowIds.map(id => deleteEventsById(id))
       var newarr = rows.filter(row => !selectedRowIds.find(id => id == row.id))
       setRows(newarr)
-      console.log(newarr)
     }
   }
 
@@ -129,7 +128,6 @@ function EventTable() {
     } else {
       alert("You need to fill all inputs...")
     }
-
   }
 
   const handleUpdate = () => {
@@ -141,142 +139,151 @@ function EventTable() {
       {status === "error" && <p>Error fetching data</p>}
       {status === "loading" && <p>Fetching data...</p>}
       {status === "success" && (
-        <Box sx={{ marginTop: "7rem", marginBottom: "7rem" }}>
-          <Container maxWidth="lg">
-            <Stack direction="row" spacing={1}>
-              <Button size="small" onClick={handleUpdate} style={{ backgroundColor: "#fff" }}>
-                <EditRoundedIcon />
-              </Button>
-              <Button size="small" onClick={handleDelete} style={{ backgroundColor: "#fff" }}>
-                <DeleteSweepRoundedIcon />
-              </Button>
-              <Button size="small" onClick={() => setShow(!show)} style={{ backgroundColor: "#fff" }}>
-                <AddCircleRoundedIcon />
-              </Button>
-            </Stack>
-            {show && (
-              <Grid container spacing={1} sx={{ marginBottom: "3rem", marginTop: "2rem" }}>
-                <Grid item xs={6} md={3}>
-                  <TextField
-                    id="outlined-basic"
-                    label="Name"
-                    variant="outlined"
-                    value={event.name}
-                    onChange={nameHandleChange}
-                    sx={{ backgroundColor: "#fff", minWidth: "100%" }}
-                  />
-                </Grid>
-                <Grid item xs={6} md={3}>
-                  <TextField
-                    id="outlined-basic"
-                    label="Description"
-                    variant="outlined"
-                    value={event.description}
-                    onChange={descriptionHandleChange}
-                    sx={{ backgroundColor: "#fff", minWidth: "100%" }}
-                  />
-                </Grid>
-                <Grid item xs={6} md={3}>
-                  <TextField
-                    id="outlined-basic"
-                    label="City"
-                    variant="outlined"
-                    value={event.city}
-                    onChange={cityHandleChange}
-                    sx={{ backgroundColor: "#fff", minWidth: "100%" }}
-                  />
-                </Grid>
-                <Grid item xs={6} md={3}>
-                  <TextField
-                    id="outlined-basic"
-                    label="Event Type"
-                    variant="outlined"
-                    value={event.eventType}
-                    onChange={eventTypeHandleChange}
-                    sx={{ backgroundColor: "#fff", minWidth: "100%" }}
-                  />
-                </Grid>
-                <Grid item xs={6} md={3}>
-                  <TextField
-                    id="outlined-basic"
-                    label="Location"
-                    variant="outlined"
-                    value={event.location}
-                    onChange={locationHandleChange}
-                    sx={{ backgroundColor: "#fff", minWidth: "100%" }}
-                  /></Grid>
-                <Grid item xs={6} md={3}>
-                  <input
-                    type="date"
-                    id="sDate"
-                    value={event.startDate}
-                    onChange={startDateHandleChange}
-                    style={{ minHeight: "100%", minWidth: "100%" }}
-                  />
-                </Grid>
-                <Grid item xs={6} md={3}>
-                  <input
-                    type="date"
-                    id="eDate"
-                    value={event.endDate}
-                    onChange={endDateHandleChange}
-                    style={{ minHeight: "100%", minWidth: "100%" }}
-                  />
-                </Grid>
-                <Grid item xs={6} md={3}>
-                  <TextField
-                    id="outlined-basic"
-                    label="Price"
-                    variant="outlined"
-                    value={event.price}
-                    onChange={priceHandleChange}
-                    sx={{ backgroundColor: "#fff", minWidth: "100%" }}
-                  />
-                </Grid>
-                <Grid item xs={6} md={3}>
-                  <TextField
-                    id="outlined-basic"
-                    label="Images"
-                    variant="outlined"
-                    value={event.images}
-                    onChange={imageHandleChange}
-                    sx={{ backgroundColor: "#fff", minWidth: "100%" }}
-                  />
-                </Grid>
-                <Grid item xs={6} md={3}>
-                  <Button
-                    variant="contained"
-                    color="secondary"
-                    size="large"
-                    onClick={handleAdd}
-                    sx={{ minHeight: "100%", minWidth: "100%" }}
-                  >
-                    Add
-                  </Button>
-                </Grid>
-              </Grid>
-            )}
-            <DataGrid
-              sx={{ backgroundColor: "#fff" }}
-              rows={rows ? rows : setRows(data)}
-              columns={columns}
-              initialState={{
-                pagination: {
-                  paginationModel: {
-                    pageSize: 5,
-                  },
-                },
-              }}
-              pageSizeOptions={[5]}
-              checkboxSelection
-              disableRowSelectionOnClick
-              onRowSelectionModelChange={(selectedIds) => {
-                setSelectedRowIds(selectedIds)
-              }}
-            />
+        <Box sx={{ pt: 15, pb: 7, width: "100%" }}>
+          <Stack direction="row" spacing={1} sx={{ mx: 10 }}>
+            <Button size="small" onClick={handleUpdate} style={{ backgroundColor: "#fff" }}>
+              <EditRoundedIcon />
+            </Button>
+            <Button size="small" onClick={handleDelete} style={{ backgroundColor: "#fff" }}>
+              <DeleteSweepRoundedIcon />
+            </Button>
+            <Button size="small" onClick={() => setShow(!show)} style={{ backgroundColor: "#fff" }}>
+              <AddCircleRoundedIcon />
+            </Button>
+          </Stack >
 
-          </Container>
-        </Box>
+          {show && (
+            <Grid container
+              columns={{ xs: 5, lg: 13}}
+              columnSpacing={{ xs: 1, sm: 5}}
+              rowSpacing={1}
+              direction="row"
+              justifyContent="center"
+              sx={{ minWidth: "100%", my: 5, mx: 10 }}
+            >
+              <Grid item xs={2} lg={4}>
+                <TextField
+                  id="outlined-basic"
+                  label="Name"
+                  variant="outlined"
+                  value={event.name}
+                  onChange={nameHandleChange}
+                  sx={{ backgroundColor: "#fff", minWidth: "100%" }}
+                />
+              </Grid>
+              <Grid item xs={2} lg={4}>
+                <TextField
+                  id="outlined-basic"
+                  label="Description"
+                  variant="outlined"
+                  value={event.description}
+                  onChange={descriptionHandleChange}
+                  sx={{ backgroundColor: "#fff", minWidth: "100%" }}
+                />
+              </Grid>
+              <Grid item xs={2} lg={4}>
+                <TextField
+                  id="outlined-basic"
+                  label="City"
+                  variant="outlined"
+                  value={event.city}
+                  onChange={cityHandleChange}
+                  sx={{ backgroundColor: "#fff", minWidth: "100%" }}
+                />
+              </Grid>
+              <Grid item xs={2} lg={4}>
+                <TextField
+                  id="outlined-basic"
+                  label="Event Type"
+                  variant="outlined"
+                  value={event.eventType}
+                  onChange={eventTypeHandleChange}
+                  sx={{ backgroundColor: "#fff", minWidth: "100%" }}
+                />
+              </Grid>
+              <Grid item xs={2} lg={4}>
+                <TextField
+                  id="outlined-basic"
+                  label="Location"
+                  variant="outlined"
+                  value={event.location}
+                  onChange={locationHandleChange}
+                  sx={{ backgroundColor: "#fff", minWidth: "100%" }}
+                />
+              </Grid>
+              <Grid item xs={2} lg={4}>
+                <TextField
+                  id="outlined-basic"
+                  label="Images"
+                  variant="outlined"
+                  value={event.images}
+                  onChange={imageHandleChange}
+                  sx={{ backgroundColor: "#fff", minWidth: "100%" }}
+                />
+              </Grid>
+              <Grid item xs={2} lg={4}>
+                <TextField
+                  id="outlined-basic"
+                  label="Price"
+                  variant="outlined"
+                  value={event.price}
+                  onChange={priceHandleChange}
+                  sx={{ backgroundColor: "#fff", minWidth: "100%" }}
+                />
+              </Grid>
+              <Grid item xs={2} lg={4}>
+                <input
+                  type="date"
+                  id="sDate"
+                  value={event.startDate}
+                  onChange={startDateHandleChange}
+                  style={{ minWidth: "100%", minHeight: "50px" }}
+                />
+              </Grid>
+              <Grid item xs={2} lg={4}>
+                <input
+                  type="date"
+                  id="eDate"
+                  value={event.endDate}
+                  onChange={endDateHandleChange}
+                  style={{ minWidth: "100%", minHeight: "50px" }}
+                />
+              </Grid>
+
+              <Grid item xs={2} lg={4}>
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  size="large"
+                  onClick={handleAdd}
+                  sx={{ minHeight: "100%", minWidth: "100%" }}
+                >
+                  Add
+                </Button>
+              </Grid>
+            </Grid>
+          )}
+
+          <DataGrid
+            sx={{ backgroundColor: "#fff", mx: 10 }}
+            rows={rows ? rows : setRows(data)}
+            columns={columns}
+            autoHeight
+            initialState={{
+              pagination: {
+                paginationModel: {
+                  pageSize: 5,
+                },
+              },
+            }}
+            pageSizeOptions={[5]}
+            checkboxSelection
+            disableRowSelectionOnClick
+            onRowSelectionModelChange={(selectedIds) => {
+              setSelectedRowIds(selectedIds)
+            }}
+          />
+        </Box >
       )}
     </>
   )
