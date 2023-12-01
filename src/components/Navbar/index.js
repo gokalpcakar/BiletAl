@@ -17,17 +17,17 @@ const Navbar = () => {
   const { loggedIn, login } = useAuth();
   const theme = useTheme();
   const isMatch = useMediaQuery(theme.breakpoints.down("lg"));
-
+ 
+ 
   useEffect(() => {
     const localStorageLoggedIn = localStorage.getItem("loggedIn") === "true";
-    if (localStorageLoggedIn) {
-      const storedUser = JSON.parse(localStorage.getItem("loginData"));
-      
+    if ({localStorageLoggedIn}) {
+      const storedUser =JSON.parse(localStorage.getItem("loginData"));
       if (storedUser) {
-        login(storedUser);
+        login(storedUser,localStorageLoggedIn);
       }
     }
-  }, [login]);
+  },[]);
 
   return (
     <>

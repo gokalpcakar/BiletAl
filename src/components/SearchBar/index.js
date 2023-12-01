@@ -79,7 +79,7 @@ function SearchBar() {
                 placeholder="Search…"
                 inputProps={{ 'aria-label': 'search' }}
                 value={searchQuery}
-                onInput={onChangeHandler}
+                onChange={onChangeHandler}
                 style={{ width: '100%' }}
             />
         </Search>
