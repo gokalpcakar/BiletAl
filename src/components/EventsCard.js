@@ -22,7 +22,7 @@ function EventsCard({ item,linkPath}) {
   };
   moment.locale("tr"); 
 
-  const formattedDateRange = `${moment(item.startDate).format("D MMMM YYYY")} - ${moment(item.endDate).format("D MMMM YYYY")}`;
+  const formattedDate = `${moment(item.startDate).format("D MMMM YYYY")}`;
   return (
     <Card>
       <Link to={`${linkPath}/${item.name}`} >
@@ -41,12 +41,12 @@ function EventsCard({ item,linkPath}) {
               <strong>{item.city}</strong> 
             </Typography>
             <Typography variant="h6" fontWeight={"bold"} sx={{textAlign:"center",color:"cdcdc1"}}>
-            {formattedDateRange}
+            {formattedDate}
             </Typography>
            
           </Link>
           <Link to="/" onClick={handleClick}>
-            <Typography variant="h5" color="text.primary" fontWeight={"bold"} sx={{border:"1px solid #cdcdc1",borderRadius:"15px",background:"#cdcdc1",textAlign:"center"}}>
+            <Typography variant="h5" color="text.primary" fontWeight={"bold"} sx={{border:"1px solid #cdcdc1",borderRadius:"10px",background:"#cdcdc1",textAlign:"center"}}>
                 <strong>{item.location} </strong> 
                 <SlLocationPin color="#1b8bb4" />
             </Typography>
@@ -55,7 +55,7 @@ function EventsCard({ item,linkPath}) {
             <Typography variant="h6" sx={{textTransform:"uppercase",fontWeight:"bold",textAlign:"center"}}>
               <strong></strong> {item.eventType}
             </Typography>
-            <Typography variant="h4" color="primary" fontWeight={"bold"} sx={{border:"1px solid #cdcdc1",borderRadius:"15px",background:"#cdcdc1",textAlign:"center"}}>
+            <Typography variant="h4" color="primary" fontWeight={"bold"} sx={{border:"1px solid #cdcdc1",borderRadius:"10px",background:"#cdcdc1",textAlign:"center"}}>
             {item.price}TL
             </Typography>
           </Link>
