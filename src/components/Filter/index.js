@@ -125,9 +125,9 @@ function Filter() {
             <Typography
               gutterBottom
               variant="h5"
-              sx={{ display: "flex", justifyContent: "center"}}
+              sx={{ display: "flex", justifyContent: "center" }}
             >
-             Lütfen Mekan Seçin
+              Lütfen Mekan Seçin
             </Typography>
             <select value={location} onChange={locationHandleChange}>
               <option value="" defaultValue>
@@ -142,7 +142,7 @@ function Filter() {
               variant="h5"
               sx={{ display: "flex", justifyContent: "center" }}
             >
-            Lütfen Şehir Seçin
+              Lütfen Şehir Seçin
             </Typography>
             <select value={city} onChange={cityHandleChange}>
               <option value="" defaultValue>
@@ -158,36 +158,41 @@ function Filter() {
               variant="h5"
               sx={{ display: "flex", justifyContent: "center" }}
             >
-             Lütfen Tarih Aralığı Seçin
+              Lütfen Tarih Aralığı Seçin
             </Typography>
-            
-            <Grid 
-              container 
-              direction="row"  
+
+            <Grid
+              container
+              direction="row"
               display="flex"
               justifyContent="space-between"
               alignItems="center"
             >
-              <Grid item xs={8}>            
-                <input
-                  className={Styles.input}
-                  type="text"
-                  onClick={toggleDateRangePicker} // Tarih aralığını seçmek için takvimi açar
-                  defaultValue={
-                    selectedDateRange[0].startDate && selectedDateRange[0].endDate
-                      ? `${selectedDateRange[0].startDate.toLocaleDateString()} - ${selectedDateRange[0].endDate.toLocaleDateString()}`
-                      : "Tarihler..."
-                  }
-                />
-                {showDateRangePicker && (
-                  <DateRange
-                    editableDateInputs={true}
-                    onChange={handleDateRangeChange}
-                    moveRangeOnFirstSelection={false}
-                    ranges={selectedDateRange}
+              <Grid item xs={8}>
+                <div style={{ position: "relative" }}>
+                  <input
+                    className={Styles.input}
+                    type="text"
+                    onClick={toggleDateRangePicker}
+                    defaultValue={
+                      selectedDateRange[0].startDate &&
+                      selectedDateRange[0].endDate
+                        ? `${selectedDateRange[0].startDate.toLocaleDateString()} - ${selectedDateRange[0].endDate.toLocaleDateString()}`
+                        : "Tarihler..."
+                    }
                   />
-                )}
-              </Grid>  
+                  {showDateRangePicker && (
+                    <div style={{ position: "absolute", top: "100%", left: 0 }}>
+                      <DateRange
+                        editableDateInputs={true}
+                        onChange={handleDateRangeChange}
+                        moveRangeOnFirstSelection={false}
+                        ranges={selectedDateRange}
+                      />
+                    </div>
+                  )}
+                </div>
+              </Grid>
 
               <Grid item xs={3}>
                 <button type="button" onClick={clearDateRange}>
