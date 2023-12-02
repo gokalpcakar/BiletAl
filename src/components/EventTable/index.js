@@ -117,10 +117,12 @@ function EventTable() {
   }
 
   const handleAdd = () => {
-    var maxId = Number(Math.max(...rows.map(row => row.id)))
-    ++maxId
-    //setEvent({ ...event, id: maxId }) --> Çalışmıyor
-    if (event.name && event.city && event.location && event.startDate && event.endDate && event.price) {
+    if (event.name 
+      && event.city 
+      && event.location 
+      && event.startDate 
+      && event.endDate 
+      && event.price) {
       addNewEvent(event)
       setRows([...rows, event])
       setShow(!show)
