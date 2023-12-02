@@ -8,6 +8,7 @@ import { useSearchContext } from "../context/SearchContext";
 import { SlLocationPin } from "react-icons/sl";
 import moment from "moment";
 import "moment/locale/tr";
+import image from "../assets/images/noImage.jpg"
 function EventsCard({ item,linkPath}) {
   const { setSearchResults, data } = useSearchContext();
 
@@ -28,7 +29,7 @@ function EventsCard({ item,linkPath}) {
       <Link to={`${linkPath}/${item.name}`} >
         <CardMedia
           sx={{ height:200, width: "100%", objectFit: "contain"}}
-          image={item.images[0]}
+          image={item.images.length > 0 ? item.images[0] : image}
         />
       </Link>
         <CardContent sx={{ backgroundColor: "#ffe7ba" }}>
