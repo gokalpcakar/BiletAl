@@ -1,4 +1,5 @@
 # https://bilet-al-zeogs.vercel.app/
+# Kayıt olup giriş yapma sayfasına yönlendirilip giriş yapabilirsiniz veya giriş yapmak için email:admin@admin.com şifre:12345
 
 # React Etkinlik Yönetimi Uygulaması
 
