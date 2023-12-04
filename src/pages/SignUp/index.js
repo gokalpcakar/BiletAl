@@ -22,7 +22,7 @@ import { fetchRegister } from "../../network/requests/UsersServices";
 const defaultTheme = createTheme();
 
 function SignUp() {
-  const { login } = useAuth();
+  const { logout } = useAuth();
   const [error, setError] = useState(""); // Hata mesajını saklamak için bir state ekledik
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -79,9 +79,8 @@ function SignUp() {
                       email: values.email,
                       password: values.password,
                     });
-
-                    login(registerResponse);
-                    navigate("/admin");
+                    logout(registerResponse);
+                    navigate("/signin");
                     routeChange();
                    // const token = captchaRef.current.getValue();
                     //captchaRef.current.reset();
