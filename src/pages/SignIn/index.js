@@ -7,7 +7,7 @@ import SubmitButton from "../../components/Form/SubmitButton"
 import PageWithHelmet from "../../components/PageWithHelmet";
 import { Form, Formik } from "formik";
 import { signInValidationSchema } from "./SignInValidationSchema";
-import ReCAPTCHA from "react-google-recaptcha";
+//import ReCAPTCHA from "react-google-recaptcha";
 import { controllerUserMail } from '../../network/requests/UsersServices'
 import { useAuth } from "../../context/AuthContext"
 import { fetchLogin } from '../../network/requests/UsersServices'
@@ -19,7 +19,7 @@ function SignIn() {
   const { login } = useAuth();
   const [error, setError] = useState(""); // Hata mesajını saklamak için bir state ekledik
   const navigate = useNavigate();
-  const captchaRef = useRef(null);
+ // const captchaRef = useRef(null);
 
   const formStyle = {
     width: "100%",
@@ -60,15 +60,16 @@ function SignIn() {
                     setError('E-mail veya parola hatalı');
                   } else {
                     const loginResponse = await fetchLogin(values.email); // Asenkron işlem
-
-                    const captchaValue = captchaRef.current.getValue();
-                    if (!captchaValue) {
-                      alert("Please verify the reCAPTCHA!");
-                    } else {
-                      // make form submission
-                      login(loginResponse)
-                      navigate("/admin")
-                    }
+                    login(loginResponse)
+                    navigate("/admin")
+                  //  const captchaValue = captchaRef.current.getValue();  localde çalışıyor canlıda alışmıyor
+                    // if (!captchaValue) {
+                    //   alert("Please verify the reCAPTCHA!");
+                    // } else {
+                    //    make form submission
+                    //   login(loginResponse)
+                    //   navigate("/admin")
+                    // }
                   }
                 } catch (error) {
                   setError('Bir hata oluştu. Lütfen tekrar deneyin.');
@@ -79,10 +80,10 @@ function SignIn() {
                 <MyTextInput label="Email Address" name="email" type="email" />
                 <MyTextInput label="Password" name="password" type="password" />
                 <MyCheckbox name="remember">Remember Me</MyCheckbox>
-                <ReCAPTCHA
+                {/* <ReCAPTCHA
                   sitekey={process.env.REACT_APP_SITE_KEY}
                   ref={captchaRef}
-                />
+                /> */}
                 {error && <div style={{ color: 'red' }}>{error}</div>}
                 <SubmitButton label="Giriş Yap" />
               </Form>
