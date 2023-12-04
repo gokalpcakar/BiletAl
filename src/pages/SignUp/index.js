@@ -15,7 +15,7 @@ import {
 } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import PageWithHelmet from "../../components/PageWithHelmet";
-import ReCAPTCHA from "react-google-recaptcha";
+//import ReCAPTCHA from "react-google-recaptcha";
 import { useAuth } from "../../context/AuthContext";
 import { controllerUserMail } from "../../network/requests/UsersServices";
 import { fetchRegister } from "../../network/requests/UsersServices";
@@ -39,7 +39,7 @@ function SignUp() {
     width: "100%",
   };
 
-  const captchaRef = useRef(null);
+ //const captchaRef = useRef(null);  localde çalışıyor canlıda çalışmıyor
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -83,8 +83,8 @@ function SignUp() {
                     login(registerResponse);
                     navigate("/admin");
                     routeChange();
-                    const token = captchaRef.current.getValue();
-                    captchaRef.current.reset();
+                   // const token = captchaRef.current.getValue();
+                    //captchaRef.current.reset();
                   }
                 } catch (error) {
                   setError("Bir hata oluştu. Lütfen tekrar deneyin.");
@@ -99,10 +99,10 @@ function SignUp() {
                 <MyCheckbox name="acceptedTerms">
                   I accept the terms and conditions
                 </MyCheckbox>
-                <ReCAPTCHA
+                {/* <ReCAPTCHA
                   sitekey={process.env.REACT_APP_SITE_KEY}
                   ref={captchaRef}
-                />
+                /> */}
                 <SubmitButton label="Kayıt Ol" />
                 {error && <div style={{ color: "red" }}>{error}</div>}
               </Form>
