@@ -10,7 +10,7 @@ Bu proje, etkinlikleri listelemek, detaylarını görüntülemek, haritada konum
 ![macbook](/src/assets/images/responsive1.PNG)
 ![mackbook](/src/assets/images/responsive2.PNG)
 ![mobile](/src/assets/images/responsive3.PNG)
-![mobile](/src/assets/images/responsive4.PNG)
+
 
 
 
