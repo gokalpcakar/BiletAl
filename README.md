@@ -5,6 +5,15 @@
 
 Bu proje, etkinlikleri listelemek, detaylarını görüntülemek, haritada konumlarını göstermek ve çeşitli filtreleme seçenekleriyle etkinlikleri yönetmek amacıyla oluşturulmuştur.Uygulama responsivedir.İstekler Postmande test edildi.
 
+
+
+![macbook](/src/assets/images/responsive1.PNG)
+![mackbook](/src/assets/images/responsive2.PNG)
+![mobile](/src/assets/images/responsive3.PNG)
+![mobile](/src/assets/images/responsive4.PNG)
+
+
+
 ## Özellikler
 
 - Etkinlik Listesi: Tüm etkinlikler bir tabloda listelenir.
